@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/006017c9c1a854129d29.css" rel="stylesheet">
+      <link href="/0269e9ac8c4a827ac226.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -33,7 +33,7 @@
 <p>The <code>this.callback</code> method is more flexible as it allows multiple arguments to be passed as opposed to just the <code>content</code>.</p>
 <p><strong>sync-loader-with-multiple-results.js</strong></p>
 <pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> map<span class="token punctuation">,</span> meta<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">callback</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token function">someSyncOperation</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">,</span> sourceMaps<span class="token punctuation">,</span> meta<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">callback</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token function">someSyncOperation</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">,</span> map<span class="token punctuation">,</span> meta<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span><span class="token punctuation">;</span> <span class="token comment">// always return undefined when calling callback()</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
