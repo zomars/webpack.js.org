@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/ad83306b618770c054b0.css" rel="stylesheet">
+      <link href="/cc1e31194e218af08827.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -43,10 +43,10 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <li><code>include</code>: Files to <code>include</code>. Default: <code>undefined</code></li>
 <li><code>exclude</code>: Files to <code>exclude</code>. Default: <code>undefined</code></li>
 <li><code>comments</code>: Preserve Comments. Default: <code>/^\**!|@preserve|@license|@cc_on/</code>, falsy value to remove all comments. Accepts function, object with property test (regex), and values.</li>
-<li><code>sourceMap</code>: Default: uses <a href="https://webpack.js.org/configuration/devtool/">webpackConfig.devtool</a>. Set this to override that.</li>
+<li><code>sourceMap</code>: Configure a sourcemap style. Default: <a href="https://webpack.js.org/configuration/devtool/">webpackConfig.devtool</a></li>
 <li><code>parserOpts</code>: Configure babel with special parser options.</li>
-<li><code>babel</code>: Pass in a custom babel-core instead. <code>require(&quot;babel-core&quot;)</code></li>
-<li><code>minifyPreset</code>: Pass in a custom minify preset instead - <code>require(&quot;babel-preset-minify&quot;)</code>.</li>
+<li><code>babel</code>: Pass in a custom <code>babel-core</code> instead. Default: <code>require(&quot;babel-core&quot;)</code></li>
+<li><code>minifyPreset</code>: Pass in a custom <code>babel-minify</code> preset instead. Default: <code>require(&quot;babel-preset-minify&quot;)</code></li>
 </ul>
 <h2 class="header"><a class="anchor" href="#why" id="why"></a><span class="text">Why</span><a class="icon-link" href="#why"></a></h2>
 <p>You can also use <a href="https://github.com/babel/babel-loader">babel-loader</a> for webpack and include <code>minify</code> <a href="https://github.com/babel/minify#babel-preset">as a preset</a> and should be much faster than using this - as babel-minify will operate on smaller file sizes. But then, why does this plugin exist at all? -</p>
