@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/cc1e31194e218af08827.css" rel="stylesheet">
+      <link href="/ceb771cb92555e34a5d5.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -139,7 +139,7 @@
 <span class="token inserted">+       sourceMap: true</span>
 <span class="token inserted">+     })</span>
     ]
-  })
+  });
 </code></pre>
 <blockquote class="tip"><div class="tip-content"> Avoid <code>inline-***</code> and <code>eval-***</code> use in production as they can increase bundle size and reduce the overall performance. </div></blockquote><h2 class="header"><a class="anchor" href="#specify-the-environment" id="specify-the-environment"></a><span class="text">Specify the Environment</span><a class="icon-link" href="#specify-the-environment"></a></h2>
 <p>Many libraries will key off the <code>process.env.NODE_ENV</code> variable to determine what should be included in the library. For example, when not in <em>production</em> some libraries may add additional logging and testing to make debugging easier. However, with <code>process.env.NODE_ENV === &apos;production&apos;</code> they might drop or add significant portions of code to optimize how things run for your actual users. We can use webpack&apos;s built in <a href="/plugins/define-plugin"><code>DefinePlugin</code></a> to define this variable for all our dependencies:</p>
@@ -154,12 +154,13 @@
     plugins: [
       new UglifyJSPlugin({
         sourceMap: true
-      }),
+<span class="token deleted">-     })</span>
+<span class="token inserted">+     }),</span>
 <span class="token inserted">+     new webpack.DefinePlugin({</span>
 <span class="token inserted">+       &apos;process.env.NODE_ENV&apos;: JSON.stringify(&apos;production&apos;)</span>
 <span class="token inserted">+     })</span>
     ]
-  })
+  });
 </code></pre>
 <blockquote class="tip"><div class="tip-content"> Technically, <code>NODE_ENV</code> is a system environment variable that Node.js exposes into running scripts. It is used by convention to determine dev-vs-prod behavior by server tools, build scripts, and client-side libraries. Contrary to expectations, <code>process.env.NODE_ENV</code> is not set to <code>&quot;production&quot;</code> <strong>within</strong> the build script <code>webpack.config.js</code>, see <a href="https://github.com/webpack/webpack/issues/2537">#2537</a>. Thus, conditionals like <code>process.env.NODE_ENV === &apos;production&apos; ? &apos;[name].[hash].bundle.js&apos; : &apos;[name].bundle.js&apos;</code> within webpack configurations do not work as expected. </div></blockquote><p>If you&apos;re using a library like <a href="https://facebook.github.io/react/"><code>react</code></a>, you should actually see a significant drop in bundle size after adding this plugin. Also note that any of our local <code>/src</code> code can key off of this as well, so the following check would be valid:</p>
 <p><strong>src/index.js</strong></p>
