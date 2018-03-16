@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/5f02c7634150ceae4386.css" rel="stylesheet">
+      <link href="/9ad77bdc966bd6126b76.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -103,7 +103,7 @@ module.exports = {
 <span class="token inserted">+ ]</span>
 };
 </code></pre>
-<blockquote class="tip"><div class="tip-content"> Note that the <code>--optimize-minimize</code> flag can be used to insert the <code>UglifyJsPlugin</code> as well. </div></blockquote><p>With that squared away, we can run another <code>npm run build</code> and see if anything has changed.</p>
+<blockquote class="tip"><div class="tip-content"> Note that the <code>--optimize-minimize</code> flag can be used to insert the <code>UglifyJSPlugin</code> as well. </div></blockquote><p>With that squared away, we can run another <code>npm run build</code> and see if anything has changed.</p>
 <p>Notice anything different about <code>dist/bundle.js</code>? Clearly the whole bundle is now minified and mangled, but, if you look carefully, you won&apos;t see the <code>square</code> function included but will see a mangled version of the <code>cube</code> function (<code>function r(e){return e*e*e}n.a=r</code>). With minification and tree shaking our bundle is now a few bytes smaller! While that may not seem like much in this contrived example, tree shaking can yield a significant decrease in bundle size when working on larger applications with complex dependency trees.</p>
 <h2 class="header"><a class="anchor" href="#caveats" id="caveats"></a><span class="text">Caveats</span><a class="icon-link" href="#caveats"></a></h2>
 <p>Please note that webpack doesn&apos;t perform tree-shaking by itself. It relies on third party tools like <a href="/plugins/uglifyjs-webpack-plugin/">UglifyJS</a> to perform actual dead code elimination. There are situations where tree-shaking may not be effective. For example, consider the following modules:</p>

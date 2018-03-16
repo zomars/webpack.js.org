@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/5f02c7634150ceae4386.css" rel="stylesheet">
+      <link href="/9ad77bdc966bd6126b76.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -488,7 +488,7 @@ Config lookup starts from <code>path.dirname(file)</code> and walks the file tre
   plugins<span class="token punctuation">:</span> <span class="token punctuation">{</span>
     <span class="token string">&apos;postcss-import&apos;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span> root<span class="token punctuation">:</span> file<span class="token punctuation">.</span>dirname <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token string">&apos;postcss-cssnext&apos;</span><span class="token punctuation">:</span> options<span class="token punctuation">.</span>cssnext <span class="token operator">?</span> options<span class="token punctuation">.</span>cssnext <span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token string">&apos;autoprefixer&apos;</span><span class="token punctuation">:</span> env <span class="token operator">==</span> <span class="token string">&apos;production&apos;</span> <span class="token operator">?</span> options<span class="token punctuation">.</span>autoprefixer <span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token string">&apos;autoprefixer&apos;</span><span class="token punctuation">:</span> env <span class="token operator">===</span> <span class="token string">&apos;production&apos;</span> <span class="token operator">?</span> options<span class="token punctuation">.</span>autoprefixer <span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
     <span class="token string">&apos;cssnano&apos;</span><span class="token punctuation">:</span> env <span class="token operator">===</span> <span class="token string">&apos;production&apos;</span> <span class="token operator">?</span> options<span class="token punctuation">.</span>cssnano <span class="token punctuation">:</span> <span class="token boolean">false</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
