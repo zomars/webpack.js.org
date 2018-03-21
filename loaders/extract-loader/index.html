@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/7128f8ebce1f6f4559a2.css" rel="stylesheet">
+      <link href="/086c6f0b337c3155e633.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -38,7 +38,7 @@
 <p>##</p>
 <p>Bundling CSS with webpack has some nice advantages like referencing images and fonts with hashed urls or <a href="http://webpack.github.io/docs/hot-module-replacement-with-webpack.html">hot module replacement</a> in development. In production, on the other hand, it&apos;s not a good idea to apply your stylesheets depending on JS execution. Rendering may be delayed or even a <a href="https://en.wikipedia.org/wiki/Flash_of_unstyled_content">FOUC</a> might be visible. Thus it&apos;s still better to have them as separate files in your final production build.</p>
 <p>With the extract-loader, you are able to reference your <code>main.css</code> as regular <code>entry</code>. The following <code>webpack.config.js</code> shows how to load your styles with the <a href="/loaders/style-loader/">style-loader</a> in development and as separate file in production.</p>
-<pre><code class="lang-javascript"><span class="token keyword">const</span> live <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span>NODE_ENV <span class="token operator">===</span> <span class="token string">&quot;production&quot;</span><span class="token punctuation">;</span>
+<pre><code class="lang-js"><span class="token keyword">const</span> live <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span>NODE_ENV <span class="token operator">===</span> <span class="token string">&quot;production&quot;</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> mainCss <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;css-loader&quot;</span><span class="token punctuation">,</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;app&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;main.css&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
 <span class="token keyword">if</span> <span class="token punctuation">(</span>live<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -57,7 +57,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 </code></pre>
 <h3 class="header"><a class="anchor" href="#extracting-the-index-html" id="extracting-the-index-html"></a><span class="text"><a href="https://github.com/peerigon/extract-loader/tree/master/examples/index-html">Extracting the index.html</a></span><a class="icon-link" href="#extracting-the-index-html"></a></h3>
 <p>You can even add your <code>index.html</code> as <code>entry</code> and just reference your stylesheets from there. You just need to tell the html-loader to also pick up <code>link:href</code>:</p>
-<pre><code class="lang-javascript"><span class="token keyword">const</span> indexHtml <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;app&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;index.html&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="lang-js"><span class="token keyword">const</span> indexHtml <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;app&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;index.html&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
     entry<span class="token punctuation">:</span> <span class="token punctuation">[</span>
