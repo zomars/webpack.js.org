@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Command Line Interface</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2B3A42">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,500,600" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    
+      <link href="/v3//213f80aa2d3fe02a48e5.css" rel="stylesheet">
+    
+
+    <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+  </head>
+  <body>
+    <div id="site" class="site"><div class="interactive" id="src/components/NotificationBar/NotificationBar.jsx" data-props="{}"><div class="notification-bar "><div class="container notification-bar__inner"></div></div></div><div class="interactive" id="src/components/Navigation/Navigation.jsx" data-props="{&quot;pageUrl&quot;:&quot;/v3/api/cli/&quot;}"><header class="navigation"><div class="container navigation__inner"></div><div class="navigation__bottom"><div class="container navigation__inner"></div></div></header></div><div class="interactive" id="src/components/SidebarMobile/SidebarMobile.jsx" data-props="{&quot;sections&quot;:[{&quot;title&quot;:&quot;Home&quot;,&quot;url&quot;:&quot;/&quot;,&quot;pages&quot;:[{&quot;title&quot;:&quot;Comparison&quot;,&quot;url&quot;:&quot;/v3//comparison/&quot;},{&quot;title&quot;:&quot;Branding Guidelines&quot;,&quot;url&quot;:&quot;/v3//branding/&quot;},{&quot;title&quot;:&quot;Glossary&quot;,&quot;url&quot;:&quot;/v3//glossary/&quot;},{&quot;title&quot;:&quot;License&quot;,&quot;url&quot;:&quot;/v3//license/&quot;}]},{&quot;title&quot;:&quot;Concepts&quot;,&quot;url&quot;:&quot;concepts&quot;,&quot;pages&quot;:[{&quot;title&quot;:&quot;Entry Points&quot;,&quot;url&quot;:&quot;/v3//concepts/entry-points/&quot;},{&quot;title&quot;:&quot;Output&quot;,&quot;url&quot;:&quot;/v3//concepts/output/&quot;},{&quot;title&quot;:&quot;Loaders&quot;,&quot;url&quot;:&quot;/v3//concepts/loaders/&quot;},{&quot;title&quot;:&quot;Plugins&quot;,&quot;url&quot;:&quot;/v3//concepts/plugins/&quot;},{&quot;title&quot;:&quot;Configuration&quot;,&quot;url&quot;:&quot;/v3//concepts/configuration/&quot;},{&quot;title&quot;:&quot;Modules&quot;,&quot;url&quot;:&quot;/v3//concepts/modules/&quot;},{&quot;title&quot;:&quot;Module Resolution&quot;,&quot;url&quot;:&quot;/v3//concepts/module-resolution/&quot;},{&quot;title&quot;:&quot;Dependency Graph&quot;,&quot;url&quot;:&quot;/v3//concepts/dependency-graph/&quot;},{&quot;title&quot;:&quot;Targets&quot;,&quot;url&quot;:&quot;/v3//concepts/targets/&quot;},{&quot;title&quot;:&quot;The Manifest&quot;,&quot;url&quot;:&quot;/v3//concepts/manifest/&quot;},{&quot;title&quot;:&quot;Hot Module Replacement&quot;,&quot;url&quot;:&quot;/v3//concepts/hot-module-replacement/&quot;}]},{&quot;title&quot;:&quot;Configuration&quot;,&quot;url&quot;:&quot;configuration&quot;,&quot;pages&quot;:[{&quot;title&quot;:&quot;Configuration Languages&quot;,&quot;url&quot;:&quot;/v3//configuration/configuration-languages/&quot;},{&quot;title&quot;:&quot;Configuration Types&quot;,&quot;url&quot;:&quot;/v3//configuration/configuration-types/&quot;},{&quot;title&quot;:&quot;Entry and Context&quot;,&quot;url&quot;:&quot;/v3//configuration/entry-context/&quot;},{&quot;title&quot;:&quot;Output&quot;,&quot;url&quot;:&quot;/v3//configuration/output/&quot;},{&quot;title&quot;:&quot;Module&quot;,&quot;url&quot;:&quot;/v3//configuration/module/&quot;},{&quot;title&quot;:&quot;Resolve&quot;,&quot;url&quot;:&quot;/v3//configuration/resolve/&quot;},{&quot;title&quot;:&quot;Plugins&quot;,&quot;url&quot;:&quot;/v3//configuration/plugins/&quot;},{&quot;title&quot;:&quot;DevServer&quot;,&quot;url&quot;:&quot;/v3//configuration/dev-server/&quot;},{&quot;title&quot;:&quot;Devtool&quot;,&quot;url&quot;:&quot;/v3//configuration/devtool/&quot;},{&quot;title&quot;:&quot;Target&quot;,&quot;url&quot;:&quot;/v3//configuration/target/&quot;},{&quot;title&quot;:&quot;Watch and WatchOptions&quot;,&quot;url&quot;:&quot;/v3//configuration/watch/&quot;},{&quot;title&quot;:&quot;Externals&quot;,&quot;url&quot;:&quot;/v3//configuration/externals/&quot;},{&quot;title&quot;:&quot;Performance&quot;,&quot;url&quot;:&quot;/v3//configuration/performance/&quot;},{&quot;title&quot;:&quot;Node&quot;,&quot;url&quot;:&quot;/v3//configuration/node/&quot;},{&quot;title&quot;:&quot;Stats&quot;,&quot;url&quot;:&quot;/v3//configuration/stats/&quot;},{&quot;title&quot;:&quot;Other Options&quot;,&quot;url&quot;:&quot;/v3//configuration/other-options/&quot;}]},{&quot;title&quot;:&quot;API&quot;,&quot;url&quot;:&quot;api&quot;,&quot;pages&quot;:[{&quot;title&quot;:&quot;Command Line Interface&quot;,&quot;url&quot;:&quot;/v3//api/cli/&quot;},{&quot;title&quot;:&quot;Stats Data&quot;,&quot;url&quot;:&quot;/v3//api/stats/&quot;},{&quot;title&quot;:&quot;Hot Module Replacement&quot;,&quot;url&quot;:&quot;/v3//api/hot-module-replacement/&quot;},{&quot;title&quot;:&quot;Node.js API&quot;,&quot;url&quot;:&quot;/v3//api/node/&quot;},{&quot;title&quot;:&quot;Loader API&quot;,&quot;url&quot;:&quot;/v3//api/loaders/&quot;},{&quot;title&quot;:&quot;Module Methods&quot;,&quot;url&quot;:&quot;/v3//api/module-methods/&quot;},{&quot;title&quot;:&quot;Module Variables&quot;,&quot;url&quot;:&quot;/v3//api/module-variables/&quot;},{&quot;title&quot;:&quot;Plugin API&quot;,&quot;url&quot;:&quot;/v3//api/plugins/&quot;},{&quot;title&quot;:&quot;Tapable&quot;,&quot;url&quot;:&quot;/v3//api/tapable/&quot;},{&quot;title&quot;:&quot;Compiler&quot;,&quot;url&quot;:&quot;/v3//api/compiler/&quot;},{&quot;title&quot;:&quot;Compilation&quot;,&quot;url&quot;:&quot;/v3//api/compilation/&quot;},{&quot;title&quot;:&quot;Module Factories&quot;,&quot;url&quot;:&quot;/v3//api/module-factories/&quot;},{&quot;title&quot;:&quot;Resolver&quot;,&quot;url&quot;:&quot;/v3//api/resolver/&quot;},{&quot;title&quot;:&quot;Parser&quot;,&quot;url&quot;:&quot;/v3//api/parser/&quot;},{&quot;title&quot;:&quot;Templates&quot;,&quot;url&quot;:&quot;/v3//api/template/&quot;}]},{&quot;title&quot;:&quot;Guides&quot;,&quot;url&quot;:&quot;guides&quot;,&quot;pages&quot;:[{&quot;title&quot;:&quot;Installation&quot;,&quot;url&quot;:&quot;/v3//guides/installation/&quot;},{&quot;title&quot;:&quot;Getting Started&quot;,&quot;url&quot;:&quot;/v3//guides/getting-started/&quot;},{&quot;title&quot;:&quot;Asset Management&quot;,&quot;url&quot;:&quot;/v3//guides/asset-management/&quot;},{&quot;title&quot;:&quot;Output Management&quot;,&quot;url&quot;:&quot;/v3//guides/output-management/&quot;},{&quot;title&quot;:&quot;Development&quot;,&quot;url&quot;:&quot;/v3//guides/development/&quot;},{&quot;title&quot;:&quot;Hot Module Replacement&quot;,&quot;url&quot;:&quot;/v3//guides/hot-module-replacement/&quot;},{&quot;title&quot;:&quot;Tree Shaking&quot;,&quot;url&quot;:&quot;/v3//guides/tree-shaking/&quot;},{&quot;title&quot;:&quot;Production&quot;,&quot;url&quot;:&quot;/v3//guides/production/&quot;},{&quot;title&quot;:&quot;Code Splitting&quot;,&quot;url&quot;:&quot;/v3//guides/code-splitting/&quot;},{&quot;title&quot;:&quot;Lazy Loading&quot;,&quot;url&quot;:&quot;/v3//guides/lazy-loading/&quot;},{&quot;title&quot;:&quot;Caching&quot;,&quot;url&quot;:&quot;/v3//guides/caching/&quot;},{&quot;title&quot;:&quot;Authoring Libraries&quot;,&quot;url&quot;:&quot;/v3//guides/author-libraries/&quot;},{&quot;title&quot;:&quot;Shimming&quot;,&quot;url&quot;:&quot;/v3//guides/shimming/&quot;},{&quot;title&quot;:&quot;Progressive Web Application&quot;,&quot;url&quot;:&quot;/v3//guides/progressive-web-application/&quot;},{&quot;title&quot;:&quot;TypeScript&quot;,&quot;url&quot;:&quot;/v3//guides/typescript/&quot;},{&quot;title&quot;:&quot;Migrating Versions&quot;,&quot;url&quot;:&quot;/v3//guides/migrating/&quot;},{&quot;title&quot;:&quot;Environment Variables&quot;,&quot;url&quot;:&quot;/v3//guides/environment-variables/&quot;},{&quot;title&quot;:&quot;Build Performance&quot;,&quot;url&quot;:&quot;/v3//guides/build-performance/&quot;},{&quot;title&quot;:&quot;Content Security Policies&quot;,&quot;url&quot;:&quot;/v3//guides/csp/&quot;},{&quot;title&quot;:&quot;Development - Vagrant&quot;,&quot;url&quot;:&quot;/v3//guides/development-vagrant/&quot;},{&quot;title&quot;:&quot;Dependency Management&quot;,&quot;url&quot;:&quot;/v3//guides/dependency-management/&quot;},{&quot;title&quot;:&quot;Public Path&quot;,&quot;url&quot;:&quot;/v3//guides/public-path/&quot;},{&quot;title&quot;:&quot;Integrations&quot;,&quot;url&quot;:&quot;/v3//guides/integrations/&quot;}]},{&quot;title&quot;:&quot;Plugins&quot;,&quot;url&quot;:&quot;plugins&quot;,&quot;pages&quot;:[{&quot;title&quot;:&quot;AggressiveSplittingPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/aggressive-splitting-plugin/&quot;},{&quot;title&quot;:&quot;ZopfliWebpackPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/zopfli-webpack-plugin/&quot;},{&quot;title&quot;:&quot;BannerPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/banner-plugin/&quot;},{&quot;title&quot;:&quot;ClosureWebpackPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/closure-webpack-plugin/&quot;},{&quot;title&quot;:&quot;CommonsChunkPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/commons-chunk-plugin/&quot;},{&quot;title&quot;:&quot;CompressionWebpackPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/compression-webpack-plugin/&quot;},{&quot;title&quot;:&quot;ContextReplacementPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/context-replacement-plugin/&quot;},{&quot;title&quot;:&quot;CopyWebpackPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/copy-webpack-plugin/&quot;},{&quot;title&quot;:&quot;CssWebpackPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/css-webpack-plugin/&quot;},{&quot;title&quot;:&quot;DefinePlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/define-plugin/&quot;},{&quot;title&quot;:&quot;DllPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/dll-plugin/&quot;},{&quot;title&quot;:&quot;EnvironmentPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/environment-plugin/&quot;},{&quot;title&quot;:&quot;EvalSourceMapDevToolPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/eval-source-map-dev-tool-plugin/&quot;},{&quot;title&quot;:&quot;ExtractTextWebpackPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/extract-text-webpack-plugin/&quot;},{&quot;title&quot;:&quot;HashedModuleIdsPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/hashed-module-ids-plugin/&quot;},{&quot;title&quot;:&quot;HotModuleReplacementPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/hot-module-replacement-plugin/&quot;},{&quot;title&quot;:&quot;BabelMinifyWebpackPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/babel-minify-webpack-plugin/&quot;},{&quot;title&quot;:&quot;I18nWebpackPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/i18n-webpack-plugin/&quot;},{&quot;title&quot;:&quot;IgnorePlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/ignore-plugin/&quot;},{&quot;title&quot;:&quot;LimitChunkCountPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/limit-chunk-count-plugin/&quot;},{&quot;title&quot;:&quot;LoaderOptionsPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/loader-options-plugin/&quot;},{&quot;title&quot;:&quot;MinChunkSizePlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/min-chunk-size-plugin/&quot;},{&quot;title&quot;:&quot;ModuleConcatenationPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/module-concatenation-plugin/&quot;},{&quot;title&quot;:&quot;NamedModulesPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/named-modules-plugin/&quot;},{&quot;title&quot;:&quot;NoEmitOnErrorsPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/no-emit-on-errors-plugin/&quot;},{&quot;title&quot;:&quot;NormalModuleReplacementPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/normal-module-replacement-plugin/&quot;},{&quot;title&quot;:&quot;NpmInstallWebpackPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/npm-install-webpack-plugin/&quot;},{&quot;title&quot;:&quot;PrefetchPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/prefetch-plugin/&quot;},{&quot;title&quot;:&quot;ProvidePlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/provide-plugin/&quot;},{&quot;title&quot;:&quot;SourceMapDevToolPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/source-map-dev-tool-plugin/&quot;},{&quot;title&quot;:&quot;UglifyjsWebpackPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/uglifyjs-webpack-plugin/&quot;},{&quot;title&quot;:&quot;WatchIgnorePlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/watch-ignore-plugin/&quot;},{&quot;title&quot;:&quot;HtmlWebpackPlugin&quot;,&quot;url&quot;:&quot;/v3//plugins/html-webpack-plugin/&quot;}]},{&quot;title&quot;:&quot;Loaders&quot;,&quot;url&quot;:&quot;loaders&quot;,&quot;pages&quot;:[{&quot;title&quot;:&quot;babel-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/babel-loader/&quot;},{&quot;title&quot;:&quot;yaml-frontmatter-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/yaml-frontmatter-loader/&quot;},{&quot;title&quot;:&quot;cache-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/cache-loader/&quot;},{&quot;title&quot;:&quot;coffee-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/coffee-loader/&quot;},{&quot;title&quot;:&quot;coffee-redux-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/coffee-redux-loader/&quot;},{&quot;title&quot;:&quot;coverjs-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/coverjs-loader/&quot;},{&quot;title&quot;:&quot;css-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/css-loader/&quot;},{&quot;title&quot;:&quot;eslint-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/eslint-loader/&quot;},{&quot;title&quot;:&quot;exports-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/exports-loader/&quot;},{&quot;title&quot;:&quot;expose-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/expose-loader/&quot;},{&quot;title&quot;:&quot;extract-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/extract-loader/&quot;},{&quot;title&quot;:&quot;file-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/file-loader/&quot;},{&quot;title&quot;:&quot;gzip-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/gzip-loader/&quot;},{&quot;title&quot;:&quot;html-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/html-loader/&quot;},{&quot;title&quot;:&quot;i18n-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/i18n-loader/&quot;},{&quot;title&quot;:&quot;imports-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/imports-loader/&quot;},{&quot;title&quot;:&quot;istanbul-instrumenter-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/istanbul-instrumenter-loader/&quot;},{&quot;title&quot;:&quot;jshint-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/jshint-loader/&quot;},{&quot;title&quot;:&quot;json-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/json-loader/&quot;},{&quot;title&quot;:&quot;json5-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/json5-loader/&quot;},{&quot;title&quot;:&quot;less-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/less-loader/&quot;},{&quot;title&quot;:&quot;bundle-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/bundle-loader/&quot;},{&quot;title&quot;:&quot;multi-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/multi-loader/&quot;},{&quot;title&quot;:&quot;node-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/node-loader/&quot;},{&quot;title&quot;:&quot;null-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/null-loader/&quot;},{&quot;title&quot;:&quot;polymer-webpack-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/polymer-webpack-loader/&quot;},{&quot;title&quot;:&quot;postcss-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/postcss-loader/&quot;},{&quot;title&quot;:&quot;raw-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/raw-loader/&quot;},{&quot;title&quot;:&quot;react-proxy-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/react-proxy-loader/&quot;},{&quot;title&quot;:&quot;restyle-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/restyle-loader/&quot;},{&quot;title&quot;:&quot;sass-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/sass-loader/&quot;},{&quot;title&quot;:&quot;script-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/script-loader/&quot;},{&quot;title&quot;:&quot;source-map-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/source-map-loader/&quot;},{&quot;title&quot;:&quot;style-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/style-loader/&quot;},{&quot;title&quot;:&quot;svg-inline-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/svg-inline-loader/&quot;},{&quot;title&quot;:&quot;thread-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/thread-loader/&quot;},{&quot;title&quot;:&quot;transform-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/transform-loader/&quot;},{&quot;title&quot;:&quot;url-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/url-loader/&quot;},{&quot;title&quot;:&quot;val-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/val-loader/&quot;},{&quot;title&quot;:&quot;worker-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/worker-loader/&quot;},{&quot;title&quot;:&quot;workerize-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/workerize-loader/&quot;},{&quot;title&quot;:&quot;mocha-loader&quot;,&quot;url&quot;:&quot;/v3//loaders/mocha-loader/&quot;}]},{&quot;title&quot;:&quot;Contribute&quot;,&quot;url&quot;:&quot;contribute&quot;,&quot;pages&quot;:[{&quot;title&quot;:&quot;Writer&apos;s Guide&quot;,&quot;url&quot;:&quot;/v3//contribute/writers-guide/&quot;},{&quot;title&quot;:&quot;Writing a Loader&quot;,&quot;url&quot;:&quot;/v3//contribute/writing-a-loader/&quot;},{&quot;title&quot;:&quot;Writing a Plugin&quot;,&quot;url&quot;:&quot;/v3//contribute/writing-a-plugin/&quot;},{&quot;title&quot;:&quot;Plugin Patterns&quot;,&quot;url&quot;:&quot;/v3//contribute/plugin-patterns/&quot;},{&quot;title&quot;:&quot;Release Process&quot;,&quot;url&quot;:&quot;/v3//contribute/release-process/&quot;},{&quot;title&quot;:&quot;Debugging&quot;,&quot;url&quot;:&quot;/v3//contribute/debugging/&quot;}]},{&quot;url&quot;:&quot;vote&quot;,&quot;pages&quot;:[]},{&quot;url&quot;:&quot;organization&quot;,&quot;pages&quot;:[]},{&quot;url&quot;:&quot;starter-kits&quot;,&quot;pages&quot;:[]},{&quot;url&quot;:&quot;api/plugins&quot;,&quot;pages&quot;:[]},{&quot;url&quot;:&quot;development&quot;,&quot;pages&quot;:[]}]}"><nav class="sidebar-mobile"><div class="sidebar-mobile__toggle"></div><div class="sidebar-mobile__content"><i class="sidebar-mobile__close icon-cross"></i><div class="sidebar-mobile__section "><a href="/" class="sidebar-mobile__section-header"></a><a href="/v3//comparison/" class="sidebar-mobile__page "></a><a href="/v3//branding/" class="sidebar-mobile__page "></a><a href="/v3//glossary/" class="sidebar-mobile__page "></a><a href="/v3//license/" class="sidebar-mobile__page "></a></div><div class="sidebar-mobile__section "><a href="/concepts" class="sidebar-mobile__section-header"></a><a href="/v3//concepts/entry-points/" class="sidebar-mobile__page "></a><a href="/v3//concepts/output/" class="sidebar-mobile__page "></a><a href="/v3//concepts/loaders/" class="sidebar-mobile__page "></a><a href="/v3//concepts/plugins/" class="sidebar-mobile__page "></a><a href="/v3//concepts/configuration/" class="sidebar-mobile__page "></a><a href="/v3//concepts/modules/" class="sidebar-mobile__page "></a><a href="/v3//concepts/module-resolution/" class="sidebar-mobile__page "></a><a href="/v3//concepts/dependency-graph/" class="sidebar-mobile__page "></a><a href="/v3//concepts/targets/" class="sidebar-mobile__page "></a><a href="/v3//concepts/manifest/" class="sidebar-mobile__page "></a><a href="/v3//concepts/hot-module-replacement/" class="sidebar-mobile__page "></a></div><div class="sidebar-mobile__section "><a href="/configuration" class="sidebar-mobile__section-header"></a><a href="/v3//configuration/configuration-languages/" class="sidebar-mobile__page "></a><a href="/v3//configuration/configuration-types/" class="sidebar-mobile__page "></a><a href="/v3//configuration/entry-context/" class="sidebar-mobile__page "></a><a href="/v3//configuration/output/" class="sidebar-mobile__page "></a><a href="/v3//configuration/module/" class="sidebar-mobile__page "></a><a href="/v3//configuration/resolve/" class="sidebar-mobile__page "></a><a href="/v3//configuration/plugins/" class="sidebar-mobile__page "></a><a href="/v3//configuration/dev-server/" class="sidebar-mobile__page "></a><a href="/v3//configuration/devtool/" class="sidebar-mobile__page "></a><a href="/v3//configuration/target/" class="sidebar-mobile__page "></a><a href="/v3//configuration/watch/" class="sidebar-mobile__page "></a><a href="/v3//configuration/externals/" class="sidebar-mobile__page "></a><a href="/v3//configuration/performance/" class="sidebar-mobile__page "></a><a href="/v3//configuration/node/" class="sidebar-mobile__page "></a><a href="/v3//configuration/stats/" class="sidebar-mobile__page "></a><a href="/v3//configuration/other-options/" class="sidebar-mobile__page "></a></div><div class="sidebar-mobile__section "><a href="/api" class="sidebar-mobile__section-header"></a><a href="/v3//api/cli/" class="sidebar-mobile__page "></a><a href="/v3//api/stats/" class="sidebar-mobile__page "></a><a href="/v3//api/hot-module-replacement/" class="sidebar-mobile__page "></a><a href="/v3//api/node/" class="sidebar-mobile__page "></a><a href="/v3//api/loaders/" class="sidebar-mobile__page "></a><a href="/v3//api/module-methods/" class="sidebar-mobile__page "></a><a href="/v3//api/module-variables/" class="sidebar-mobile__page "></a><a href="/v3//api/plugins/" class="sidebar-mobile__page "></a><a href="/v3//api/tapable/" class="sidebar-mobile__page "></a><a href="/v3//api/compiler/" class="sidebar-mobile__page "></a><a href="/v3//api/compilation/" class="sidebar-mobile__page "></a><a href="/v3//api/module-factories/" class="sidebar-mobile__page "></a><a href="/v3//api/resolver/" class="sidebar-mobile__page "></a><a href="/v3//api/parser/" class="sidebar-mobile__page "></a><a href="/v3//api/template/" class="sidebar-mobile__page "></a></div><div class="sidebar-mobile__section "><a href="/guides" class="sidebar-mobile__section-header"></a><a href="/v3//guides/installation/" class="sidebar-mobile__page "></a><a href="/v3//guides/getting-started/" class="sidebar-mobile__page "></a><a href="/v3//guides/asset-management/" class="sidebar-mobile__page "></a><a href="/v3//guides/output-management/" class="sidebar-mobile__page "></a><a href="/v3//guides/development/" class="sidebar-mobile__page "></a><a href="/v3//guides/hot-module-replacement/" class="sidebar-mobile__page "></a><a href="/v3//guides/tree-shaking/" class="sidebar-mobile__page "></a><a href="/v3//guides/production/" class="sidebar-mobile__page "></a><a href="/v3//guides/code-splitting/" class="sidebar-mobile__page "></a><a href="/v3//guides/lazy-loading/" class="sidebar-mobile__page "></a><a href="/v3//guides/caching/" class="sidebar-mobile__page "></a><a href="/v3//guides/author-libraries/" class="sidebar-mobile__page "></a><a href="/v3//guides/shimming/" class="sidebar-mobile__page "></a><a href="/v3//guides/progressive-web-application/" class="sidebar-mobile__page "></a><a href="/v3//guides/typescript/" class="sidebar-mobile__page "></a><a href="/v3//guides/migrating/" class="sidebar-mobile__page "></a><a href="/v3//guides/environment-variables/" class="sidebar-mobile__page "></a><a href="/v3//guides/build-performance/" class="sidebar-mobile__page "></a><a href="/v3//guides/csp/" class="sidebar-mobile__page "></a><a href="/v3//guides/development-vagrant/" class="sidebar-mobile__page "></a><a href="/v3//guides/dependency-management/" class="sidebar-mobile__page "></a><a href="/v3//guides/public-path/" class="sidebar-mobile__page "></a><a href="/v3//guides/integrations/" class="sidebar-mobile__page "></a></div><div class="sidebar-mobile__section "><a href="/plugins" class="sidebar-mobile__section-header"></a><a href="/v3//plugins/aggressive-splitting-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/zopfli-webpack-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/banner-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/closure-webpack-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/commons-chunk-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/compression-webpack-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/context-replacement-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/copy-webpack-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/css-webpack-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/define-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/dll-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/environment-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/eval-source-map-dev-tool-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/extract-text-webpack-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/hashed-module-ids-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/hot-module-replacement-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/babel-minify-webpack-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/i18n-webpack-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/ignore-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/limit-chunk-count-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/loader-options-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/min-chunk-size-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/module-concatenation-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/named-modules-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/no-emit-on-errors-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/normal-module-replacement-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/npm-install-webpack-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/prefetch-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/provide-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/source-map-dev-tool-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/uglifyjs-webpack-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/watch-ignore-plugin/" class="sidebar-mobile__page "></a><a href="/v3//plugins/html-webpack-plugin/" class="sidebar-mobile__page "></a></div><div class="sidebar-mobile__section "><a href="/loaders" class="sidebar-mobile__section-header"></a><a href="/v3//loaders/babel-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/yaml-frontmatter-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/cache-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/coffee-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/coffee-redux-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/coverjs-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/css-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/eslint-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/exports-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/expose-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/extract-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/file-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/gzip-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/html-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/i18n-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/imports-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/istanbul-instrumenter-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/jshint-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/json-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/json5-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/less-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/bundle-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/multi-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/node-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/null-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/polymer-webpack-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/postcss-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/raw-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/react-proxy-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/restyle-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/sass-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/script-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/source-map-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/style-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/svg-inline-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/thread-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/transform-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/url-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/val-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/worker-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/workerize-loader/" class="sidebar-mobile__page "></a><a href="/v3//loaders/mocha-loader/" class="sidebar-mobile__page "></a></div><div class="sidebar-mobile__section "><a href="/contribute" class="sidebar-mobile__section-header"></a><a href="/v3//contribute/writers-guide/" class="sidebar-mobile__page "></a><a href="/v3//contribute/writing-a-loader/" class="sidebar-mobile__page "></a><a href="/v3//contribute/writing-a-plugin/" class="sidebar-mobile__page "></a><a href="/v3//contribute/plugin-patterns/" class="sidebar-mobile__page "></a><a href="/v3//contribute/release-process/" class="sidebar-mobile__page "></a><a href="/v3//contribute/debugging/" class="sidebar-mobile__page "></a></div><div class="sidebar-mobile__section "><a href="/vote" class="sidebar-mobile__section-header"></a></div><div class="sidebar-mobile__section "><a href="/organization" class="sidebar-mobile__section-header"></a></div><div class="sidebar-mobile__section "><a href="/starter-kits" class="sidebar-mobile__section-header"></a></div><div class="sidebar-mobile__section "><a href="/api/plugins" class="sidebar-mobile__section-header"></a></div><div class="sidebar-mobile__section "><a href="/development" class="sidebar-mobile__section-header"></a></div></div></nav></div><div class="container page"><a href="https://www.ag-grid.com/?utm_source=webpack&amp;utm_medium=banner&amp;utm_campaign=sponsorship" target="_blank" class="sponsors"><img src="/v3/bf176a25b4f8227fea804854c98dc5e2.png"><img src="/v3/6bc5d8cf78d442a984e70195db059b69.svg" style="width:100px;"><div style="margin-top:1em;font-size:2em;text-align:center;color:#535353;">ag-grid is proud to partner with webpack</div></a><div class="interactive" id="src/components/Sidebar/Sidebar.jsx" data-props="{&quot;pages&quot;:[{&quot;url&quot;:&quot;/v3/api/&quot;,&quot;group&quot;:&quot;-&quot;,&quot;title&quot;:&quot;Introduction&quot;,&quot;anchors&quot;:[{&quot;title&quot;:&quot;CLI&quot;,&quot;id&quot;:&quot;cli&quot;},{&quot;title&quot;:&quot;Module&quot;,&quot;id&quot;:&quot;module&quot;},{&quot;title&quot;:&quot;Node&quot;,&quot;id&quot;:&quot;node&quot;},{&quot;title&quot;:&quot;Loaders&quot;,&quot;id&quot;:&quot;loaders&quot;},{&quot;title&quot;:&quot;Plugins&quot;,&quot;id&quot;:&quot;plugins&quot;}]},{&quot;url&quot;:&quot;/v3/api/cli/&quot;,&quot;title&quot;:&quot;Command Line Interface&quot;,&quot;group&quot;:&quot;-&quot;,&quot;anchors&quot;:[{&quot;title&quot;:&quot;Usage with config file&quot;,&quot;id&quot;:&quot;usage-with-config-file&quot;},{&quot;title&quot;:&quot;Usage without config file&quot;,&quot;id&quot;:&quot;usage-without-config-file&quot;},{&quot;title&quot;:&quot;Common Options&quot;,&quot;id&quot;:&quot;common-options&quot;},{&quot;title&quot;:&quot;Environment Options&quot;,&quot;id&quot;:&quot;environment-options&quot;},{&quot;title&quot;:&quot;Output Options&quot;,&quot;id&quot;:&quot;output-options&quot;},{&quot;title&quot;:&quot;Example Usage&quot;,&quot;id&quot;:&quot;example-usage&quot;},{&quot;title&quot;:&quot;Debug Options&quot;,&quot;id&quot;:&quot;debug-options&quot;},{&quot;title&quot;:&quot;Module Options&quot;,&quot;id&quot;:&quot;module-options&quot;},{&quot;title&quot;:&quot;Watch Options&quot;,&quot;id&quot;:&quot;watch-options&quot;},{&quot;title&quot;:&quot;Optimize Options&quot;,&quot;id&quot;:&quot;optimize-options&quot;},{&quot;title&quot;:&quot;Resolve Options&quot;,&quot;id&quot;:&quot;resolve-options&quot;},{&quot;title&quot;:&quot;Stats Options&quot;,&quot;id&quot;:&quot;stats-options&quot;},{&quot;title&quot;:&quot;Advanced Options&quot;,&quot;id&quot;:&quot;advanced-options&quot;},{&quot;title&quot;:&quot;Shortcuts&quot;,&quot;id&quot;:&quot;shortcuts&quot;},{&quot;title&quot;:&quot;Profiling&quot;,&quot;id&quot;:&quot;profiling&quot;}]},{&quot;url&quot;:&quot;/v3/api/stats/&quot;,&quot;title&quot;:&quot;Stats Data&quot;,&quot;group&quot;:&quot;-&quot;,&quot;anchors&quot;:[{&quot;title&quot;:&quot;Structure&quot;,&quot;id&quot;:&quot;structure&quot;},{&quot;title&quot;:&quot;Asset Objects&quot;,&quot;id&quot;:&quot;asset-objects&quot;},{&quot;title&quot;:&quot;Chunk Objects&quot;,&quot;id&quot;:&quot;chunk-objects&quot;},{&quot;title&quot;:&quot;Module Objects&quot;,&quot;id&quot;:&quot;module-objects&quot;},{&quot;title&quot;:&quot;Errors and Warnings&quot;,&quot;id&quot;:&quot;errors-and-warnings&quot;}]},{&quot;url&quot;:&quot;/v3/api/hot-module-replacement/&quot;,&quot;title&quot;:&quot;Hot Module Replacement&quot;,&quot;group&quot;:&quot;-&quot;,&quot;anchors&quot;:[{&quot;title&quot;:&quot;accept&quot;,&quot;id&quot;:&quot;accept&quot;},{&quot;title&quot;:&quot;decline&quot;,&quot;id&quot;:&quot;decline&quot;},{&quot;title&quot;:&quot;dispose (or addDisposeHandler)&quot;,&quot;id&quot;:&quot;dispose-or-adddisposehandler-&quot;},{&quot;title&quot;:&quot;removeDisposeHandler&quot;,&quot;id&quot;:&quot;removedisposehandler&quot;},{&quot;title&quot;:&quot;status&quot;,&quot;id&quot;:&quot;status&quot;},{&quot;title&quot;:&quot;check&quot;,&quot;id&quot;:&quot;check&quot;},{&quot;title&quot;:&quot;apply&quot;,&quot;id&quot;:&quot;apply&quot;},{&quot;title&quot;:&quot;addStatusHandler&quot;,&quot;id&quot;:&quot;addstatushandler&quot;},{&quot;title&quot;:&quot;removeStatusHandler&quot;,&quot;id&quot;:&quot;removestatushandler&quot;}]},{&quot;url&quot;:&quot;/v3/api/node/&quot;,&quot;title&quot;:&quot;Node.js API&quot;,&quot;group&quot;:&quot;-&quot;,&quot;anchors&quot;:[{&quot;title&quot;:&quot;Installation&quot;,&quot;id&quot;:&quot;installation&quot;},{&quot;title&quot;:&quot;webpack()&quot;,&quot;id&quot;:&quot;webpack-&quot;},{&quot;title&quot;:&quot;Compiler Instance&quot;,&quot;id&quot;:&quot;compiler-instance&quot;},{&quot;title&quot;:&quot;Run&quot;,&quot;id&quot;:&quot;run&quot;},{&quot;title&quot;:&quot;Watching&quot;,&quot;id&quot;:&quot;watching&quot;},{&quot;title&quot;:&quot;Close Watching&quot;,&quot;id&quot;:&quot;close-watching&quot;},{&quot;title&quot;:&quot;Invalidate Watching&quot;,&quot;id&quot;:&quot;invalidate-watching&quot;},{&quot;title&quot;:&quot;Stats Object&quot;,&quot;id&quot;:&quot;stats-object&quot;},{&quot;title&quot;:&quot;stats.hasErrors()&quot;,&quot;id&quot;:&quot;stats-haserrors-&quot;},{&quot;title&quot;:&quot;stats.hasWarnings()&quot;,&quot;id&quot;:&quot;stats-haswarnings-&quot;},{&quot;title&quot;:&quot;stats.toJson(options)&quot;,&quot;id&quot;:&quot;stats-tojson-options-&quot;},{&quot;title&quot;:&quot;stats.toString(options)&quot;,&quot;id&quot;:&quot;stats-tostring-options-&quot;},{&quot;title&quot;:&quot;Error Handling&quot;,&quot;id&quot;:&quot;error-handling&quot;},{&quot;title&quot;:&quot;Custom File Systems&quot;,&quot;id&quot;:&quot;custom-file-systems&quot;}]},{&quot;url&quot;:&quot;/v3/api/loaders/&quot;,&quot;title&quot;:&quot;Loader API&quot;,&quot;group&quot;:&quot;-&quot;,&quot;anchors&quot;:[{&quot;title&quot;:&quot;Examples&quot;,&quot;id&quot;:&quot;examples&quot;},{&quot;title&quot;:&quot;Synchronous Loaders&quot;,&quot;id&quot;:&quot;synchronous-loaders&quot;},{&quot;title&quot;:&quot;Asynchronous Loaders&quot;,&quot;id&quot;:&quot;asynchronous-loaders&quot;},{&quot;title&quot;:&quot;\&quot;Raw\&quot; Loader&quot;,&quot;id&quot;:&quot;-raw-loader&quot;},{&quot;title&quot;:&quot;Pitching Loader&quot;,&quot;id&quot;:&quot;pitching-loader&quot;},{&quot;title&quot;:&quot;The Loader Context&quot;,&quot;id&quot;:&quot;the-loader-context&quot;},{&quot;title&quot;:&quot;this.version&quot;,&quot;id&quot;:&quot;this-version&quot;},{&quot;title&quot;:&quot;this.context&quot;,&quot;id&quot;:&quot;this-context&quot;},{&quot;title&quot;:&quot;this.request&quot;,&quot;id&quot;:&quot;this-request&quot;},{&quot;title&quot;:&quot;this.query&quot;,&quot;id&quot;:&quot;this-query&quot;},{&quot;title&quot;:&quot;this.callback&quot;,&quot;id&quot;:&quot;this-callback&quot;},{&quot;title&quot;:&quot;this.async&quot;,&quot;id&quot;:&quot;this-async&quot;},{&quot;title&quot;:&quot;this.data&quot;,&quot;id&quot;:&quot;this-data&quot;},{&quot;title&quot;:&quot;this.cacheable&quot;,&quot;id&quot;:&quot;this-cacheable&quot;},{&quot;title&quot;:&quot;this.loaders&quot;,&quot;id&quot;:&quot;this-loaders&quot;},{&quot;title&quot;:&quot;this.loaderIndex&quot;,&quot;id&quot;:&quot;this-loaderindex&quot;},{&quot;title&quot;:&quot;this.resource&quot;,&quot;id&quot;:&quot;this-resource&quot;},{&quot;title&quot;:&quot;this.resourcePath&quot;,&quot;id&quot;:&quot;this-resourcepath&quot;},{&quot;title&quot;:&quot;this.resourceQuery&quot;,&quot;id&quot;:&quot;this-resourcequery&quot;},{&quot;title&quot;:&quot;this.target&quot;,&quot;id&quot;:&quot;this-target&quot;},{&quot;title&quot;:&quot;this.webpack&quot;,&quot;id&quot;:&quot;this-webpack&quot;},{&quot;title&quot;:&quot;this.sourceMap&quot;,&quot;id&quot;:&quot;this-sourcemap&quot;},{&quot;title&quot;:&quot;this.emitWarning&quot;,&quot;id&quot;:&quot;this-emitwarning&quot;},{&quot;title&quot;:&quot;this.emitError&quot;,&quot;id&quot;:&quot;this-emiterror&quot;},{&quot;title&quot;:&quot;this.loadModule&quot;,&quot;id&quot;:&quot;this-loadmodule&quot;},{&quot;title&quot;:&quot;this.resolve&quot;,&quot;id&quot;:&quot;this-resolve&quot;},{&quot;title&quot;:&quot;this.addDependency&quot;,&quot;id&quot;:&quot;this-adddependency&quot;},{&quot;title&quot;:&quot;this.addContextDependency&quot;,&quot;id&quot;:&quot;this-addcontextdependency&quot;},{&quot;title&quot;:&quot;this.clearDependencies&quot;,&quot;id&quot;:&quot;this-cleardependencies&quot;},{&quot;title&quot;:&quot;this.emitFile&quot;,&quot;id&quot;:&quot;this-emitfile&quot;},{&quot;title&quot;:&quot;this.fs&quot;,&quot;id&quot;:&quot;this-fs&quot;},{&quot;title&quot;:&quot;Deprecated context properties&quot;,&quot;id&quot;:&quot;deprecated-context-properties&quot;},{&quot;title&quot;:&quot;this.exec&quot;,&quot;id&quot;:&quot;this-exec&quot;},{&quot;title&quot;:&quot;this.resolveSync&quot;,&quot;id&quot;:&quot;this-resolvesync&quot;},{&quot;title&quot;:&quot;this.value&quot;,&quot;id&quot;:&quot;this-value&quot;},{&quot;title&quot;:&quot;this.inputValue&quot;,&quot;id&quot;:&quot;this-inputvalue&quot;},{&quot;title&quot;:&quot;this.options&quot;,&quot;id&quot;:&quot;this-options&quot;},{&quot;title&quot;:&quot;this.debug&quot;,&quot;id&quot;:&quot;this-debug&quot;},{&quot;title&quot;:&quot;this.minimize&quot;,&quot;id&quot;:&quot;this-minimize&quot;},{&quot;title&quot;:&quot;this._compilation&quot;,&quot;id&quot;:&quot;this-_compilation&quot;},{&quot;title&quot;:&quot;this._compiler&quot;,&quot;id&quot;:&quot;this-_compiler&quot;},{&quot;title&quot;:&quot;this._module&quot;,&quot;id&quot;:&quot;this-_module&quot;}]},{&quot;url&quot;:&quot;/v3/api/module-methods/&quot;,&quot;title&quot;:&quot;Module Methods&quot;,&quot;group&quot;:&quot;Modules&quot;,&quot;anchors&quot;:[{&quot;title&quot;:&quot;ES6 (Recommended)&quot;,&quot;id&quot;:&quot;es6-recommended-&quot;},{&quot;title&quot;:&quot;import&quot;,&quot;id&quot;:&quot;import&quot;},{&quot;title&quot;:&quot;export&quot;,&quot;id&quot;:&quot;export&quot;},{&quot;title&quot;:&quot;import()&quot;,&quot;id&quot;:&quot;import-&quot;},{&quot;title&quot;:&quot;CommonJS&quot;,&quot;id&quot;:&quot;commonjs&quot;},{&quot;title&quot;:&quot;require&quot;,&quot;id&quot;:&quot;require&quot;},{&quot;title&quot;:&quot;require.resolve&quot;,&quot;id&quot;:&quot;require-resolve&quot;},{&quot;title&quot;:&quot;require.cache&quot;,&quot;id&quot;:&quot;require-cache&quot;},{&quot;title&quot;:&quot;require.ensure&quot;,&quot;id&quot;:&quot;require-ensure&quot;},{&quot;title&quot;:&quot;AMD&quot;,&quot;id&quot;:&quot;amd&quot;},{&quot;title&quot;:&quot;define (with factory)&quot;,&quot;id&quot;:&quot;define-with-factory-&quot;},{&quot;title&quot;:&quot;define (with value)&quot;,&quot;id&quot;:&quot;define-with-value-&quot;},{&quot;title&quot;:&quot;require (amd-version)&quot;,&quot;id&quot;:&quot;require-amd-version-&quot;},{&quot;title&quot;:&quot;Labeled Modules&quot;,&quot;id&quot;:&quot;labeled-modules&quot;},{&quot;title&quot;:&quot;export label&quot;,&quot;id&quot;:&quot;export-label&quot;},{&quot;title&quot;:&quot;require label&quot;,&quot;id&quot;:&quot;require-label&quot;},{&quot;title&quot;:&quot;Webpack&quot;,&quot;id&quot;:&quot;webpack&quot;},{&quot;title&quot;:&quot;require.context&quot;,&quot;id&quot;:&quot;require-context&quot;},{&quot;title&quot;:&quot;require.include&quot;,&quot;id&quot;:&quot;require-include&quot;},{&quot;title&quot;:&quot;require.resolveWeak&quot;,&quot;id&quot;:&quot;require-resolveweak&quot;}]},{&quot;url&quot;:&quot;/v3/api/module-variables/&quot;,&quot;title&quot;:&quot;Module Variables&quot;,&quot;group&quot;:&quot;Modules&quot;,&quot;anchors&quot;:[{&quot;title&quot;:&quot;module.loaded (NodeJS)&quot;,&quot;id&quot;:&quot;module-loaded-nodejs-&quot;},{&quot;title&quot;:&quot;module.hot (webpack-specific)&quot;,&quot;id&quot;:&quot;module-hot-webpack-specific-&quot;},{&quot;title&quot;:&quot;module.id (CommonJS)&quot;,&quot;id&quot;:&quot;module-id-commonjs-&quot;},{&quot;title&quot;:&quot;module.exports (CommonJS)&quot;,&quot;id&quot;:&quot;module-exports-commonjs-&quot;},{&quot;title&quot;:&quot;exports (CommonJS)&quot;,&quot;id&quot;:&quot;exports-commonjs-&quot;},{&quot;title&quot;:&quot;global (NodeJS)&quot;,&quot;id&quot;:&quot;global-nodejs-&quot;},{&quot;title&quot;:&quot;process (NodeJS)&quot;,&quot;id&quot;:&quot;process-nodejs-&quot;},{&quot;title&quot;:&quot;__dirname (NodeJS)&quot;,&quot;id&quot;:&quot;__dirname-nodejs-&quot;},{&quot;title&quot;:&quot;__filename (NodeJS)&quot;,&quot;id&quot;:&quot;__filename-nodejs-&quot;},{&quot;title&quot;:&quot;__resourceQuery (webpack-specific)&quot;,&quot;id&quot;:&quot;__resourcequery-webpack-specific-&quot;},{&quot;title&quot;:&quot;__webpack_public_path__ (webpack-specific)&quot;,&quot;id&quot;:&quot;__webpack_public_path__-webpack-specific-&quot;},{&quot;title&quot;:&quot;__webpack_require__ (webpack-specific)&quot;,&quot;id&quot;:&quot;__webpack_require__-webpack-specific-&quot;},{&quot;title&quot;:&quot;__webpack_chunk_load__ (webpack-specific)&quot;,&quot;id&quot;:&quot;__webpack_chunk_load__-webpack-specific-&quot;},{&quot;title&quot;:&quot;__webpack_modules__ (webpack-specific)&quot;,&quot;id&quot;:&quot;__webpack_modules__-webpack-specific-&quot;},{&quot;title&quot;:&quot;__webpack_hash__ (webpack-specific)&quot;,&quot;id&quot;:&quot;__webpack_hash__-webpack-specific-&quot;},{&quot;title&quot;:&quot;__non_webpack_require__ (webpack-specific)&quot;,&quot;id&quot;:&quot;__non_webpack_require__-webpack-specific-&quot;},{&quot;title&quot;:&quot;DEBUG  (webpack-specific)&quot;,&quot;id&quot;:&quot;debug-webpack-specific-&quot;}]},{&quot;url&quot;:&quot;/v3/api/plugins/&quot;,&quot;title&quot;:&quot;Plugin API&quot;,&quot;group&quot;:&quot;Plugins&quot;,&quot;anchors&quot;:[{&quot;title&quot;:&quot;Tapable &amp; Tapable Instances&quot;,&quot;id&quot;:&quot;tapable-tapable-instances&quot;}]},{&quot;url&quot;:&quot;/v3/api/tapable/&quot;,&quot;title&quot;:&quot;Tapable&quot;,&quot;group&quot;:&quot;Plugins&quot;,&quot;anchors&quot;:[{&quot;title&quot;:&quot;Example&quot;,&quot;id&quot;:&quot;example&quot;}]},{&quot;url&quot;:&quot;/v3/api/compiler/&quot;,&quot;title&quot;:&quot;Compiler&quot;,&quot;group&quot;:&quot;Plugins&quot;,&quot;anchors&quot;:[{&quot;title&quot;:&quot;Watching&quot;,&quot;id&quot;:&quot;watching&quot;},{&quot;title&quot;:&quot;MultiCompiler&quot;,&quot;id&quot;:&quot;multicompiler&quot;},{&quot;title&quot;:&quot;Event Hooks&quot;,&quot;id&quot;:&quot;event-hooks&quot;},{&quot;title&quot;:&quot;Usage&quot;,&quot;id&quot;:&quot;usage&quot;}]},{&quot;url&quot;:&quot;/v3/api/compilation/&quot;,&quot;title&quot;:&quot;Compilation&quot;,&quot;group&quot;:&quot;Plugins&quot;,&quot;anchors&quot;:[{&quot;title&quot;:&quot;normal-module-loader&quot;,&quot;id&quot;:&quot;normal-module-loader&quot;},{&quot;title&quot;:&quot;seal&quot;,&quot;id&quot;:&quot;seal&quot;},{&quot;title&quot;:&quot;optimize&quot;,&quot;id&quot;:&quot;optimize&quot;},{&quot;title&quot;:&quot;optimize-tree(chunks, modules) async&quot;,&quot;id&quot;:&quot;optimize-tree-chunks-modules-async&quot;},{&quot;title&quot;:&quot;optimize-modules(modules: Module[])&quot;,&quot;id&quot;:&quot;optimize-modules-modules-module-&quot;},{&quot;title&quot;:&quot;after-optimize-modules(modules: Module[])&quot;,&quot;id&quot;:&quot;after-optimize-modules-modules-module-&quot;},{&quot;title&quot;:&quot;optimize-chunks(chunks: Chunk[])&quot;,&quot;id&quot;:&quot;optimize-chunks-chunks-chunk-&quot;},{&quot;title&quot;:&quot;after-optimize-chunks(chunks: Chunk[])&quot;,&quot;id&quot;:&quot;after-optimize-chunks-chunks-chunk-&quot;},{&quot;title&quot;:&quot;revive-modules(modules: Module[], records)&quot;,&quot;id&quot;:&quot;revive-modules-modules-module-records-&quot;},{&quot;title&quot;:&quot;optimize-module-order(modules: Module[])&quot;,&quot;id&quot;:&quot;optimize-module-order-modules-module-&quot;},{&quot;title&quot;:&quot;optimize-module-ids(modules: Module[])&quot;,&quot;id&quot;:&quot;optimize-module-ids-modules-module-&quot;},{&quot;title&quot;:&quot;after-optimize-module-ids(modules: Module[])&quot;,&quot;id&quot;:&quot;after-optimize-module-ids-modules-module-&quot;},{&quot;title&quot;:&quot;record-modules(modules: Module[], records)&quot;,&quot;id&quot;:&quot;record-modules-modules-module-records-&quot;},{&quot;title&quot;:&quot;revive-chunks(chunks: Chunk[], records)&quot;,&quot;id&quot;:&quot;revive-chunks-chunks-chunk-records-&quot;},{&quot;title&quot;:&quot;optimize-chunk-order(chunks: Chunk[])&quot;,&quot;id&quot;:&quot;optimize-chunk-order-chunks-chunk-&quot;},{&quot;title&quot;:&quot;optimize-chunk-ids(chunks: Chunk[])&quot;,&quot;id&quot;:&quot;optimize-chunk-ids-chunks-chunk-&quot;},{&quot;title&quot;:&quot;after-optimize-chunk-ids(chunks: Chunk[])&quot;,&quot;id&quot;:&quot;after-optimize-chunk-ids-chunks-chunk-&quot;},{&quot;title&quot;:&quot;record-chunks(chunks: Chunk[], records)&quot;,&quot;id&quot;:&quot;record-chunks-chunks-chunk-records-&quot;},{&quot;title&quot;:&quot;before-hash&quot;,&quot;id&quot;:&quot;before-hash&quot;},{&quot;title&quot;:&quot;after-hash&quot;,&quot;id&quot;:&quot;after-hash&quot;},{&quot;title&quot;:&quot;before-chunk-assets&quot;,&quot;id&quot;:&quot;before-chunk-assets&quot;},{&quot;title&quot;:&quot;additional-chunk-assets(chunks: Chunk[])&quot;,&quot;id&quot;:&quot;additional-chunk-assets-chunks-chunk-&quot;},{&quot;title&quot;:&quot;record(compilation, records)&quot;,&quot;id&quot;:&quot;record-compilation-records-&quot;},{&quot;title&quot;:&quot;additional-assets async&quot;,&quot;id&quot;:&quot;additional-assets-async&quot;},{&quot;title&quot;:&quot;optimize-chunk-assets(chunks: Chunk[]) async&quot;,&quot;id&quot;:&quot;optimize-chunk-assets-chunks-chunk-async&quot;},{&quot;title&quot;:&quot;after-optimize-chunk-assets(chunks: Chunk[])&quot;,&quot;id&quot;:&quot;after-optimize-chunk-assets-chunks-chunk-&quot;},{&quot;title&quot;:&quot;optimize-assets(assets: Object{name: Source}) async&quot;,&quot;id&quot;:&quot;optimize-assets-assets-object-name-source-async&quot;},{&quot;title&quot;:&quot;after-optimize-assets(assets: Object{name: Source})&quot;,&quot;id&quot;:&quot;after-optimize-assets-assets-object-name-source-&quot;},{&quot;title&quot;:&quot;build-module(module)&quot;,&quot;id&quot;:&quot;build-module-module-&quot;},{&quot;title&quot;:&quot;succeed-module(module)&quot;,&quot;id&quot;:&quot;succeed-module-module-&quot;},{&quot;title&quot;:&quot;failed-module(module)&quot;,&quot;id&quot;:&quot;failed-module-module-&quot;},{&quot;title&quot;:&quot;module-asset(module, filename)&quot;,&quot;id&quot;:&quot;module-asset-module-filename-&quot;},{&quot;title&quot;:&quot;chunk-asset(chunk, filename)&quot;,&quot;id&quot;:&quot;chunk-asset-chunk-filename-&quot;}]},{&quot;url&quot;:&quot;/v3/api/module-factories/&quot;,&quot;title&quot;:&quot;Module Factories&quot;,&quot;group&quot;:&quot;Plugins&quot;,&quot;anchors&quot;:[{&quot;title&quot;:&quot;NormalModuleFactory&quot;,&quot;id&quot;:&quot;normalmodulefactory&quot;},{&quot;title&quot;:&quot;ContextModuleFactory&quot;,&quot;id&quot;:&quot;contextmodulefactory&quot;}]},{&quot;url&quot;:&quot;/v3/api/resolver/&quot;,&quot;title&quot;:&quot;Resolver&quot;,&quot;group&quot;:&quot;Plugins&quot;,&quot;anchors&quot;:[{&quot;title&quot;:&quot;resolve(context: String, request: String)&quot;,&quot;id&quot;:&quot;resolve-context-string-request-string-&quot;},{&quot;title&quot;:&quot;resolve-step(types: String[], request: Request)&quot;,&quot;id&quot;:&quot;resolve-step-types-string-request-request-&quot;},{&quot;title&quot;:&quot;module(request: Request) async waterfall&quot;,&quot;id&quot;:&quot;module-request-request-async-waterfall&quot;},{&quot;title&quot;:&quot;directory(request: Request) async waterfall&quot;,&quot;id&quot;:&quot;directory-request-request-async-waterfall&quot;},{&quot;title&quot;:&quot;file(request: Request) async waterfall&quot;,&quot;id&quot;:&quot;file-request-request-async-waterfall&quot;},{&quot;title&quot;:&quot;The plugins may offer more extensions points&quot;,&quot;id&quot;:&quot;the-plugins-may-offer-more-extensions-points&quot;},{&quot;title&quot;:&quot;module-module&quot;,&quot;id&quot;:&quot;module-module&quot;},{&quot;title&quot;:&quot;module-loader-module (only for loaders)&quot;,&quot;id&quot;:&quot;module-loader-module-only-for-loaders-&quot;}]},{&quot;url&quot;:&quot;/v3/api/parser/&quot;,&quot;title&quot;:&quot;Parser&quot;,&quot;group&quot;:&quot;Plugins&quot;,&quot;anchors&quot;:[{&quot;title&quot;:&quot;program(ast) bailing&quot;,&quot;id&quot;:&quot;program-ast-bailing&quot;},{&quot;title&quot;:&quot;statement(statement: Statement) bailing&quot;,&quot;id&quot;:&quot;statement-statement-statement-bailing&quot;},{&quot;title&quot;:&quot;call (expr: Expression) bailing&quot;,&quot;id&quot;:&quot;call-expr-expression-bailing&quot;},{&quot;title&quot;:&quot;expression (expr: Expression) bailing&quot;,&quot;id&quot;:&quot;expression-expr-expression-bailing&quot;},{&quot;title&quot;:&quot;expression ?:(expr: Expression) bailing&quot;,&quot;id&quot;:&quot;expression-expr-expression-bailing&quot;},{&quot;title&quot;:&quot;typeof (expr: Expression) bailing&quot;,&quot;id&quot;:&quot;typeof-expr-expression-bailing&quot;},{&quot;title&quot;:&quot;statement if(statement: Statement) bailing&quot;,&quot;id&quot;:&quot;statement-if-statement-statement-bailing&quot;},{&quot;title&quot;:&quot;label (statement: Statement) bailing&quot;,&quot;id&quot;:&quot;label-statement-statement-bailing&quot;},{&quot;title&quot;:&quot;var (statement: Statement) bailing&quot;,&quot;id&quot;:&quot;var-statement-statement-bailing&quot;},{&quot;title&quot;:&quot;evaluate (expr: Expression) bailing&quot;,&quot;id&quot;:&quot;evaluate-expr-expression-bailing&quot;},{&quot;title&quot;:&quot;evaluate typeof (expr: Expression) bailing&quot;,&quot;id&quot;:&quot;evaluate-typeof-expr-expression-bailing&quot;},{&quot;title&quot;:&quot;evaluate Identifier (expr: Expression) bailing&quot;,&quot;id&quot;:&quot;evaluate-identifier-expr-expression-bailing&quot;},{&quot;title&quot;:&quot;evaluate defined Identifier (expr: Expression) bailing&quot;,&quot;id&quot;:&quot;evaluate-defined-identifier-expr-expression-bailing&quot;},{&quot;title&quot;:&quot;evaluate CallExpression .(expr: Expression) bailing&quot;,&quot;id&quot;:&quot;evaluate-callexpression-expr-expression-bailing&quot;}]},{&quot;url&quot;:&quot;/v3/api/template/&quot;,&quot;title&quot;:&quot;Templates&quot;,&quot;group&quot;:&quot;Plugins&quot;,&quot;anchors&quot;:[{&quot;title&quot;:&quot;MainTemplate&quot;,&quot;id&quot;:&quot;maintemplate&quot;},{&quot;title&quot;:&quot;startup(source, module, hash)&quot;,&quot;id&quot;:&quot;startup-source-module-hash-&quot;},{&quot;title&quot;:&quot;ModuleTemplate&quot;,&quot;id&quot;:&quot;moduletemplate&quot;},{&quot;title&quot;:&quot;ChunkTemplate&quot;,&quot;id&quot;:&quot;chunktemplate&quot;},{&quot;title&quot;:&quot;FunctionModuleTemplate&quot;,&quot;id&quot;:&quot;functionmoduletemplate&quot;},{&quot;title&quot;:&quot;HotUpdateChunkTemplate&quot;,&quot;id&quot;:&quot;hotupdatechunktemplate&quot;}]}],&quot;currentPage&quot;:&quot;/api/cli/&quot;}"><nav class="sidebar"><div class="sidebar__inner"><a href="https://github.com/webpack/webpack/releases"><img src="https://img.shields.io/npm/v/webpack.svg?label=webpack&amp;style=flat-square&amp;maxAge=3600"></a><div><div class="sidebar-item  "><i class="sidebar-item__toggle icon-chevron-right"></i><a href="/v3/api/" class="sidebar-item__title"></a><ul class="sidebar-item__anchors"><li class="sidebar-item__anchor" title="CLI"><a href="/v3/api/#cli">CLI</a></li><li class="sidebar-item__anchor" title="Module"><a href="/v3/api/#module">Module</a></li><li class="sidebar-item__anchor" title="Node"><a href="/v3/api/#node">Node</a></li><li class="sidebar-item__anchor" title="Loaders"><a href="/v3/api/#loaders">Loaders</a></li><li class="sidebar-item__anchor" title="Plugins"><a href="/v3/api/#plugins">Plugins</a></li></ul></div></div><div><div class="sidebar-item sidebar-item--open "><i class="sidebar-item__toggle icon-chevron-right"></i><a href="/v3/api/cli/" class="sidebar-item__title"></a><ul class="sidebar-item__anchors"><li class="sidebar-item__anchor" title="Usage with config file"><a href="/v3/api/cli/#usage-with-config-file">Usage with config file</a></li><li class="sidebar-item__anchor" title="Usage without config file"><a href="/v3/api/cli/#usage-without-config-file">Usage without config file</a></li><li class="sidebar-item__anchor" title="Common Options"><a href="/v3/api/cli/#common-options">Common Options</a></li><li class="sidebar-item__anchor" title="Environment Options"><a href="/v3/api/cli/#environment-options">Environment Options</a></li><li class="sidebar-item__anchor" title="Output Options"><a href="/v3/api/cli/#output-options">Output Options</a></li><li class="sidebar-item__anchor" title="Example Usage"><a href="/v3/api/cli/#example-usage">Example Usage</a></li><li class="sidebar-item__anchor" title="Debug Options"><a href="/v3/api/cli/#debug-options">Debug Options</a></li><li class="sidebar-item__anchor" title="Module Options"><a href="/v3/api/cli/#module-options">Module Options</a></li><li class="sidebar-item__anchor" title="Watch Options"><a href="/v3/api/cli/#watch-options">Watch Options</a></li><li class="sidebar-item__anchor" title="Optimize Options"><a href="/v3/api/cli/#optimize-options">Optimize Options</a></li><li class="sidebar-item__anchor" title="Resolve Options"><a href="/v3/api/cli/#resolve-options">Resolve Options</a></li><li class="sidebar-item__anchor" title="Stats Options"><a href="/v3/api/cli/#stats-options">Stats Options</a></li><li class="sidebar-item__anchor" title="Advanced Options"><a href="/v3/api/cli/#advanced-options">Advanced Options</a></li><li class="sidebar-item__anchor" title="Shortcuts"><a href="/v3/api/cli/#shortcuts">Shortcuts</a></li><li class="sidebar-item__anchor" title="Profiling"><a href="/v3/api/cli/#profiling">Profiling</a></li></ul></div></div><div><div class="sidebar-item  "><i class="sidebar-item__toggle icon-chevron-right"></i><a href="/v3/api/stats/" class="sidebar-item__title"></a><ul class="sidebar-item__anchors"><li class="sidebar-item__anchor" title="Structure"><a href="/v3/api/stats/#structure">Structure</a></li><li class="sidebar-item__anchor" title="Asset Objects"><a href="/v3/api/stats/#asset-objects">Asset Objects</a></li><li class="sidebar-item__anchor" title="Chunk Objects"><a href="/v3/api/stats/#chunk-objects">Chunk Objects</a></li><li class="sidebar-item__anchor" title="Module Objects"><a href="/v3/api/stats/#module-objects">Module Objects</a></li><li class="sidebar-item__anchor" title="Errors and Warnings"><a href="/v3/api/stats/#errors-and-warnings">Errors and Warnings</a></li></ul></div></div><div><div class="sidebar-item  "><i class="sidebar-item__toggle icon-chevron-right"></i><a href="/v3/api/hot-module-replacement/" class="sidebar-item__title"></a><ul class="sidebar-item__anchors"><li class="sidebar-item__anchor" title="accept"><a href="/v3/api/hot-module-replacement/#accept">accept</a></li><li class="sidebar-item__anchor" title="decline"><a href="/v3/api/hot-module-replacement/#decline">decline</a></li><li class="sidebar-item__anchor" title="dispose (or addDisposeHandler)"><a href="/v3/api/hot-module-replacement/#dispose-or-adddisposehandler-">dispose (or addDisposeHandler)</a></li><li class="sidebar-item__anchor" title="removeDisposeHandler"><a href="/v3/api/hot-module-replacement/#removedisposehandler">removeDisposeHandler</a></li><li class="sidebar-item__anchor" title="status"><a href="/v3/api/hot-module-replacement/#status">status</a></li><li class="sidebar-item__anchor" title="check"><a href="/v3/api/hot-module-replacement/#check">check</a></li><li class="sidebar-item__anchor" title="apply"><a href="/v3/api/hot-module-replacement/#apply">apply</a></li><li class="sidebar-item__anchor" title="addStatusHandler"><a href="/v3/api/hot-module-replacement/#addstatushandler">addStatusHandler</a></li><li class="sidebar-item__anchor" title="removeStatusHandler"><a href="/v3/api/hot-module-replacement/#removestatushandler">removeStatusHandler</a></li></ul></div></div><div><div class="sidebar-item  "><i class="sidebar-item__toggle icon-chevron-right"></i><a href="/v3/api/node/" class="sidebar-item__title"></a><ul class="sidebar-item__anchors"><li class="sidebar-item__anchor" title="Installation"><a href="/v3/api/node/#installation">Installation</a></li><li class="sidebar-item__anchor" title="webpack()"><a href="/v3/api/node/#webpack-">webpack()</a></li><li class="sidebar-item__anchor" title="Compiler Instance"><a href="/v3/api/node/#compiler-instance">Compiler Instance</a></li><li class="sidebar-item__anchor" title="Run"><a href="/v3/api/node/#run">Run</a></li><li class="sidebar-item__anchor" title="Watching"><a href="/v3/api/node/#watching">Watching</a></li><li class="sidebar-item__anchor" title="Close Watching"><a href="/v3/api/node/#close-watching">Close Watching</a></li><li class="sidebar-item__anchor" title="Invalidate Watching"><a href="/v3/api/node/#invalidate-watching">Invalidate Watching</a></li><li class="sidebar-item__anchor" title="Stats Object"><a href="/v3/api/node/#stats-object">Stats Object</a></li><li class="sidebar-item__anchor" title="stats.hasErrors()"><a href="/v3/api/node/#stats-haserrors-">stats.hasErrors()</a></li><li class="sidebar-item__anchor" title="stats.hasWarnings()"><a href="/v3/api/node/#stats-haswarnings-">stats.hasWarnings()</a></li><li class="sidebar-item__anchor" title="stats.toJson(options)"><a href="/v3/api/node/#stats-tojson-options-">stats.toJson(options)</a></li><li class="sidebar-item__anchor" title="stats.toString(options)"><a href="/v3/api/node/#stats-tostring-options-">stats.toString(options)</a></li><li class="sidebar-item__anchor" title="Error Handling"><a href="/v3/api/node/#error-handling">Error Handling</a></li><li class="sidebar-item__anchor" title="Custom File Systems"><a href="/v3/api/node/#custom-file-systems">Custom File Systems</a></li></ul></div></div><div><div class="sidebar-item  "><i class="sidebar-item__toggle icon-chevron-right"></i><a href="/v3/api/loaders/" class="sidebar-item__title"></a><ul class="sidebar-item__anchors"><li class="sidebar-item__anchor" title="Examples"><a href="/v3/api/loaders/#examples">Examples</a></li><li class="sidebar-item__anchor" title="Synchronous Loaders"><a href="/v3/api/loaders/#synchronous-loaders">Synchronous Loaders</a></li><li class="sidebar-item__anchor" title="Asynchronous Loaders"><a href="/v3/api/loaders/#asynchronous-loaders">Asynchronous Loaders</a></li><li class="sidebar-item__anchor" title="&quot;Raw&quot; Loader"><a href="/v3/api/loaders/#-raw-loader">&quot;Raw&quot; Loader</a></li><li class="sidebar-item__anchor" title="Pitching Loader"><a href="/v3/api/loaders/#pitching-loader">Pitching Loader</a></li><li class="sidebar-item__anchor" title="The Loader Context"><a href="/v3/api/loaders/#the-loader-context">The Loader Context</a></li><li class="sidebar-item__anchor" title="this.version"><a href="/v3/api/loaders/#this-version">this.version</a></li><li class="sidebar-item__anchor" title="this.context"><a href="/v3/api/loaders/#this-context">this.context</a></li><li class="sidebar-item__anchor" title="this.request"><a href="/v3/api/loaders/#this-request">this.request</a></li><li class="sidebar-item__anchor" title="this.query"><a href="/v3/api/loaders/#this-query">this.query</a></li><li class="sidebar-item__anchor" title="this.callback"><a href="/v3/api/loaders/#this-callback">this.callback</a></li><li class="sidebar-item__anchor" title="this.async"><a href="/v3/api/loaders/#this-async">this.async</a></li><li class="sidebar-item__anchor" title="this.data"><a href="/v3/api/loaders/#this-data">this.data</a></li><li class="sidebar-item__anchor" title="this.cacheable"><a href="/v3/api/loaders/#this-cacheable">this.cacheable</a></li><li class="sidebar-item__anchor" title="this.loaders"><a href="/v3/api/loaders/#this-loaders">this.loaders</a></li><li class="sidebar-item__anchor" title="this.loaderIndex"><a href="/v3/api/loaders/#this-loaderindex">this.loaderIndex</a></li><li class="sidebar-item__anchor" title="this.resource"><a href="/v3/api/loaders/#this-resource">this.resource</a></li><li class="sidebar-item__anchor" title="this.resourcePath"><a href="/v3/api/loaders/#this-resourcepath">this.resourcePath</a></li><li class="sidebar-item__anchor" title="this.resourceQuery"><a href="/v3/api/loaders/#this-resourcequery">this.resourceQuery</a></li><li class="sidebar-item__anchor" title="this.target"><a href="/v3/api/loaders/#this-target">this.target</a></li><li class="sidebar-item__anchor" title="this.webpack"><a href="/v3/api/loaders/#this-webpack">this.webpack</a></li><li class="sidebar-item__anchor" title="this.sourceMap"><a href="/v3/api/loaders/#this-sourcemap">this.sourceMap</a></li><li class="sidebar-item__anchor" title="this.emitWarning"><a href="/v3/api/loaders/#this-emitwarning">this.emitWarning</a></li><li class="sidebar-item__anchor" title="this.emitError"><a href="/v3/api/loaders/#this-emiterror">this.emitError</a></li><li class="sidebar-item__anchor" title="this.loadModule"><a href="/v3/api/loaders/#this-loadmodule">this.loadModule</a></li><li class="sidebar-item__anchor" title="this.resolve"><a href="/v3/api/loaders/#this-resolve">this.resolve</a></li><li class="sidebar-item__anchor" title="this.addDependency"><a href="/v3/api/loaders/#this-adddependency">this.addDependency</a></li><li class="sidebar-item__anchor" title="this.addContextDependency"><a href="/v3/api/loaders/#this-addcontextdependency">this.addContextDependency</a></li><li class="sidebar-item__anchor" title="this.clearDependencies"><a href="/v3/api/loaders/#this-cleardependencies">this.clearDependencies</a></li><li class="sidebar-item__anchor" title="this.emitFile"><a href="/v3/api/loaders/#this-emitfile">this.emitFile</a></li><li class="sidebar-item__anchor" title="this.fs"><a href="/v3/api/loaders/#this-fs">this.fs</a></li><li class="sidebar-item__anchor" title="Deprecated context properties"><a href="/v3/api/loaders/#deprecated-context-properties">Deprecated context properties</a></li><li class="sidebar-item__anchor" title="this.exec"><a href="/v3/api/loaders/#this-exec">this.exec</a></li><li class="sidebar-item__anchor" title="this.resolveSync"><a href="/v3/api/loaders/#this-resolvesync">this.resolveSync</a></li><li class="sidebar-item__anchor" title="this.value"><a href="/v3/api/loaders/#this-value">this.value</a></li><li class="sidebar-item__anchor" title="this.inputValue"><a href="/v3/api/loaders/#this-inputvalue">this.inputValue</a></li><li class="sidebar-item__anchor" title="this.options"><a href="/v3/api/loaders/#this-options">this.options</a></li><li class="sidebar-item__anchor" title="this.debug"><a href="/v3/api/loaders/#this-debug">this.debug</a></li><li class="sidebar-item__anchor" title="this.minimize"><a href="/v3/api/loaders/#this-minimize">this.minimize</a></li><li class="sidebar-item__anchor" title="this._compilation"><a href="/v3/api/loaders/#this-_compilation">this._compilation</a></li><li class="sidebar-item__anchor" title="this._compiler"><a href="/v3/api/loaders/#this-_compiler">this._compiler</a></li><li class="sidebar-item__anchor" title="this._module"><a href="/v3/api/loaders/#this-_module">this._module</a></li></ul></div></div><div><h4 class="sidebar__group">Modules</h4><div class="sidebar-item  "><i class="sidebar-item__toggle icon-chevron-right"></i><a href="/v3/api/module-methods/" class="sidebar-item__title"></a><ul class="sidebar-item__anchors"><li class="sidebar-item__anchor" title="ES6 (Recommended)"><a href="/v3/api/module-methods/#es6-recommended-">ES6 (Recommended)</a></li><li class="sidebar-item__anchor" title="import"><a href="/v3/api/module-methods/#import">import</a></li><li class="sidebar-item__anchor" title="export"><a href="/v3/api/module-methods/#export">export</a></li><li class="sidebar-item__anchor" title="import()"><a href="/v3/api/module-methods/#import-">import()</a></li><li class="sidebar-item__anchor" title="CommonJS"><a href="/v3/api/module-methods/#commonjs">CommonJS</a></li><li class="sidebar-item__anchor" title="require"><a href="/v3/api/module-methods/#require">require</a></li><li class="sidebar-item__anchor" title="require.resolve"><a href="/v3/api/module-methods/#require-resolve">require.resolve</a></li><li class="sidebar-item__anchor" title="require.cache"><a href="/v3/api/module-methods/#require-cache">require.cache</a></li><li class="sidebar-item__anchor" title="require.ensure"><a href="/v3/api/module-methods/#require-ensure">require.ensure</a></li><li class="sidebar-item__anchor" title="AMD"><a href="/v3/api/module-methods/#amd">AMD</a></li><li class="sidebar-item__anchor" title="define (with factory)"><a href="/v3/api/module-methods/#define-with-factory-">define (with factory)</a></li><li class="sidebar-item__anchor" title="define (with value)"><a href="/v3/api/module-methods/#define-with-value-">define (with value)</a></li><li class="sidebar-item__anchor" title="require (amd-version)"><a href="/v3/api/module-methods/#require-amd-version-">require (amd-version)</a></li><li class="sidebar-item__anchor" title="Labeled Modules"><a href="/v3/api/module-methods/#labeled-modules">Labeled Modules</a></li><li class="sidebar-item__anchor" title="export label"><a href="/v3/api/module-methods/#export-label">export label</a></li><li class="sidebar-item__anchor" title="require label"><a href="/v3/api/module-methods/#require-label">require label</a></li><li class="sidebar-item__anchor" title="Webpack"><a href="/v3/api/module-methods/#webpack">Webpack</a></li><li class="sidebar-item__anchor" title="require.context"><a href="/v3/api/module-methods/#require-context">require.context</a></li><li class="sidebar-item__anchor" title="require.include"><a href="/v3/api/module-methods/#require-include">require.include</a></li><li class="sidebar-item__anchor" title="require.resolveWeak"><a href="/v3/api/module-methods/#require-resolveweak">require.resolveWeak</a></li></ul></div></div><div><div class="sidebar-item  "><i class="sidebar-item__toggle icon-chevron-right"></i><a href="/v3/api/module-variables/" class="sidebar-item__title"></a><ul class="sidebar-item__anchors"><li class="sidebar-item__anchor" title="module.loaded (NodeJS)"><a href="/v3/api/module-variables/#module-loaded-nodejs-">module.loaded (NodeJS)</a></li><li class="sidebar-item__anchor" title="module.hot (webpack-specific)"><a href="/v3/api/module-variables/#module-hot-webpack-specific-">module.hot (webpack-specific)</a></li><li class="sidebar-item__anchor" title="module.id (CommonJS)"><a href="/v3/api/module-variables/#module-id-commonjs-">module.id (CommonJS)</a></li><li class="sidebar-item__anchor" title="module.exports (CommonJS)"><a href="/v3/api/module-variables/#module-exports-commonjs-">module.exports (CommonJS)</a></li><li class="sidebar-item__anchor" title="exports (CommonJS)"><a href="/v3/api/module-variables/#exports-commonjs-">exports (CommonJS)</a></li><li class="sidebar-item__anchor" title="global (NodeJS)"><a href="/v3/api/module-variables/#global-nodejs-">global (NodeJS)</a></li><li class="sidebar-item__anchor" title="process (NodeJS)"><a href="/v3/api/module-variables/#process-nodejs-">process (NodeJS)</a></li><li class="sidebar-item__anchor" title="__dirname (NodeJS)"><a href="/v3/api/module-variables/#__dirname-nodejs-">__dirname (NodeJS)</a></li><li class="sidebar-item__anchor" title="__filename (NodeJS)"><a href="/v3/api/module-variables/#__filename-nodejs-">__filename (NodeJS)</a></li><li class="sidebar-item__anchor" title="__resourceQuery (webpack-specific)"><a href="/v3/api/module-variables/#__resourcequery-webpack-specific-">__resourceQuery (webpack-specific)</a></li><li class="sidebar-item__anchor" title="__webpack_public_path__ (webpack-specific)"><a href="/v3/api/module-variables/#__webpack_public_path__-webpack-specific-">__webpack_public_path__ (webpack-specific)</a></li><li class="sidebar-item__anchor" title="__webpack_require__ (webpack-specific)"><a href="/v3/api/module-variables/#__webpack_require__-webpack-specific-">__webpack_require__ (webpack-specific)</a></li><li class="sidebar-item__anchor" title="__webpack_chunk_load__ (webpack-specific)"><a href="/v3/api/module-variables/#__webpack_chunk_load__-webpack-specific-">__webpack_chunk_load__ (webpack-specific)</a></li><li class="sidebar-item__anchor" title="__webpack_modules__ (webpack-specific)"><a href="/v3/api/module-variables/#__webpack_modules__-webpack-specific-">__webpack_modules__ (webpack-specific)</a></li><li class="sidebar-item__anchor" title="__webpack_hash__ (webpack-specific)"><a href="/v3/api/module-variables/#__webpack_hash__-webpack-specific-">__webpack_hash__ (webpack-specific)</a></li><li class="sidebar-item__anchor" title="__non_webpack_require__ (webpack-specific)"><a href="/v3/api/module-variables/#__non_webpack_require__-webpack-specific-">__non_webpack_require__ (webpack-specific)</a></li><li class="sidebar-item__anchor" title="DEBUG  (webpack-specific)"><a href="/v3/api/module-variables/#debug-webpack-specific-">DEBUG  (webpack-specific)</a></li></ul></div></div><div><h4 class="sidebar__group">Plugins</h4><div class="sidebar-item  "><i class="sidebar-item__toggle icon-chevron-right"></i><a href="/v3/api/plugins/" class="sidebar-item__title"></a><ul class="sidebar-item__anchors"><li class="sidebar-item__anchor" title="Tapable &amp; Tapable Instances"><a href="/v3/api/plugins/#tapable-tapable-instances">Tapable &amp; Tapable Instances</a></li></ul></div></div><div><div class="sidebar-item  "><i class="sidebar-item__toggle icon-chevron-right"></i><a href="/v3/api/tapable/" class="sidebar-item__title"></a><ul class="sidebar-item__anchors"><li class="sidebar-item__anchor" title="Example"><a href="/v3/api/tapable/#example">Example</a></li></ul></div></div><div><div class="sidebar-item  "><i class="sidebar-item__toggle icon-chevron-right"></i><a href="/v3/api/compiler/" class="sidebar-item__title"></a><ul class="sidebar-item__anchors"><li class="sidebar-item__anchor" title="Watching"><a href="/v3/api/compiler/#watching">Watching</a></li><li class="sidebar-item__anchor" title="MultiCompiler"><a href="/v3/api/compiler/#multicompiler">MultiCompiler</a></li><li class="sidebar-item__anchor" title="Event Hooks"><a href="/v3/api/compiler/#event-hooks">Event Hooks</a></li><li class="sidebar-item__anchor" title="Usage"><a href="/v3/api/compiler/#usage">Usage</a></li></ul></div></div><div><div class="sidebar-item  "><i class="sidebar-item__toggle icon-chevron-right"></i><a href="/v3/api/compilation/" class="sidebar-item__title"></a><ul class="sidebar-item__anchors"><li class="sidebar-item__anchor" title="normal-module-loader"><a href="/v3/api/compilation/#normal-module-loader">normal-module-loader</a></li><li class="sidebar-item__anchor" title="seal"><a href="/v3/api/compilation/#seal">seal</a></li><li class="sidebar-item__anchor" title="optimize"><a href="/v3/api/compilation/#optimize">optimize</a></li><li class="sidebar-item__anchor" title="optimize-tree(chunks, modules) async"><a href="/v3/api/compilation/#optimize-tree-chunks-modules-async">optimize-tree(chunks, modules) async</a></li><li class="sidebar-item__anchor" title="optimize-modules(modules: Module[])"><a href="/v3/api/compilation/#optimize-modules-modules-module-">optimize-modules(modules: Module[])</a></li><li class="sidebar-item__anchor" title="after-optimize-modules(modules: Module[])"><a href="/v3/api/compilation/#after-optimize-modules-modules-module-">after-optimize-modules(modules: Module[])</a></li><li class="sidebar-item__anchor" title="optimize-chunks(chunks: Chunk[])"><a href="/v3/api/compilation/#optimize-chunks-chunks-chunk-">optimize-chunks(chunks: Chunk[])</a></li><li class="sidebar-item__anchor" title="after-optimize-chunks(chunks: Chunk[])"><a href="/v3/api/compilation/#after-optimize-chunks-chunks-chunk-">after-optimize-chunks(chunks: Chunk[])</a></li><li class="sidebar-item__anchor" title="revive-modules(modules: Module[], records)"><a href="/v3/api/compilation/#revive-modules-modules-module-records-">revive-modules(modules: Module[], records)</a></li><li class="sidebar-item__anchor" title="optimize-module-order(modules: Module[])"><a href="/v3/api/compilation/#optimize-module-order-modules-module-">optimize-module-order(modules: Module[])</a></li><li class="sidebar-item__anchor" title="optimize-module-ids(modules: Module[])"><a href="/v3/api/compilation/#optimize-module-ids-modules-module-">optimize-module-ids(modules: Module[])</a></li><li class="sidebar-item__anchor" title="after-optimize-module-ids(modules: Module[])"><a href="/v3/api/compilation/#after-optimize-module-ids-modules-module-">after-optimize-module-ids(modules: Module[])</a></li><li class="sidebar-item__anchor" title="record-modules(modules: Module[], records)"><a href="/v3/api/compilation/#record-modules-modules-module-records-">record-modules(modules: Module[], records)</a></li><li class="sidebar-item__anchor" title="revive-chunks(chunks: Chunk[], records)"><a href="/v3/api/compilation/#revive-chunks-chunks-chunk-records-">revive-chunks(chunks: Chunk[], records)</a></li><li class="sidebar-item__anchor" title="optimize-chunk-order(chunks: Chunk[])"><a href="/v3/api/compilation/#optimize-chunk-order-chunks-chunk-">optimize-chunk-order(chunks: Chunk[])</a></li><li class="sidebar-item__anchor" title="optimize-chunk-ids(chunks: Chunk[])"><a href="/v3/api/compilation/#optimize-chunk-ids-chunks-chunk-">optimize-chunk-ids(chunks: Chunk[])</a></li><li class="sidebar-item__anchor" title="after-optimize-chunk-ids(chunks: Chunk[])"><a href="/v3/api/compilation/#after-optimize-chunk-ids-chunks-chunk-">after-optimize-chunk-ids(chunks: Chunk[])</a></li><li class="sidebar-item__anchor" title="record-chunks(chunks: Chunk[], records)"><a href="/v3/api/compilation/#record-chunks-chunks-chunk-records-">record-chunks(chunks: Chunk[], records)</a></li><li class="sidebar-item__anchor" title="before-hash"><a href="/v3/api/compilation/#before-hash">before-hash</a></li><li class="sidebar-item__anchor" title="after-hash"><a href="/v3/api/compilation/#after-hash">after-hash</a></li><li class="sidebar-item__anchor" title="before-chunk-assets"><a href="/v3/api/compilation/#before-chunk-assets">before-chunk-assets</a></li><li class="sidebar-item__anchor" title="additional-chunk-assets(chunks: Chunk[])"><a href="/v3/api/compilation/#additional-chunk-assets-chunks-chunk-">additional-chunk-assets(chunks: Chunk[])</a></li><li class="sidebar-item__anchor" title="record(compilation, records)"><a href="/v3/api/compilation/#record-compilation-records-">record(compilation, records)</a></li><li class="sidebar-item__anchor" title="additional-assets async"><a href="/v3/api/compilation/#additional-assets-async">additional-assets async</a></li><li class="sidebar-item__anchor" title="optimize-chunk-assets(chunks: Chunk[]) async"><a href="/v3/api/compilation/#optimize-chunk-assets-chunks-chunk-async">optimize-chunk-assets(chunks: Chunk[]) async</a></li><li class="sidebar-item__anchor" title="after-optimize-chunk-assets(chunks: Chunk[])"><a href="/v3/api/compilation/#after-optimize-chunk-assets-chunks-chunk-">after-optimize-chunk-assets(chunks: Chunk[])</a></li><li class="sidebar-item__anchor" title="optimize-assets(assets: Object{name: Source}) async"><a href="/v3/api/compilation/#optimize-assets-assets-object-name-source-async">optimize-assets(assets: Object{name: Source}) async</a></li><li class="sidebar-item__anchor" title="after-optimize-assets(assets: Object{name: Source})"><a href="/v3/api/compilation/#after-optimize-assets-assets-object-name-source-">after-optimize-assets(assets: Object{name: Source})</a></li><li class="sidebar-item__anchor" title="build-module(module)"><a href="/v3/api/compilation/#build-module-module-">build-module(module)</a></li><li class="sidebar-item__anchor" title="succeed-module(module)"><a href="/v3/api/compilation/#succeed-module-module-">succeed-module(module)</a></li><li class="sidebar-item__anchor" title="failed-module(module)"><a href="/v3/api/compilation/#failed-module-module-">failed-module(module)</a></li><li class="sidebar-item__anchor" title="module-asset(module, filename)"><a href="/v3/api/compilation/#module-asset-module-filename-">module-asset(module, filename)</a></li><li class="sidebar-item__anchor" title="chunk-asset(chunk, filename)"><a href="/v3/api/compilation/#chunk-asset-chunk-filename-">chunk-asset(chunk, filename)</a></li></ul></div></div><div><div class="sidebar-item  "><i class="sidebar-item__toggle icon-chevron-right"></i><a href="/v3/api/module-factories/" class="sidebar-item__title"></a><ul class="sidebar-item__anchors"><li class="sidebar-item__anchor" title="NormalModuleFactory"><a href="/v3/api/module-factories/#normalmodulefactory">NormalModuleFactory</a></li><li class="sidebar-item__anchor" title="ContextModuleFactory"><a href="/v3/api/module-factories/#contextmodulefactory">ContextModuleFactory</a></li></ul></div></div><div><div class="sidebar-item  "><i class="sidebar-item__toggle icon-chevron-right"></i><a href="/v3/api/resolver/" class="sidebar-item__title"></a><ul class="sidebar-item__anchors"><li class="sidebar-item__anchor" title="resolve(context: String, request: String)"><a href="/v3/api/resolver/#resolve-context-string-request-string-">resolve(context: String, request: String)</a></li><li class="sidebar-item__anchor" title="resolve-step(types: String[], request: Request)"><a href="/v3/api/resolver/#resolve-step-types-string-request-request-">resolve-step(types: String[], request: Request)</a></li><li class="sidebar-item__anchor" title="module(request: Request) async waterfall"><a href="/v3/api/resolver/#module-request-request-async-waterfall">module(request: Request) async waterfall</a></li><li class="sidebar-item__anchor" title="directory(request: Request) async waterfall"><a href="/v3/api/resolver/#directory-request-request-async-waterfall">directory(request: Request) async waterfall</a></li><li class="sidebar-item__anchor" title="file(request: Request) async waterfall"><a href="/v3/api/resolver/#file-request-request-async-waterfall">file(request: Request) async waterfall</a></li><li class="sidebar-item__anchor" title="The plugins may offer more extensions points"><a href="/v3/api/resolver/#the-plugins-may-offer-more-extensions-points">The plugins may offer more extensions points</a></li><li class="sidebar-item__anchor" title="module-module"><a href="/v3/api/resolver/#module-module">module-module</a></li><li class="sidebar-item__anchor" title="module-loader-module (only for loaders)"><a href="/v3/api/resolver/#module-loader-module-only-for-loaders-">module-loader-module (only for loaders)</a></li></ul></div></div><div><div class="sidebar-item  "><i class="sidebar-item__toggle icon-chevron-right"></i><a href="/v3/api/parser/" class="sidebar-item__title"></a><ul class="sidebar-item__anchors"><li class="sidebar-item__anchor" title="program(ast) bailing"><a href="/v3/api/parser/#program-ast-bailing">program(ast) bailing</a></li><li class="sidebar-item__anchor" title="statement(statement: Statement) bailing"><a href="/v3/api/parser/#statement-statement-statement-bailing">statement(statement: Statement) bailing</a></li><li class="sidebar-item__anchor" title="call (expr: Expression) bailing"><a href="/v3/api/parser/#call-expr-expression-bailing">call (expr: Expression) bailing</a></li><li class="sidebar-item__anchor" title="expression (expr: Expression) bailing"><a href="/v3/api/parser/#expression-expr-expression-bailing">expression (expr: Expression) bailing</a></li><li class="sidebar-item__anchor" title="expression ?:(expr: Expression) bailing"><a href="/v3/api/parser/#expression-expr-expression-bailing">expression ?:(expr: Expression) bailing</a></li><li class="sidebar-item__anchor" title="typeof (expr: Expression) bailing"><a href="/v3/api/parser/#typeof-expr-expression-bailing">typeof (expr: Expression) bailing</a></li><li class="sidebar-item__anchor" title="statement if(statement: Statement) bailing"><a href="/v3/api/parser/#statement-if-statement-statement-bailing">statement if(statement: Statement) bailing</a></li><li class="sidebar-item__anchor" title="label (statement: Statement) bailing"><a href="/v3/api/parser/#label-statement-statement-bailing">label (statement: Statement) bailing</a></li><li class="sidebar-item__anchor" title="var (statement: Statement) bailing"><a href="/v3/api/parser/#var-statement-statement-bailing">var (statement: Statement) bailing</a></li><li class="sidebar-item__anchor" title="evaluate (expr: Expression) bailing"><a href="/v3/api/parser/#evaluate-expr-expression-bailing">evaluate (expr: Expression) bailing</a></li><li class="sidebar-item__anchor" title="evaluate typeof (expr: Expression) bailing"><a href="/v3/api/parser/#evaluate-typeof-expr-expression-bailing">evaluate typeof (expr: Expression) bailing</a></li><li class="sidebar-item__anchor" title="evaluate Identifier (expr: Expression) bailing"><a href="/v3/api/parser/#evaluate-identifier-expr-expression-bailing">evaluate Identifier (expr: Expression) bailing</a></li><li class="sidebar-item__anchor" title="evaluate defined Identifier (expr: Expression) bailing"><a href="/v3/api/parser/#evaluate-defined-identifier-expr-expression-bailing">evaluate defined Identifier (expr: Expression) bailing</a></li><li class="sidebar-item__anchor" title="evaluate CallExpression .(expr: Expression) bailing"><a href="/v3/api/parser/#evaluate-callexpression-expr-expression-bailing">evaluate CallExpression .(expr: Expression) bailing</a></li></ul></div></div><div><div class="sidebar-item  "><i class="sidebar-item__toggle icon-chevron-right"></i><a href="/v3/api/template/" class="sidebar-item__title"></a><ul class="sidebar-item__anchors"><li class="sidebar-item__anchor" title="MainTemplate"><a href="/v3/api/template/#maintemplate">MainTemplate</a></li><li class="sidebar-item__anchor" title="startup(source, module, hash)"><a href="/v3/api/template/#startup-source-module-hash-">startup(source, module, hash)</a></li><li class="sidebar-item__anchor" title="ModuleTemplate"><a href="/v3/api/template/#moduletemplate">ModuleTemplate</a></li><li class="sidebar-item__anchor" title="ChunkTemplate"><a href="/v3/api/template/#chunktemplate">ChunkTemplate</a></li><li class="sidebar-item__anchor" title="FunctionModuleTemplate"><a href="/v3/api/template/#functionmoduletemplate">FunctionModuleTemplate</a></li><li class="sidebar-item__anchor" title="HotUpdateChunkTemplate"><a href="/v3/api/template/#hotupdatechunktemplate">HotUpdateChunkTemplate</a></li></ul></div></div></div></nav></div><section class="page__content"><h1>Command Line Interface</h1><div class="page-links"><a class="page-links__link" href="https://github.com/webpack/webpack.js.org/edit/master/src/content/api/cli.md">Edit Document<i class="page-links__icon icon-edit"></i></a></div><div><p>For proper usage and easy distribution of this configuration, webpack can be configured with <code>webpack.config.js</code>. Any parameters sent to the CLI will map to a corresponding parameter in the config file.</p>
+<p>Have a look at the <a href="/guides/installation">installation guide</a> if you don&apos;t already have webpack installed.</p>
+<blockquote class="tip"><div class="tip-content"> The new CLI for webpack is under development. New features are being added such as the <code>--init</code> flag. <a href="https://github.com/webpack/webpack-cli">Check it out!</a> </div></blockquote><h2 class="header"><a class="anchor" href="#usage-with-config-file" id="usage-with-config-file"></a><span class="text">Usage with config file</span><a class="icon-link" href="#usage-with-config-file"></a></h2>
+<pre><code class="lang-sh">webpack <span class="token punctuation">[</span>--config webpack.config.js<span class="token punctuation">]</span>
+</code></pre>
+<p>See <a href="/configuration">configuration</a> for the options in the configuration file.</p>
+<h2 class="header"><a class="anchor" href="#usage-without-config-file" id="usage-without-config-file"></a><span class="text">Usage without config file</span><a class="icon-link" href="#usage-without-config-file"></a></h2>
+<pre><code class="lang-sh">webpack <span class="token operator">&lt;</span>entry<span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>entry<span class="token operator">&gt;</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span>output<span class="token operator">&gt;</span>
+</code></pre>
+<p><strong><code>&lt;entry&gt;</code></strong></p>
+<p>A filename or a set of named filenames which act as the entry point to build your project. You can pass multiple entries (every entry is loaded on startup). If you pass a pair in the form <code>&lt;name&gt;=&lt;request&gt;</code> you can create an additional entry point. It will be mapped to the configuration option <code>entry</code>.</p>
+<p><strong><code>&lt;output&gt;</code></strong></p>
+<p>A path and filename for the bundled file to be saved in. It will be mapped to the configuration options <code>output.path</code> and <code>output.filename</code>.</p>
+<p><strong>Example</strong></p>
+<p>If your project structure is as follows -</p>
+<pre><code class="lang-bash"><span class="token keyword">.</span>
+&#x251C;&#x2500;&#x2500; dist
+&#x251C;&#x2500;&#x2500; index.html
+&#x2514;&#x2500;&#x2500; src
+    &#x251C;&#x2500;&#x2500; index.js
+    &#x251C;&#x2500;&#x2500; index2.js
+    &#x2514;&#x2500;&#x2500; others.js
+</code></pre>
+<pre><code class="lang-bash">webpack src/index.js dist/bundle.js
+</code></pre>
+<p>This will bundle your source code with entry as <code>index.js</code> and the output bundle file will have a path of <code>dist</code> and the filename will be <code>bundle.js</code></p>
+<pre><code class="lang-bash">    <span class="token operator">|</span> Asset     <span class="token operator">|</span> Size    <span class="token operator">|</span> Chunks      <span class="token operator">|</span> Chunk Names <span class="token operator">|</span>
+    <span class="token operator">|</span>-----------<span class="token operator">|</span>---------<span class="token operator">|</span>-------------<span class="token operator">|</span>-------------<span class="token operator">|</span>
+    <span class="token operator">|</span> bundle.js <span class="token operator">|</span> 1.54 kB <span class="token operator">|</span> 0 <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span> <span class="token operator">|</span> index       <span class="token operator">|</span>
+    <span class="token punctuation">[</span>0<span class="token punctuation">]</span> ./src/index.js 51 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>1<span class="token punctuation">]</span> ./src/others.js 29 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+</code></pre>
+<pre><code class="lang-bash">webpack index<span class="token operator">=</span>./src/index.js entry2<span class="token operator">=</span>./src/index2.js dist/bundle.js
+</code></pre>
+<p>This will form the bundle with both the files as separate entry points.</p>
+<pre><code class="lang-bash">    <span class="token operator">|</span> Asset     <span class="token operator">|</span> Size    <span class="token operator">|</span> Chunks        <span class="token operator">|</span> Chunk Names   <span class="token operator">|</span>
+    <span class="token operator">|</span>-----------<span class="token operator">|</span>---------<span class="token operator">|</span>---------------<span class="token operator">|</span>---------------<span class="token operator">|</span>
+    <span class="token operator">|</span> bundle.js <span class="token operator">|</span> 1.55 kB <span class="token operator">|</span> 0,1 <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span> <span class="token operator">|</span> index, entry2 <span class="token operator">|</span>
+    <span class="token punctuation">[</span>0<span class="token punctuation">]</span> ./src/index.js 51 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>0<span class="token punctuation">]</span> ./src/index2.js 54 bytes <span class="token punctuation">{</span>1<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>1<span class="token punctuation">]</span> ./src/others.js 29 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">{</span>1<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+</code></pre>
+<h3 class="header"><a class="anchor" href="#common-options" id="common-options"></a><span class="text">Common Options</span><a class="icon-link" href="#common-options"></a></h3>
+<p><strong>List all of the options available on the cli</strong></p>
+<pre><code class="lang-bash">webpack --help
+webpack -h
+</code></pre>
+<p><strong>Build source using a config file</strong></p>
+<p>Specifies a different <a href="/configuration">configuration</a> file to pick up. Use this if you want to specify something different than <code>webpack.config.js</code>, which is the default.</p>
+<pre><code class="lang-bash">webpack --config example.config.js
+</code></pre>
+<p><strong>Print result of webpack as a JSON</strong></p>
+<pre><code class="lang-bash">webpack --json
+webpack --json <span class="token operator">&gt;</span> stats.json
+</code></pre>
+<p>In every other case, webpack prints out a set of stats showing bundle, chunk and timing details. Using this option the output can be a JSON object. This response is accepted by webpack&apos;s <a href="https://webpack.github.com/analyse">analyse tool</a>, or chrisbateman&apos;s <a href="https://chrisbateman.github.io/webpack-visualizer/">webpack-visualizer</a>, or th0r&apos;s <a href="https://github.com/th0r/webpack-bundle-analyzer">webpack-bundle-analyzer</a>. The analyse tool will take in the JSON and provide all the details of the build in graphical form.</p>
+<h3 class="header"><a class="anchor" href="#environment-options" id="environment-options"></a><span class="text">Environment Options</span><a class="icon-link" href="#environment-options"></a></h3>
+<p>When the webpack configuration <a href="/configuration/configuration-types#exporting-a-function">exports a function</a>, an &quot;environment&quot; may be passed to it.</p>
+<pre><code class="lang-bash">webpack --env.production    <span class="token comment"># sets env.production == true</span>
+webpack --env.platform<span class="token operator">=</span>web  <span class="token comment"># sets env.platform == &quot;web&quot;</span>
+</code></pre>
+<p>The <code>--env</code> argument accepts various syntaxes:</p>
+
+    <div class="table">
+        <div class="table-wrap">
+          <div class="table-header">
+              <div class="table-tr"><div class="table-th">Invocation</div><div class="table-th">Resulting environment</div></div>
+          </div>
+          <div class="table-body">
+              <div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Invocation
+    </div>
+    <div class="table-td-content">
+        <code>webpack --env prod</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Resulting environment
+    </div>
+    <div class="table-td-content">
+        <code>&quot;prod&quot;</code>
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Invocation
+    </div>
+    <div class="table-td-content">
+        <code>webpack --env.prod</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Resulting environment
+    </div>
+    <div class="table-td-content">
+        <code>{ prod: true }</code>
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Invocation
+    </div>
+    <div class="table-td-content">
+        <code>webpack --env.prod=1</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Resulting environment
+    </div>
+    <div class="table-td-content">
+        <code>{ prod: 1 }</code>
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Invocation
+    </div>
+    <div class="table-td-content">
+        <code>webpack --env.prod=foo</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Resulting environment
+    </div>
+    <div class="table-td-content">
+        <code>{ prod: &quot;foo&quot; }</code>
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Invocation
+    </div>
+    <div class="table-td-content">
+        <code>webpack --env.prod --env.min</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Resulting environment
+    </div>
+    <div class="table-td-content">
+        <code>{ prod: true, min: true }</code>
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Invocation
+    </div>
+    <div class="table-td-content">
+        <code>webpack --env.prod --env min</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Resulting environment
+    </div>
+    <div class="table-td-content">
+        <code>[{ prod: true }, &quot;min&quot;]</code>
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Invocation
+    </div>
+    <div class="table-td-content">
+        <code>webpack --env.prod=foo --env.prod=bar</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Resulting environment
+    </div>
+    <div class="table-td-content">
+        <code>{prod: [ &quot;foo&quot;, &quot;bar&quot; ]}</code>
+    </div>
+  </div></div>
+          </div>
+        </div>
+    </div><blockquote class="tip"><div class="tip-content"> See the <a href="/guides/environment-variables">environment variables</a> guide for more information on its usage. </div></blockquote><h3 class="header"><a class="anchor" href="#output-options" id="output-options"></a><span class="text">Output Options</span><a class="icon-link" href="#output-options"></a></h3>
+<p>This set of options allows you to manipulate certain <a href="/configuration/output">output</a> parameters of your build.</p>
+
+    <div class="table">
+        <div class="table-wrap">
+          <div class="table-header">
+              <div class="table-tr"><div class="table-th">Parameter</div><div class="table-th">Explanation</div><div class="table-th">Input type</div><div class="table-th">Default</div></div>
+          </div>
+          <div class="table-body">
+              <div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--output-chunk-filename</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        The output filename for additional chunks
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Input type
+    </div>
+    <div class="table-td-content">
+        string
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Default
+    </div>
+    <div class="table-td-content">
+        filename with [id] instead of [name] or [id] prefixed
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--output-filename</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        The output filename of the bundle
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Input type
+    </div>
+    <div class="table-td-content">
+        string
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Default
+    </div>
+    <div class="table-td-content">
+        [name].js
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--output-jsonp-function</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        The name of the JSONP function used for chunk loading
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Input type
+    </div>
+    <div class="table-td-content">
+        string
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Default
+    </div>
+    <div class="table-td-content">
+        webpackJsonp
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--output-library</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Expose the exports of the entry point as library
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Input type
+    </div>
+    <div class="table-td-content">
+        string
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Default
+    </div>
+    <div class="table-td-content">
+        
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--output-library-target</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        The type for exposing the exports of the entry point as library
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Input type
+    </div>
+    <div class="table-td-content">
+        string
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Default
+    </div>
+    <div class="table-td-content">
+        var
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--output-path</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        The output path for compilation assets
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Input type
+    </div>
+    <div class="table-td-content">
+        string
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Default
+    </div>
+    <div class="table-td-content">
+        Current directory
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--output-pathinfo</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Include a comment with the request for every dependency
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Input type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Default
+    </div>
+    <div class="table-td-content">
+        false
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--output-public-path</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        The public path for the assets
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Input type
+    </div>
+    <div class="table-td-content">
+        string
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Default
+    </div>
+    <div class="table-td-content">
+        /
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--output-source-map-filename</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        The output filename for the SourceMap
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Input type
+    </div>
+    <div class="table-td-content">
+        string
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Default
+    </div>
+    <div class="table-td-content">
+        [name].map or [outputFilename].map
+    </div>
+  </div></div>
+          </div>
+        </div>
+    </div><h4 class="header"><a class="anchor" href="#example-usage" id="example-usage"></a><span class="text">Example Usage</span><a class="icon-link" href="#example-usage"></a></h4>
+<pre><code class="lang-bash">webpack index<span class="token operator">=</span>./src/index.js index2<span class="token operator">=</span>./src/index2.js --output-path<span class="token operator">=</span><span class="token string">&apos;./dist&apos;</span> --output-filename<span class="token operator">=</span><span class="token string">&apos;[name][hash].bundle.js&apos;</span>
+
+<span class="token operator">|</span> Asset                                <span class="token operator">|</span> Size    <span class="token operator">|</span> Chunks      <span class="token operator">|</span> Chunk Names   <span class="token operator">|</span>
+<span class="token operator">|</span>--------------------------------------<span class="token operator">|</span>---------<span class="token operator">|</span>-------------<span class="token operator">|</span>---------------<span class="token operator">|</span>
+<span class="token operator">|</span> index2740fdca26e9348bedbec.bundle.js <span class="token operator">|</span>  2.6 kB <span class="token operator">|</span> 0 <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span> <span class="token operator">|</span> index2        <span class="token operator">|</span>
+<span class="token operator">|</span> index740fdca26e9348bedbec.bundle.js  <span class="token operator">|</span> 2.59 kB <span class="token operator">|</span> 1 <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span> <span class="token operator">|</span> index         <span class="token operator">|</span>
+    <span class="token punctuation">[</span>0<span class="token punctuation">]</span> ./src/others.js 29 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">{</span>1<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>1<span class="token punctuation">]</span> ./src/index.js 51 bytes <span class="token punctuation">{</span>1<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>2<span class="token punctuation">]</span> ./src/index2.js 54 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+</code></pre>
+<pre><code class="lang-bash">webpack.js index<span class="token operator">=</span>./src/index.js index2<span class="token operator">=</span>./src/index2.js --output-path<span class="token operator">=</span><span class="token string">&apos;./dist&apos;</span> --output-filename<span class="token operator">=</span><span class="token string">&apos;[name][hash].bundle.js&apos;</span> --devtool source-map --output-source-map-filename<span class="token operator">=</span><span class="token string">&apos;[name]123.map&apos;</span>
+
+<span class="token operator">|</span> Asset                                <span class="token operator">|</span> Size    <span class="token operator">|</span> Chunks      <span class="token operator">|</span> Chunk Names   <span class="token operator">|</span>
+<span class="token operator">|</span>--------------------------------------<span class="token operator">|</span>---------<span class="token operator">|</span>-------------<span class="token operator">|</span>---------------<span class="token operator">|</span>
+<span class="token operator">|</span> index2740fdca26e9348bedbec.bundle.js <span class="token operator">|</span> 2.76 kB <span class="token operator">|</span> 0 <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span> <span class="token operator">|</span> index2        <span class="token operator">|</span>
+<span class="token operator">|</span>  index740fdca26e9348bedbec.bundle.js <span class="token operator">|</span> 2.74 kB <span class="token operator">|</span> 1 <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span> <span class="token operator">|</span> index         <span class="token operator">|</span>
+<span class="token operator">|</span>                        index2123.map <span class="token operator">|</span> 2.95 kB <span class="token operator">|</span> 0 <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span> <span class="token operator">|</span> index2        <span class="token operator">|</span>
+<span class="token operator">|</span>                         index123.map <span class="token operator">|</span> 2.95 kB <span class="token operator">|</span> 1 <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span> <span class="token operator">|</span> index         <span class="token operator">|</span>
+    <span class="token punctuation">[</span>0<span class="token punctuation">]</span> ./src/others.js 29 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">{</span>1<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>1<span class="token punctuation">]</span> ./src/index.js 51 bytes <span class="token punctuation">{</span>1<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>2<span class="token punctuation">]</span> ./src/index2.js 54 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+</code></pre>
+<h3 class="header"><a class="anchor" href="#debug-options" id="debug-options"></a><span class="text">Debug Options</span><a class="icon-link" href="#debug-options"></a></h3>
+<p>This set of options allows you to better debug the application containing assets compiled with webpack</p>
+
+    <div class="table">
+        <div class="table-wrap">
+          <div class="table-header">
+              <div class="table-tr"><div class="table-th">Parameter</div><div class="table-th">Explanation</div><div class="table-th">Input type</div><div class="table-th">Default value</div></div>
+          </div>
+          <div class="table-body">
+              <div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--debug</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Switch loaders to debug mode
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Input type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Default value
+    </div>
+    <div class="table-td-content">
+        false
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--devtool</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Define <a href="/configuration/devtool/">source map type</a> for the bundled resources
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Input type
+    </div>
+    <div class="table-td-content">
+        string
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Default value
+    </div>
+    <div class="table-td-content">
+        -
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--progress</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Print compilation progress in percentage
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Input type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Default value
+    </div>
+    <div class="table-td-content">
+        false
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--display-error-details</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Display details about errors
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Input type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Default value
+    </div>
+    <div class="table-td-content">
+        false 
+    </div>
+  </div></div>
+          </div>
+        </div>
+    </div><h3 class="header"><a class="anchor" href="#module-options" id="module-options"></a><span class="text">Module Options</span><a class="icon-link" href="#module-options"></a></h3>
+<p>These options allow you to bind <a href="/configuration/module/">modules</a> as allowed by webpack</p>
+
+    <div class="table">
+        <div class="table-wrap">
+          <div class="table-header">
+              <div class="table-tr"><div class="table-th">Parameter</div><div class="table-th">Explanation</div><div class="table-th">Usage</div></div>
+          </div>
+          <div class="table-body">
+              <div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--module-bind</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Bind an extension to a loader
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Usage
+    </div>
+    <div class="table-td-content">
+        <code>--module-bind js=babel-loader</code>
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--module-bind-post</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Bind an extension to a post loader
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Usage
+    </div>
+    <div class="table-td-content">
+        
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--module-bind-pre</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Bind an extension to a pre loader
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Usage
+    </div>
+    <div class="table-td-content">
+        
+    </div>
+  </div></div>
+          </div>
+        </div>
+    </div><h3 class="header"><a class="anchor" href="#watch-options" id="watch-options"></a><span class="text">Watch Options</span><a class="icon-link" href="#watch-options"></a></h3>
+<p>These options makes the build <a href="/configuration/watch/">watch</a> for changes in files of the dependency graph and perform the build again.</p>
+
+    <div class="table">
+        <div class="table-wrap">
+          <div class="table-header">
+              <div class="table-tr"><div class="table-th">Parameter</div><div class="table-th">Explanation</div></div>
+          </div>
+          <div class="table-body">
+              <div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--watch</code>, <code>-w</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Watch the filesystem for changes
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--watch-aggregate-timeout</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Timeout for gathering changes while watching
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--watch-poll</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        The polling interval for watching (also enable polling)
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--watch-stdin</code>, <code>--stdin</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Exit the process when stdin is closed
+    </div>
+  </div></div>
+          </div>
+        </div>
+    </div><h3 class="header"><a class="anchor" href="#optimize-options" id="optimize-options"></a><span class="text">Optimize Options</span><a class="icon-link" href="#optimize-options"></a></h3>
+<p>These options allow you to manipulate optimisations for a production build using webpack</p>
+
+    <div class="table">
+        <div class="table-wrap">
+          <div class="table-header">
+              <div class="table-tr"><div class="table-th">Parameter</div><div class="table-th">Explanation</div><div class="table-th">Plugin Used</div></div>
+          </div>
+          <div class="table-body">
+              <div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--optimize-max-chunks</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Try to keep the chunk count below a limit
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Plugin Used
+    </div>
+    <div class="table-td-content">
+        <a href="/plugins/limit-chunk-count-plugin">LimitChunkCountPlugin</a>
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--optimize-min-chunk-size</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Try to keep the chunk size above a limit
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Plugin Used
+    </div>
+    <div class="table-td-content">
+        <a href="/plugins/min-chunk-size-plugin">MinChunkSizePlugin</a>
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--optimize-minimize</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Minimize javascript and switches loaders to minimizing
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Plugin Used
+    </div>
+    <div class="table-td-content">
+        <a href="/plugins/uglifyjs-webpack-plugin/">UglifyJsPlugin</a> &amp; <a href="/plugins/loader-options-plugin/">LoaderOptionsPlugin</a>
+    </div>
+  </div></div>
+          </div>
+        </div>
+    </div><h3 class="header"><a class="anchor" href="#resolve-options" id="resolve-options"></a><span class="text">Resolve Options</span><a class="icon-link" href="#resolve-options"></a></h3>
+<p>These allow you to configure the webpack <a href="/configuration/resolve/">resolver</a> with aliases and extensions.</p>
+
+    <div class="table">
+        <div class="table-wrap">
+          <div class="table-header">
+              <div class="table-tr"><div class="table-th">Parameter</div><div class="table-th">Explanation</div><div class="table-th">Example</div></div>
+          </div>
+          <div class="table-body">
+              <div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        --resolve-alias
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Setup a module alias for resolving
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Example
+    </div>
+    <div class="table-td-content">
+        --resolve-alias jquery-plugin=jquery.plugin
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        --resolve-extensions
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Setup extensions that should be used to resolve modules
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Example
+    </div>
+    <div class="table-td-content">
+        --resolve-extensions .es6 .js .ts
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        --resolve-loader-alias
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Minimize javascript and switches loaders to minimizing
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Example
+    </div>
+    <div class="table-td-content">
+        
+    </div>
+  </div></div>
+          </div>
+        </div>
+    </div><h3 class="header"><a class="anchor" href="#stats-options" id="stats-options"></a><span class="text">Stats Options</span><a class="icon-link" href="#stats-options"></a></h3>
+<p>These options allow webpack to display various <a href="/configuration/stats/">stats</a> and style them differently in the console output.</p>
+
+    <div class="table">
+        <div class="table-wrap">
+          <div class="table-header">
+              <div class="table-tr"><div class="table-th">Parameter</div><div class="table-th">Explanation</div><div class="table-th">Type</div></div>
+          </div>
+          <div class="table-body">
+              <div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--color</code>, <code>--colors</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Enables/Disables colors on the console [default: (supports-color)]
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--display</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Select <a href="/configuration/stats">display preset</a> (verbose, detailed, normal, minimal, errors-only, none; since webpack 3.0.0)
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        string
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--display-cached</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Display also cached modules in the output
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--display-cached-assets</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Display also cached assets in the output
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--display-chunks</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Display chunks in the output
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--display-depth</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Display distance from entry point for each module
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--display-entrypoints</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Display entry points in the output
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--display-error-details</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Display details about errors
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--display-exclude</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Exclude modules in the output
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--display-max-modules</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Sets the maximum number of visible modules in output
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        number
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--display-modules</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Display even excluded modules in the output
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--display-optimization-bailout</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Scope hoisting fallback trigger (since webpack 3.0.0)
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--display-origins</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Display origins of chunks in the output
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--display-provided-exports</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Display information about exports provided from modules
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--display-reasons</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Display reasons about module inclusion in the output
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--display-used-exports</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Display information about used exports in modules (Tree Shaking)
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--hide-modules</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Hides info about modules
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--sort-assets-by</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Sorts the assets list by property in asset
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        string
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--sort-chunks-by</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Sorts the chunks list by property in chunk
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        string
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--sort-modules-by</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Sorts the modules list by property in module
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        string
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--verbose</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Show more details
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Type
+    </div>
+    <div class="table-td-content">
+        boolean
+    </div>
+  </div></div>
+          </div>
+        </div>
+    </div><h3 class="header"><a class="anchor" href="#advanced-options" id="advanced-options"></a><span class="text">Advanced Options</span><a class="icon-link" href="#advanced-options"></a></h3>
+
+    <div class="table">
+        <div class="table-wrap">
+          <div class="table-header">
+              <div class="table-tr"><div class="table-th">Parameter</div><div class="table-th">Explanation</div><div class="table-th">Usage</div></div>
+          </div>
+          <div class="table-body">
+              <div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--bail</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Abort the compilation on first error
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Usage
+    </div>
+    <div class="table-td-content">
+        
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--cache</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Enable in memory caching [Enabled by default for watch]
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Usage
+    </div>
+    <div class="table-td-content">
+        <code>--cache=false</code>
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--define</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Define any free variable, see <a href="/guides/shimming">shimming</a>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Usage
+    </div>
+    <div class="table-td-content">
+        <code>--define process.env.NODE_ENV=&apos;development&apos;</code>
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--hot</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Enables <a href="/concepts/hot-module-replacement">Hot Module Replacement</a>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Usage
+    </div>
+    <div class="table-td-content">
+        <code>--hot=true</code>
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--labeled-modules</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Enables labeled modules [Uses LabeledModulesPlugin]
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Usage
+    </div>
+    <div class="table-td-content">
+        
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--plugin</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Load this <a href="/configuration/plugins/">plugin</a>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Usage
+    </div>
+    <div class="table-td-content">
+        
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--prefetch</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Prefetch the particular file
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Usage
+    </div>
+    <div class="table-td-content">
+        <code>--prefetch=./files.js</code>
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--provide</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Provide these modules as globals, see <a href="/guides/shimming">shimming</a>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Usage
+    </div>
+    <div class="table-td-content">
+        <code>--provide jQuery=jquery</code>
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--records-input-path</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Path to the records file (reading)
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Usage
+    </div>
+    <div class="table-td-content">
+        
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--records-output-path</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Path to the records file (writing)
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Usage
+    </div>
+    <div class="table-td-content">
+        
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--records-path</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        Path to the records file
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Usage
+    </div>
+    <div class="table-td-content">
+        
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Parameter
+    </div>
+    <div class="table-td-content">
+        <code>--target</code>
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Explanation
+    </div>
+    <div class="table-td-content">
+        The <a href="/configuration/target/">targeted</a> execution environment
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Usage
+    </div>
+    <div class="table-td-content">
+        <code>--target=&apos;node&apos;</code>
+    </div>
+  </div></div>
+          </div>
+        </div>
+    </div><h3 class="header"><a class="anchor" href="#shortcuts" id="shortcuts"></a><span class="text">Shortcuts</span><a class="icon-link" href="#shortcuts"></a></h3>
+
+    <div class="table">
+        <div class="table-wrap">
+          <div class="table-header">
+              <div class="table-tr"><div class="table-th">Shortcut</div><div class="table-th">Replaces</div></div>
+          </div>
+          <div class="table-body">
+              <div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Shortcut
+    </div>
+    <div class="table-td-content">
+        -d
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Replaces
+    </div>
+    <div class="table-td-content">
+        <code>--debug --devtool cheap-module-eval-source-map --output-pathinfo</code>
+    </div>
+  </div></div><div class="table-tr"><div class="table-td">
+    <div class="table-td-title">
+        Shortcut
+    </div>
+    <div class="table-td-content">
+        -p
+    </div>
+  </div><div class="table-td">
+    <div class="table-td-title">
+        Replaces
+    </div>
+    <div class="table-td-content">
+        <code>--optimize-minimize --define process.env.NODE_ENV=&quot;production&quot;</code>, see <a href="/guides/production">building for production</a>
+    </div>
+  </div></div>
+          </div>
+        </div>
+    </div><h3 class="header"><a class="anchor" href="#profiling" id="profiling"></a><span class="text">Profiling</span><a class="icon-link" href="#profiling"></a></h3>
+<p>The <code>--profile</code> option captures timing information for each step of the compilation and includes this in the output.</p>
+<pre><code class="lang-bash">webpack --profile
+
+&#x22EE;
+<span class="token punctuation">[</span>0<span class="token punctuation">]</span> ./src/index.js 90 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+    factory:22ms building:16ms <span class="token operator">=</span> 38ms
+</code></pre>
+<p>For each module, the following details are included in the output as applicable:</p>
+<ul>
+<li><code>factory</code>: time to collect module metadata (e.g. resolving the filename)</li>
+<li><code>building</code>: time to build the module (e.g. loaders and parsing)</li>
+<li><code>dependencies</code>: time to identify and connect the module&#x2019;s dependencies</li>
+</ul>
+<p>Paired with <code>--progress</code>, <code>--profile</code> gives you an in depth idea of which step in the compilation is taking how long. This can help you optimise your build in a more informed manner.</p>
+<pre><code class="lang-bash">webpack --progress --profile
+
+30ms building modules
+1ms sealing
+1ms optimizing
+0ms basic module optimization
+1ms module optimization
+1ms advanced module optimization
+0ms basic chunk optimization
+0ms chunk optimization
+1ms advanced chunk optimization
+0ms module and chunk tree optimization
+1ms module reviving
+0ms module order optimization
+1ms module <span class="token function">id</span> optimization
+1ms chunk reviving
+0ms chunk order optimization
+1ms chunk <span class="token function">id</span> optimization
+10ms hashing
+0ms module assets processing
+13ms chunk assets processing
+1ms additional chunk assets processing
+0ms recording
+0ms additional asset processing
+26ms chunk asset optimization
+1ms asset optimization
+6ms emitting
+&#x22EE;
+</code></pre>
+</div><div><hr><h3>Further Reading</h3><ul><li><a href="https://survivejs.com/webpack/optimizing-build/analyzing-build-statistics/">Analyzing Build Statistics</a></li><li><a href="https://medium.com/@joeclever/three-simple-ways-to-inspect-a-webpack-bundle-7f6a8fe7195d#.7d2i06mjx">Three simple ways to inspect a webpack bundle</a></li><li><a href="https://hackernoon.com/optimising-your-application-bundle-size-with-webpack-e85b00bab579#.5w5ko08pq">Optimising your application bundle size with webpack</a></li><li><a href="https://medium.com/@ahmedelgabri/analyzing-optimizing-your-webpack-bundle-8590818af4df#.hce4vdjs9">Analyzing &amp; optimizing your webpack bundle</a></li><li><a href="https://medium.com/@nimgrg/analysing-and-minimising-the-size-of-client-side-bundle-with-webpack-and-source-map-explorer-41096559beca#.c3t2srr8x">Analysing and minimising the size of client side bundle with webpack and source-map-explorer</a></li></ul></div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/ev1stensberg"><img src="https://github.com/ev1stensberg.png?size=90"><span class="contributor__name"> ev1stensberg</span></a><a class="contributor" href="https://github.com/simon04"><img src="https://github.com/simon04.png?size=90"><span class="contributor__name"> simon04</span></a><a class="contributor" href="https://github.com/tbroadley"><img src="https://github.com/tbroadley.png?size=90"><span class="contributor__name"> tbroadley</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0;"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/v3/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="//gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/v3/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/v3/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div>
+
+    
+      <script src="/v3//8f1f5e18b415bfda3e0ecb98d0a8eace.js"></script>
+    
+
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'webpack/webpack',
+        activationElement: false
+      };
+    </script>
+
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+  </body>
+</html>
