@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/eb2f4c48123e48d2331f.css" rel="stylesheet">
+      <link href="/2ec5abdc0ceef3488d2e.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -126,12 +126,12 @@ document<span class="token punctuation">.</span>body<span class="token punctuati
    &lt;/head&gt;
    &lt;body&gt;
 <span class="token deleted">-    &lt;script src=&quot;./src/index.js&quot;&gt;&lt;/script&gt;</span>
-<span class="token inserted">+    &lt;script src=&quot;bundle.js&quot;&gt;&lt;/script&gt;</span>
+<span class="token inserted">+    &lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;</span>
    &lt;/body&gt;
   &lt;/html&gt;
 </code></pre>
 <p>In this setup, <code>index.js</code> explicitly requires <code>lodash</code> to be present, and binds it as <code>_</code> (no global scope pollution). By stating what dependencies a module needs, webpack can use this information to build a dependency graph. It then uses the graph to generate an optimized bundle where scripts will be executed in the correct order.</p>
-<p>With that said, let&apos;s run <code>npx webpack</code> with our script as the <a href="/concepts/entry-points">entry point</a> and <code>bundle.js</code> as the <a href="/concepts/output">output</a>. The <code>npx</code> command, which ships with Node 8.2 or higher, runs the webpack binary (<code>./node_modules/.bin/webpack</code>) of the webpack package we installed in the beginning:</p>
+<p>With that said, let&apos;s run <code>npx webpack</code> with our script as the <a href="/concepts/entry-points">entry point</a> and <code>main.js</code> as the <a href="/concepts/output">output</a>. The <code>npx</code> command, which ships with Node 8.2 or higher, runs the webpack binary (<code>./node_modules/.bin/webpack</code>) of the webpack package we installed in the beginning:</p>
 <pre><code class="lang-bash">npx webpack
 
 Hash: dabab1bac2b940c1462b
@@ -140,7 +140,7 @@ Time: 3003ms
 Built at: 2018-2-26 22:42:11
     Asset      Size  Chunks             Chunk Names
 bundle.js  69.6 KiB       0  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  main
-Entrypoint main <span class="token operator">=</span> bundle.js
+Entrypoint main <span class="token operator">=</span> main.js
    <span class="token punctuation">[</span>1<span class="token punctuation">]</span> <span class="token punctuation">(</span>webpack<span class="token punctuation">)</span>/buildin/module.js 519 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
    <span class="token punctuation">[</span>2<span class="token punctuation">]</span> <span class="token punctuation">(</span>webpack<span class="token punctuation">)</span>/buildin/global.js 509 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
    <span class="token punctuation">[</span>3<span class="token punctuation">]</span> ./src/index.js 256 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>

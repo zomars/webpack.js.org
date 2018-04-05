@@ -271,6 +271,9 @@
         <loc>https://webpack.js.org/guides/hot-module-replacement/index.html</loc>
     </url>
     <url>
+        <loc>https://webpack.js.org/guides/installation/index.html</loc>
+    </url>
+    <url>
         <loc>https://webpack.js.org/guides/integrations/index.html</loc>
     </url>
     <url>
@@ -278,9 +281,6 @@
     </url>
     <url>
         <loc>https://webpack.js.org/guides/migrating/index.html</loc>
-    </url>
-    <url>
-        <loc>https://webpack.js.org/guides/installation/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/guides/output-management/index.html</loc>
@@ -358,10 +358,10 @@
         <loc>https://webpack.js.org/loaders/imports-loader/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/loaders/jshint-loader/index.html</loc>
+        <loc>https://webpack.js.org/loaders/istanbul-instrumenter-loader/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/loaders/istanbul-instrumenter-loader/index.html</loc>
+        <loc>https://webpack.js.org/loaders/jshint-loader/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/loaders/json-loader/index.html</loc>
@@ -436,10 +436,10 @@
         <loc>https://webpack.js.org/loaders/yaml-frontmatter-loader/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/plugins/babel-minify-webpack-plugin/index.html</loc>
+        <loc>https://webpack.js.org/plugins/aggressive-splitting-plugin/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/plugins/aggressive-splitting-plugin/index.html</loc>
+        <loc>https://webpack.js.org/plugins/babel-minify-webpack-plugin/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/plugins/banner-plugin/index.html</loc>
@@ -457,6 +457,9 @@
         <loc>https://webpack.js.org/plugins/context-replacement-plugin/index.html</loc>
     </url>
     <url>
+        <loc>https://webpack.js.org/plugins/copy-webpack-plugin/index.html</loc>
+    </url>
+    <url>
         <loc>https://webpack.js.org/plugins/css-webpack-plugin/index.html</loc>
     </url>
     <url>
@@ -464,9 +467,6 @@
     </url>
     <url>
         <loc>https://webpack.js.org/plugins/dll-plugin/index.html</loc>
-    </url>
-    <url>
-        <loc>https://webpack.js.org/plugins/copy-webpack-plugin/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/plugins/environment-plugin/index.html</loc>
