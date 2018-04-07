@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/842411826515e85a2e9c.css" rel="stylesheet">
+      <link href="/1bc3283e14d85a3dd38a.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -29,6 +29,7 @@
 <span class="token keyword">import</span> webpack from <span class="token string">&apos;webpack&apos;</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> config<span class="token punctuation">:</span> webpack<span class="token punctuation">.</span>Configuration <span class="token operator">=</span> <span class="token punctuation">{</span>
+  mode<span class="token punctuation">:</span> <span class="token string">&apos;production&apos;</span><span class="token punctuation">,</span>
   entry<span class="token punctuation">:</span> <span class="token string">&apos;./foo.js&apos;</span><span class="token punctuation">,</span>
   output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
     path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;dist&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -77,6 +78,7 @@ webpack <span class="token operator">=</span> <span class="token function">requi
 path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;path&apos;</span><span class="token punctuation">)</span>
 
 config <span class="token operator">=</span>
+  mode<span class="token punctuation">:</span> <span class="token string">&apos;production&apos;</span>
   entry<span class="token punctuation">:</span> <span class="token string">&apos;./path/to/my/entry/file.js&apos;</span>
   output<span class="token punctuation">:</span>
     path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;dist&apos;</span><span class="token punctuation">)</span>
@@ -115,7 +117,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">(</span>
-  <span class="token operator">&lt;</span>webpack target<span class="token operator">=</span><span class="token string">&quot;web&quot;</span> watch<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>webpack target<span class="token operator">=</span><span class="token string">&quot;web&quot;</span> watch mode<span class="token operator">=</span><span class="token string">&quot;production&quot;</span><span class="token operator">&gt;</span>
     <span class="token operator">&lt;</span>entry path<span class="token operator">=</span><span class="token string">&quot;src/index.js&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
     <span class="token operator">&lt;</span>resolve<span class="token operator">&gt;</span>
       <span class="token operator">&lt;</span>alias <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">{</span>

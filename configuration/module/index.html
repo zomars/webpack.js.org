@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/842411826515e85a2e9c.css" rel="stylesheet">
+      <link href="/1bc3283e14d85a3dd38a.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -37,7 +37,7 @@ noParse<span class="token punctuation">:</span> <span class="token keyword">func
 <p>A Rule can be separated into three parts &#x2014; Conditions, Results and nested Rules.</p>
 <h3 class="header"><a class="anchor" href="#rule-conditions" id="rule-conditions"></a><span class="text">Rule Conditions</span><a class="icon-link" href="#rule-conditions"></a></h3>
 <p>There are two input values for the conditions:</p>
-<ol>
+<ol start="undefined">
 <li><p>The resource: An absolute path to the file requested. It&apos;s already resolved according to the <a href="/configuration/resolve"><code>resolve</code> rules</a>.</p>
 </li>
 <li><p>The issuer: An absolute path to the file of the module which requested the resource. It&apos;s the location of the import.</p>
@@ -49,7 +49,7 @@ noParse<span class="token punctuation">:</span> <span class="token keyword">func
 <blockquote class="warning"><div class="tip-content"> Be careful! The resource is the <em>resolved</em> path of the file, which means symlinked resources are the real path <em>not</em> the symlink location. This is good to remember when using tools that symlink packages (like <code>npm link</code>), common conditions like <code>/node_modules/</code> may inadvertently miss symlinked files. Note that you can turn off symlink resolving (so that resources are resolved to the symlink path) via <a href="/configuration/resolve#resolve-symlinks"><code>resolve.symlinks</code></a>. </div></blockquote><h3 class="header"><a class="anchor" href="#rule-results" id="rule-results"></a><span class="text">Rule results</span><a class="icon-link" href="#rule-results"></a></h3>
 <p>Rule results are used only when the Rule condition matches.</p>
 <p>There are two output values of a Rule:</p>
-<ol>
+<ol start="undefined">
 <li>Applied loaders: An array of loaders applied to the resource.</li>
 <li>Parser options: An options object which should be used to create the parser for this module.</li>
 </ol>

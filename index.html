@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/842411826515e85a2e9c.css" rel="stylesheet">
+      <link href="/1bc3283e14d85a3dd38a.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -223,14 +223,14 @@
             rotateX(0deg)
             rotateY(0deg)
             rotateZ(0deg);"><section class="cube__face" style="transform:rotateX(0deg) translateZ(60px);"></section><section class="cube__face" style="transform:rotateX(-90deg) translateZ(60px);"></section><section class="cube__face" style="transform:rotateX(90deg) translateZ(60px);"></section><section class="cube__face" style="transform:rotateY(-90deg) translateZ(60px);"></section><section class="cube__face" style="transform:rotateY(90deg) translateZ(60px);"></section><section class="cube__face" style="transform:rotateY(180deg) translateZ(60px);"></section></figure></span></div></section></div><div class="splash__section splash__section--dark page__content"><div class="container "><div><h2 class="header"><a class="anchor" href="#write-your-code" id="write-your-code"></a><span class="text">Write your code</span><a class="icon-link" href="#write-your-code"></a></h2>
-<div class="splash__wrap"><div class="splash__left"><p><strong>app.js</strong></p>
+<div class="splash__wrap"><div class="splash__left"><p><strong>src/index.js</strong></p>
 <pre><code class="lang-js"><span class="token keyword">import</span> bar <span class="token keyword">from</span> <span class="token string">&apos;./bar&apos;</span><span class="token punctuation">;</span>
 
 <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p></p></div><p></p>
 <p><div class="splash__right">
-<strong>bar.js</strong></div></p>
+<strong>src/bar.js</strong></div></p>
 <pre><code class="lang-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">//</span>
 <span class="token punctuation">}</span>
@@ -238,10 +238,13 @@
 <p></p></div><p></p>
 <p></p></div><p></p>
 <h2 class="header"><a class="anchor" href="#bundle-with-webpack" id="bundle-with-webpack"></a><span class="text">Bundle with webpack</span><a class="icon-link" href="#bundle-with-webpack"></a></h2>
-<div class="splash__wrap"><div class="splash__left"><p><strong>webpack.config.js</strong></p>
-<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  entry<span class="token punctuation">:</span> <span class="token string">&apos;./app.js&apos;</span><span class="token punctuation">,</span>
+<div class="splash__wrap"><div class="splash__left"><p><strong><a href="https://youtu.be/3Nv9muOkb6k?t=21293">Without config</a></strong> or provide custom <strong>webpack.config.js</strong></p>
+<pre><code class="lang-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;path&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  entry<span class="token punctuation">:</span> <span class="token string">&apos;./src/index.js&apos;</span><span class="token punctuation">,</span>
   output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;dist&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     filename<span class="token punctuation">:</span> <span class="token string">&apos;bundle.js&apos;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -256,7 +259,7 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
     ...
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>bundle.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dist/bundle.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
