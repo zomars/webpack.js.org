@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/ae97a9edad8d46113db0.css" rel="stylesheet">
+      <link href="/d246c515074a80321d98.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -141,86 +141,122 @@
         </div>
     </div><p>For more granular control, it is possible to specify exactly what information you want. Please note that all of the options in this object are optional.</p>
 <pre><code class="lang-js">stats<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+
   <span class="token comment">// fallback value for stats options when an option is not defined (has precedence over local webpack defaults)</span>
   all<span class="token punctuation">:</span> undefined<span class="token punctuation">,</span>
+
   <span class="token comment">// Add asset Information</span>
   assets<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Sort assets by a field</span>
   <span class="token comment">// You can reverse the sort with `!field`.</span>
   assetsSort<span class="token punctuation">:</span> <span class="token string">&quot;field&quot;</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Add build date and time information</span>
   builtAt<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Add information about cached (not built) modules</span>
   cached<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Show cached assets (setting this to `false` only shows emitted files)</span>
   cachedAssets<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Add children information</span>
   children<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Add chunk information (setting this to `false` allows for a less verbose output)</span>
   chunks<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Add built modules information to chunk information</span>
   chunkModules<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Add the origins of chunks and chunk merging info</span>
   chunkOrigins<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Sort the chunks by a field</span>
   <span class="token comment">// You can reverse the sort with `!field`. Default is `id`.</span>
   chunksSort<span class="token punctuation">:</span> <span class="token string">&quot;field&quot;</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Context directory for request shortening</span>
   context<span class="token punctuation">:</span> <span class="token string">&quot;../src/&quot;</span><span class="token punctuation">,</span>
+
   <span class="token comment">// `webpack --colors` equivalent</span>
   colors<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Display the distance from the entry point for each module</span>
   depth<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Display the entry points with the corresponding bundles</span>
   entrypoints<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Add --env information</span>
   env<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Add errors</span>
   errors<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Add details to errors (like resolving log)</span>
   errorDetails<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Exclude assets from being displayed in stats</span>
   <span class="token comment">// This can be done with a String, a RegExp, a Function getting the assets name</span>
   <span class="token comment">// and returning a boolean or an Array of the above.</span>
   excludeAssets<span class="token punctuation">:</span> <span class="token string">&quot;filter&quot;</span> <span class="token operator">|</span> <span class="token operator">/</span>filter<span class="token operator">/</span> <span class="token operator">|</span> <span class="token punctuation">(</span>assetName<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token operator">|</span><span class="token boolean">false</span> <span class="token operator">|</span>
     <span class="token punctuation">[</span><span class="token string">&quot;filter&quot;</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token operator">/</span>filter<span class="token operator">/</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>assetName<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token operator">|</span><span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Exclude modules from being displayed in stats</span>
   <span class="token comment">// This can be done with a String, a RegExp, a Function getting the modules source</span>
   <span class="token comment">// and returning a boolean or an Array of the above.</span>
   excludeModules<span class="token punctuation">:</span> <span class="token string">&quot;filter&quot;</span> <span class="token operator">|</span> <span class="token operator">/</span>filter<span class="token operator">/</span> <span class="token operator">|</span> <span class="token punctuation">(</span>moduleSource<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token operator">|</span><span class="token boolean">false</span> <span class="token operator">|</span>
     <span class="token punctuation">[</span><span class="token string">&quot;filter&quot;</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token operator">/</span>filter<span class="token operator">/</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>moduleSource<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token operator">|</span><span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+
   <span class="token comment">// See excludeModules</span>
   exclude<span class="token punctuation">:</span> <span class="token string">&quot;filter&quot;</span> <span class="token operator">|</span> <span class="token operator">/</span>filter<span class="token operator">/</span> <span class="token operator">|</span> <span class="token punctuation">(</span>moduleSource<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token operator">|</span><span class="token boolean">false</span> <span class="token operator">|</span>
     <span class="token punctuation">[</span><span class="token string">&quot;filter&quot;</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token operator">/</span>filter<span class="token operator">/</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>moduleSource<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token operator">|</span><span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Add the hash of the compilation</span>
   hash<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Set the maximum number of modules to be shown</span>
   maxModules<span class="token punctuation">:</span> <span class="token number">15</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Add built modules information</span>
   modules<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Sort the modules by a field</span>
   <span class="token comment">// You can reverse the sort with `!field`. Default is `id`.</span>
   modulesSort<span class="token punctuation">:</span> <span class="token string">&quot;field&quot;</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Show dependencies and origin of warnings/errors (since webpack 2.5.0)</span>
   moduleTrace<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Show performance hint when file size exceeds `performance.maxAssetSize`</span>
   performance<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Show the exports of the modules</span>
   providedExports<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Add public path information</span>
   publicPath<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Add information about the reasons why modules are included</span>
   reasons<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Add the source code of modules</span>
   source<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Add timing information</span>
   timings<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Show which exports of a module are used</span>
   usedExports<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Add webpack version information</span>
   version<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Add warnings</span>
   warnings<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
   <span class="token comment">// Filter warnings to be shown (since webpack 2.4.0),</span>
   <span class="token comment">// can be a String, Regexp, a function getting the warning and returning a boolean</span>
   <span class="token comment">// or an Array of a combination of the above. First match wins.</span>
