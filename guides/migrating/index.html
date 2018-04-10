@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/b8a030c5212a7162c0bc.css" rel="stylesheet">
+      <link href="/784f73c9716c494f43b5.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -330,7 +330,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 </code></pre>
 <p>Good news: Failure to load a chunk can now be handled because they are <code>Promise</code> based.</p>
 <h2 class="header"><a class="anchor" href="#dynamic-expressions" id="dynamic-expressions"></a><span class="text">Dynamic expressions</span><a class="icon-link" href="#dynamic-expressions"></a></h2>
-<p>It&apos;s possible to pass a partial expression to <code>import()</code>. This is handled similar to expressions in CommonJS (webpack creates a <a href="https://webpack.github.io/docs/context.html">context</a> with all possible files).</p>
+<p>It&apos;s possible to pass a partial expression to <code>import()</code>. This is handled similar to expressions in CommonJS (webpack creates a <a href="/plugins/context-replacement-plugin/">context</a> with all possible files).</p>
 <p><code>import()</code> creates a separate chunk for each possible module.</p>
 <pre><code class="lang-js"><span class="token keyword">function</span> <span class="token function">route</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> query<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`./routes/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>path<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/route`</span></span><span class="token punctuation">)</span>

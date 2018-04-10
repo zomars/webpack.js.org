@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/b8a030c5212a7162c0bc.css" rel="stylesheet">
+      <link href="/784f73c9716c494f43b5.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -22,7 +22,7 @@
 being processed by webpack. The <code>parser</code> is yet another webpack class that
 extends <code>tapable</code> and provides a variety of <code>tapable</code> hooks that can be used by
 plugin authors to customize the parsing process.</p>
-<p>The <code>parser</code> is found within <a href="/api/module-factories/">module factories</a> and therefore takes little
+<p>The <code>parser</code> is found within <a href="/api/compiler-hooks/#normalmodulefactory">module factories</a> and therefore takes little
 more work to access:</p>
 <pre><code class="lang-js">compiler<span class="token punctuation">.</span>hooks<span class="token punctuation">.</span>normalModuleFactory<span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span>factory <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
   factory<span class="token punctuation">.</span>hooks<span class="token punctuation">.</span>parser<span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span><span class="token punctuation">(</span>parser<span class="token punctuation">,</span> options<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
