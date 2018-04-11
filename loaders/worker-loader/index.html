@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/8da3175676ac3bcd6656.css" rel="stylesheet">
+      <link href="/6e01418e5e8a12c33051.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -63,7 +63,7 @@ worker<span class="token punctuation">.</span><span class="token function">addEv
         Name
     </div>
     <div class="table-td-content">
-        <a href="https://raw.githubusercontent.com/webpack-contrib/worker-loader/master/README.md#name"><strong><code>name</code></strong></a>
+        <a href="#name"><strong><code>name</code></strong></a>
     </div>
   </div><div class="table-td">
     <div class="table-td-title">
@@ -91,7 +91,7 @@ worker<span class="token punctuation">.</span><span class="token function">addEv
         Name
     </div>
     <div class="table-td-content">
-        <a href="https://raw.githubusercontent.com/webpack-contrib/worker-loader/master/README.md#inline"><strong><code>inline</code></strong></a>
+        <a href="#inline"><strong><code>inline</code></strong></a>
     </div>
   </div><div class="table-td">
     <div class="table-td-title">
@@ -119,7 +119,7 @@ worker<span class="token punctuation">.</span><span class="token function">addEv
         Name
     </div>
     <div class="table-td-content">
-        <a href="https://raw.githubusercontent.com/webpack-contrib/worker-loader/master/README.md#fallback"><strong><code>fallback</code></strong></a>
+        <a href="#fallback"><strong><code>fallback</code></strong></a>
     </div>
   </div><div class="table-td">
     <div class="table-td-title">
@@ -147,7 +147,7 @@ worker<span class="token punctuation">.</span><span class="token function">addEv
         Name
     </div>
     <div class="table-td-content">
-        <a href="https://raw.githubusercontent.com/webpack-contrib/worker-loader/master/README.md#publicPath"><strong><code>publicPath</code></strong></a>
+        <a href="#publicPath"><strong><code>publicPath</code></strong></a>
     </div>
   </div><div class="table-td">
     <div class="table-td-title">
@@ -279,7 +279,7 @@ worker<span class="token punctuation">.</span><span class="token function">addEv
 </code></pre>
 <h3 class="header"><a class="anchor" href="#cross-origin-policy" id="cross-origin-policy"></a><span class="text"><code>Cross-Origin Policy</code></span><a class="icon-link" href="#cross-origin-policy"></a></h3>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API"><code>WebWorkers</code></a> are restricted by a <a href="https://en.wikipedia.org/wiki/Same-origin_policy">same-origin policy</a>, so if your <code>webpack</code> assets are not being served from the same origin as your application, their download may be blocked by your browser. This scenario can commonly occur if you are hosting your assets under a CDN domain. Even downloads from the <code>webpack-dev-server</code> could be blocked. There are two workarounds</p>
-<p>Firstly, you can inline the worker as a blob instead of downloading it as an external script via the <a href="https://raw.githubusercontent.com/webpack-contrib/worker-loader/master/README.md#inline"><code>inline</code></a> parameter</p>
+<p>Firstly, you can inline the worker as a blob instead of downloading it as an external script via the <a href="#inline"><code>inline</code></a> parameter</p>
 <p><strong>App.js</strong></p>
 <pre><code class="lang-js"><span class="token keyword">import</span> Worker <span class="token keyword">from</span> <span class="token string">&apos;./file.worker.js&apos;</span><span class="token punctuation">;</span>
 </code></pre>
@@ -289,7 +289,7 @@ worker<span class="token punctuation">.</span><span class="token function">addEv
   options<span class="token punctuation">:</span> <span class="token punctuation">{</span> inline<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>Secondly, you may override the base download URL for your worker script via the <a href="https://raw.githubusercontent.com/webpack-contrib/worker-loader/master/README.md#publicpath"><code>publicPath</code></a> option</p>
+<p>Secondly, you may override the base download URL for your worker script via the <a href="#publicpath"><code>publicPath</code></a> option</p>
 <p><strong>App.js</strong></p>
 <pre><code class="lang-js"><span class="token comment">// This will cause the worker to be downloaded from `/workers/file.worker.js`</span>
 <span class="token keyword">import</span> Worker <span class="token keyword">from</span> <span class="token string">&apos;./file.worker.js&apos;</span><span class="token punctuation">;</span>

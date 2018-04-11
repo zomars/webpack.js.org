@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/8da3175676ac3bcd6656.css" rel="stylesheet">
+      <link href="/6e01418e5e8a12c33051.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -340,12 +340,12 @@
 <p>The prefix length of the hash digest to use, defaults to <code>20</code>.</p>
 <h2 class="header"><a class="anchor" href="#output-hashfunction" id="output-hashfunction"></a><span class="text"><code>output.hashFunction</code></span><a class="icon-link" href="#output-hashfunction"></a></h2>
 <p><code>string|function</code></p>
-<p>The hashing algorithm to use, defaults to <code>&apos;md5&apos;</code>. All functions from Node.JS&apos; <a href="https://nodejs.org/api/crypto.html#crypto_crypto_createhash_algorithm"><code>crypto.createHash</code></a> are supported. Since <code>4.0.0-alpha2</code>, the <code>hashFunction</code> can now be a constructor to a custom hash function. You can provide a non-crypto hash function for performance reasons.</p>
+<p>The hashing algorithm to use, defaults to <code>&apos;md5&apos;</code>. All functions from Node.JS&apos; <a href="https://nodejs.org/api/crypto.html#crypto_crypto_createhash_algorithm_options"><code>crypto.createHash</code></a> are supported. Since <code>4.0.0-alpha2</code>, the <code>hashFunction</code> can now be a constructor to a custom hash function. You can provide a non-crypto hash function for performance reasons.</p>
 <pre><code class="lang-js">hashFunction<span class="token punctuation">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;metrohash&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>MetroHash64
 </code></pre>
 <p>Make sure that the hashing function will have <code>update</code> and <code>digest</code> methods available.</p>
 <h2 class="header"><a class="anchor" href="#output-hashsalt" id="output-hashsalt"></a><span class="text"><code>output.hashSalt</code></span><a class="icon-link" href="#output-hashsalt"></a></h2>
-<p>An optional salt to update the hash via Node.JS&apos; <a href="https://nodejs.org/api/crypto.html#crypto_hash_update_data_input_encoding"><code>hash.update</code></a>.</p>
+<p>An optional salt to update the hash via Node.JS&apos; <a href="https://nodejs.org/api/crypto.html#crypto_hash_update_data_inputencoding"><code>hash.update</code></a>.</p>
 <h2 class="header"><a class="anchor" href="#output-hotupdatechunkfilename" id="output-hotupdatechunkfilename"></a><span class="text"><code>output.hotUpdateChunkFilename</code></span><a class="icon-link" href="#output-hotupdatechunkfilename"></a></h2>
 <p><code>string</code> <code>function</code></p>
 <p>Customize the filenames of hot update chunks. See <a href="#output-filename"><code>output.filename</code></a> option for details on the possible values.</p>
