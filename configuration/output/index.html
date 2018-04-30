@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/7f8ac315e7c1c6f28005.css" rel="stylesheet">
+      <link href="/e414ec4cb4860152576f.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -543,8 +543,8 @@ global<span class="token punctuation">.</span>MyLibrary<span class="token punctu
 <p>Note that <code>[hash]</code> in this parameter will be replaced with an hash of the compilation. See the <a href="/guides/caching">Caching guide</a> for details.</p>
 <h2 class="header"><a class="anchor" href="#output-pathinfo" id="output-pathinfo"></a><span class="text"><code>output.pathinfo</code></span><a class="icon-link" href="#output-pathinfo"></a></h2>
 <p><code>boolean</code></p>
-<p>Tell webpack to include comments in bundles with information about the contained modules. This option defaults to <code>false</code> and <strong>should not</strong> be used in production, but it&apos;s very useful in development when reading the generated code.</p>
-<pre><code class="lang-js">pathinfo<span class="token punctuation">:</span> <span class="token boolean">true</span>
+<p>Tells webpack to include comments in bundles with information about the contained modules. This option defaults to <code>true</code> in <code>development</code> and <code>false</code> in <code>production</code> <a href="/concepts/mode/">mode</a> respectively.</p>
+<blockquote class="warning"><div class="tip-content"> While the data this comments can provide is very useful during development when reading the generated code, it <strong>should not</strong> be used in production. </div></blockquote><pre><code class="lang-js">pathinfo<span class="token punctuation">:</span> <span class="token boolean">true</span>
 </code></pre>
 <p>Note it also adds some info about tree shaking to the generated bundle.</p>
 <h2 class="header"><a class="anchor" href="#output-publicpath" id="output-publicpath"></a><span class="text"><code>output.publicPath</code></span><a class="icon-link" href="#output-publicpath"></a></h2>
