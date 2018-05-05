@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/9fc2f7f7f44f84a926ca.css" rel="stylesheet">
+      <link href="/57a19a7fd48de01e85ca.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -652,9 +652,6 @@ Config lookup starts from <code>path.dirname(file)</code> and walks the file tre
 </code></pre>
 <h3 class="header"><a class="anchor" href="#sourcemap" id="sourcemap"></a><span class="text"><code>SourceMap</code></span><a class="icon-link" href="#sourcemap"></a></h3>
 <p>Enables source map support, <code>postcss-loader</code> will use the previous source map given by other loaders and update it accordingly, if no previous loader is applied before <code>postcss-loader</code>, the loader will generate a source map for you.</p>
-<blockquote>
-<p>:warning: If a previous loader like e.g <code>sass-loader</code> is applied and it&apos;s <code>sourceMap</code> option is set, but the <code>sourceMap</code> option in <code>postcss-loader</code> is omitted, previous source maps will be discarded by <code>postcss-loader</code> <strong>entirely</strong>.</p>
-</blockquote>
 <p><strong>webpack.config.js</strong></p>
 <pre><code class="lang-js"><span class="token punctuation">{</span>
   test<span class="token punctuation">:</span> <span class="token regex">/\.css/</span><span class="token punctuation">,</span>

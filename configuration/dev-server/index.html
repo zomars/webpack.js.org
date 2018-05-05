@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/9fc2f7f7f44f84a926ca.css" rel="stylesheet">
+      <link href="/57a19a7fd48de01e85ca.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -342,6 +342,17 @@ filename<span class="token punctuation">:</span> <span class="token string">&quo
   context<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;/auth&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/api&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
   target<span class="token punctuation">:</span> <span class="token string">&quot;http://localhost:3000&quot;</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">]</span>
+</code></pre>
+<p>Note that requests to root won&apos;t be proxied by default. To enable root proxying, the <code>devServer.index</code> option should be specified as a falsy value:</p>
+<pre><code class="lang-js">devServer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  index<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span> <span class="token comment">// specify to enable root proxying</span>
+  host<span class="token punctuation">:</span> <span class="token string">&apos;...&apos;</span><span class="token punctuation">,</span>
+  contentBase<span class="token punctuation">:</span> <span class="token string">&apos;...&apos;</span><span class="token punctuation">,</span>
+  proxy<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    context<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    target<span class="token punctuation">:</span> <span class="token string">&apos;http://localhost:1234&apos;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 class="header"><a class="anchor" href="#devserver-progress-cli-only" id="devserver-progress-cli-only"></a><span class="text"><code>devServer.progress</code> - CLI only</span><a class="icon-link" href="#devserver-progress-cli-only"></a></h2>
 <p><code>boolean</code></p>
