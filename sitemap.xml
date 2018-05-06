@@ -157,10 +157,10 @@
         <loc>https://webpack.js.org/configuration/entry-context/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/configuration/externals/index.html</loc>
+        <loc>https://webpack.js.org/configuration/module/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/configuration/module/index.html</loc>
+        <loc>https://webpack.js.org/configuration/externals/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/configuration/node/index.html</loc>
@@ -181,6 +181,9 @@
         <loc>https://webpack.js.org/configuration/plugins/index.html</loc>
     </url>
     <url>
+        <loc>https://webpack.js.org/configuration/resolve/index.html</loc>
+    </url>
+    <url>
         <loc>https://webpack.js.org/configuration/stats/index.html</loc>
     </url>
     <url>
@@ -191,9 +194,6 @@
     </url>
     <url>
         <loc>https://webpack.js.org/contribute/debugging/index.html</loc>
-    </url>
-    <url>
-        <loc>https://webpack.js.org/configuration/resolve/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/contribute/plugin-patterns/index.html</loc>
@@ -433,6 +433,9 @@
         <loc>https://webpack.js.org/loaders/url-loader/index.html</loc>
     </url>
     <url>
+        <loc>https://webpack.js.org/loaders/val-loader/index.html</loc>
+    </url>
+    <url>
         <loc>https://webpack.js.org/loaders/worker-loader/index.html</loc>
     </url>
     <url>
@@ -440,9 +443,6 @@
     </url>
     <url>
         <loc>https://webpack.js.org/loaders/yaml-frontmatter-loader/index.html</loc>
-    </url>
-    <url>
-        <loc>https://webpack.js.org/loaders/val-loader/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/migrate/3/index.html</loc>
@@ -517,13 +517,13 @@
         <loc>https://webpack.js.org/plugins/mini-css-extract-plugin/index.html</loc>
     </url>
     <url>
+        <loc>https://webpack.js.org/plugins/module-concatenation-plugin/index.html</loc>
+    </url>
+    <url>
         <loc>https://webpack.js.org/plugins/named-modules-plugin/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/plugins/no-emit-on-errors-plugin/index.html</loc>
-    </url>
-    <url>
-        <loc>https://webpack.js.org/plugins/module-concatenation-plugin/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/plugins/normal-module-replacement-plugin/index.html</loc>
@@ -568,9 +568,6 @@
         <loc>https://webpack.js.org/api/plugins/compilation/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/api/plugins/compiler/index.html</loc>
-    </url>
-    <url>
         <loc>https://webpack.js.org/api/plugins/module-factories/index.html</loc>
     </url>
     <url>
@@ -584,5 +581,8 @@
     </url>
     <url>
         <loc>https://webpack.js.org/api/plugins/template/index.html</loc>
+    </url>
+    <url>
+        <loc>https://webpack.js.org/api/plugins/compiler/index.html</loc>
     </url>
 </urlset>
