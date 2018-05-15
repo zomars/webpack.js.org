@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/0b159b33abfb7a35f096.css" rel="stylesheet">
+      <link href="/ab520f2faca3b4eb9310.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -168,6 +168,16 @@ You can use other loader using <code>fallback</code> option.</p>
   loader<span class="token punctuation">:</span> <span class="token string">&apos;url-loader&apos;</span><span class="token punctuation">,</span>
   options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
     fallback<span class="token punctuation">:</span> <span class="token string">&apos;responsive-loader&apos;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>The fallback loader will recieve the same configuration options as the url-loader.</p>
+<p>Example: To set the quality option of the responsive-loader above use:</p>
+<pre><code class="lang-js"><span class="token punctuation">{</span>
+  loader<span class="token punctuation">:</span> <span class="token string">&apos;url-loader&apos;</span><span class="token punctuation">,</span>
+  options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    fallback<span class="token punctuation">:</span> <span class="token string">&apos;responsive-loader&apos;</span><span class="token punctuation">,</span>
+    quality<span class="token punctuation">:</span> <span class="token number">85</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
