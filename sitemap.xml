@@ -4,10 +4,10 @@
         <loc>https://webpack.js.org/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/branding/index.html</loc>
+        <loc>https://webpack.js.org/api/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/api/index.html</loc>
+        <loc>https://webpack.js.org/branding/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/comparison/index.html</loc>
@@ -106,10 +106,10 @@
         <loc>https://webpack.js.org/api/stats/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/concepts/configuration/index.html</loc>
+        <loc>https://webpack.js.org/concepts/dependency-graph/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/concepts/dependency-graph/index.html</loc>
+        <loc>https://webpack.js.org/concepts/configuration/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/concepts/entry-points/index.html</loc>
@@ -205,6 +205,9 @@
         <loc>https://webpack.js.org/contribute/writers-guide/index.html</loc>
     </url>
     <url>
+        <loc>https://webpack.js.org/contribute/writing-a-loader/index.html</loc>
+    </url>
+    <url>
         <loc>https://webpack.js.org/contribute/writing-a-plugin/index.html</loc>
     </url>
     <url>
@@ -283,9 +286,6 @@
         <loc>https://webpack.js.org/guides/integrations/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/guides/lazy-loading/index.html</loc>
-    </url>
-    <url>
         <loc>https://webpack.js.org/guides/output-management/index.html</loc>
     </url>
     <url>
@@ -326,9 +326,6 @@
     </url>
     <url>
         <loc>https://webpack.js.org/loaders/coffee-redux-loader/index.html</loc>
-    </url>
-    <url>
-        <loc>https://webpack.js.org/contribute/writing-a-loader/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/loaders/config-loader/index.html</loc>
@@ -560,6 +557,9 @@
     </url>
     <url>
         <loc>https://webpack.js.org/pluginsapi/template/index.html</loc>
+    </url>
+    <url>
+        <loc>https://webpack.js.org/guides/lazy-loading/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/api/plugins/compilation/index.html</loc>
