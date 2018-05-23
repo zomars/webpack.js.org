@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/fb3db2a3c74e431069b5.css" rel="stylesheet">
+      <link href="/b1a5a733fbc1e1e1ad4e.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -22,7 +22,7 @@
 <p>There are three general approaches to code splitting available:</p>
 <ul>
 <li>Entry Points: Manually split code using <a href="/configuration/entry-context"><code>entry</code></a> configuration.</li>
-<li>Prevent Duplication: Use the <a href="/plugins/commons-chunk-plugin"><code>CommonsChunkPlugin</code></a> to dedupe and split chunks.</li>
+<li>Prevent Duplication: Use the <a href="/plugins/split-chunks-plugin/"><code>SplitChunks</code></a> to dedupe and split chunks.</li>
 <li>Dynamic Imports: Split code via inline function calls within modules.</li>
 </ul>
 <h2 class="header"><a class="anchor" href="#entry-points" id="entry-points"></a><span class="text">Entry Points</span><a class="icon-link" href="#entry-points"></a></h2>
@@ -45,119 +45,108 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><strong>webpack.config.js</strong></p>
-<pre><code class="lang-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;path&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> HTMLWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;html-webpack-plugin&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="lang-diff">const path = require(&apos;path&apos;);
 
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  entry<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    index<span class="token punctuation">:</span> <span class="token string">&apos;./src/index.js&apos;</span><span class="token punctuation">,</span>
-    another<span class="token punctuation">:</span> <span class="token string">&apos;./src/another-module.js&apos;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-    <span class="token keyword">new</span> <span class="token class-name">HTMLWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-      title<span class="token punctuation">:</span> <span class="token string">&apos;Code Splitting&apos;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    filename<span class="token punctuation">:</span> <span class="token string">&apos;[name].bundle.js&apos;</span><span class="token punctuation">,</span>
-    path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;dist&apos;</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+module.exports = {
+  mode: &apos;development&apos;,
+  entry: {
+    index: &apos;./src/index.js&apos;,
+<span class="token inserted">+   another: &apos;./src/another-module.js&apos;</span>
+  },
+  output: {
+    filename: &apos;[name].bundle.js&apos;,
+    path: path.resolve(__dirname, &apos;dist&apos;)
+  }
+};
 </code></pre>
 <p>This will yield the following build result:</p>
-<pre><code class="lang-bash">Hash: 309402710a14167f42a8
-Version: webpack 2.6.1
-Time: 570ms
-            Asset    Size  Chunks                    Chunk Names
-  index.bundle.js  544 kB       0  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  <span class="token punctuation">[</span>big<span class="token punctuation">]</span>  index
-another.bundle.js  544 kB       1  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  <span class="token punctuation">[</span>big<span class="token punctuation">]</span>  another
-   <span class="token punctuation">[</span>0<span class="token punctuation">]</span> ./~/lodash/lodash.js 540 kB <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">{</span>1<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
-   <span class="token punctuation">[</span>1<span class="token punctuation">]</span> <span class="token punctuation">(</span>webpack<span class="token punctuation">)</span>/buildin/global.js 509 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">{</span>1<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
-   <span class="token punctuation">[</span>2<span class="token punctuation">]</span> <span class="token punctuation">(</span>webpack<span class="token punctuation">)</span>/buildin/module.js 517 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">{</span>1<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
-   <span class="token punctuation">[</span>3<span class="token punctuation">]</span> ./src/another-module.js 87 bytes <span class="token punctuation">{</span>1<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
-   <span class="token punctuation">[</span>4<span class="token punctuation">]</span> ./src/index.js 216 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+<pre><code class="lang-bash">Hash: a948f6cc8219cc2d39a1
+Version: webpack 4.7.0
+Time: 323ms
+            Asset     Size   Chunks             Chunk Names
+another.bundle.js  550 KiB  another  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  another
+  index.bundle.js  550 KiB    index  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  index
+Entrypoint index <span class="token operator">=</span> index.bundle.js
+Entrypoint another <span class="token operator">=</span> another.bundle.js
+<span class="token punctuation">[</span>./node_modules/webpack/buildin/global.js<span class="token punctuation">]</span> <span class="token punctuation">(</span>webpack<span class="token punctuation">)</span>/buildin/global.js 489 bytes <span class="token punctuation">{</span>another<span class="token punctuation">}</span> <span class="token punctuation">{</span>index<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>./node_modules/webpack/buildin/module.js<span class="token punctuation">]</span> <span class="token punctuation">(</span>webpack<span class="token punctuation">)</span>/buildin/module.js 497 bytes <span class="token punctuation">{</span>another<span class="token punctuation">}</span> <span class="token punctuation">{</span>index<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>./src/another-module.js<span class="token punctuation">]</span> 88 bytes <span class="token punctuation">{</span>another<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>./src/index.js<span class="token punctuation">]</span> 86 bytes <span class="token punctuation">{</span>index<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+    + 1 hidden module
 </code></pre>
 <p>As mentioned there are some pitfalls to this approach:</p>
 <ul>
 <li>If there are any duplicated modules between entry chunks they will be included in both bundles.</li>
 <li>It isn&apos;t as flexible and can&apos;t be used to dynamically split code with the core application logic.</li>
 </ul>
-<p>The first of these two points is definitely an issue for our example, as <code>lodash</code> is also imported within <code>./src/index.js</code> and will thus be duplicated in both bundles. Let&apos;s remove this duplication by using the <code>CommonsChunkPlugin</code>.</p>
+<p>The first of these two points is definitely an issue for our example, as <code>lodash</code> is also imported within <code>./src/index.js</code> and will thus be duplicated in both bundles. Let&apos;s remove this duplication by using the <code>SplitChunks</code> plugin.</p>
 <h2 class="header"><a class="anchor" href="#prevent-duplication" id="prevent-duplication"></a><span class="text">Prevent Duplication</span><a class="icon-link" href="#prevent-duplication"></a></h2>
-<p>The <a href="/plugins/commons-chunk-plugin"><code>CommonsChunkPlugin</code></a> allows us to extract common dependencies into an existing entry chunk or an entirely new chunk. Let&apos;s use this to de-duplicate the <code>lodash</code> dependency from the previous example:</p>
+<p>The <a href="/plugins/split-chunks-plugin/"><code>SplitChunks</code></a> allows us to extract common dependencies into an existing entry chunk or an entirely new chunk. Let&apos;s use this to de-duplicate the <code>lodash</code> dependency from the previous example:</p>
 <p><strong>webpack.config.js</strong></p>
 <pre><code class="lang-diff">  const path = require(&apos;path&apos;);
-<span class="token inserted">+ const webpack = require(&apos;webpack&apos;);</span>
-  const HTMLWebpackPlugin = require(&apos;html-webpack-plugin&apos;);
 
   module.exports = {
+    mode: &apos;development&apos;,
     entry: {
       index: &apos;./src/index.js&apos;,
       another: &apos;./src/another-module.js&apos;
     },
-    plugins: [
-      new HTMLWebpackPlugin({
-        title: &apos;Code Splitting&apos;
-<span class="token deleted">-     })</span>
-<span class="token inserted">+     }),</span>
-<span class="token inserted">+     new webpack.optimize.CommonsChunkPlugin({</span>
-<span class="token inserted">+       name: &apos;common&apos; // Specify the common bundle&apos;s name.</span>
-<span class="token inserted">+     })</span>
-    ],
     output: {
       filename: &apos;[name].bundle.js&apos;,
       path: path.resolve(__dirname, &apos;dist&apos;)
-    }
+    },
+<span class="token inserted">+   optimization: {</span>
+<span class="token inserted">+     splitChunks: {</span>
+<span class="token inserted">+       chunks: &apos;all&apos;</span>
+<span class="token inserted">+     }</span>
+<span class="token inserted">+   }</span>
   };
 </code></pre>
-<p>With the <a href="/plugins/commons-chunk-plugin"><code>CommonsChunkPlugin</code></a> in place, we should now see the duplicate dependency removed from our <code>index.bundle.js</code>. The plugin should notice that we&apos;ve separated <code>lodash</code> out to a separate chunk and remove the dead weight from our main bundle. Let&apos;s do an <code>npm run build</code> to see if it worked:</p>
-<pre><code class="lang-bash">Hash: 70a59f8d46ff12575481
-Version: webpack 2.6.1
-Time: 510ms
-            Asset       Size  Chunks                    Chunk Names
-  index.bundle.js  665 bytes       0  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>         index
-another.bundle.js  537 bytes       1  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>         another
- common.bundle.js     547 kB       2  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  <span class="token punctuation">[</span>big<span class="token punctuation">]</span>  common
-   <span class="token punctuation">[</span>0<span class="token punctuation">]</span> ./~/lodash/lodash.js 540 kB <span class="token punctuation">{</span>2<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
-   <span class="token punctuation">[</span>1<span class="token punctuation">]</span> <span class="token punctuation">(</span>webpack<span class="token punctuation">)</span>/buildin/global.js 509 bytes <span class="token punctuation">{</span>2<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
-   <span class="token punctuation">[</span>2<span class="token punctuation">]</span> <span class="token punctuation">(</span>webpack<span class="token punctuation">)</span>/buildin/module.js 517 bytes <span class="token punctuation">{</span>2<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
-   <span class="token punctuation">[</span>3<span class="token punctuation">]</span> ./src/another-module.js 87 bytes <span class="token punctuation">{</span>1<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
-   <span class="token punctuation">[</span>4<span class="token punctuation">]</span> ./src/index.js 216 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+<p>With the <a href="/plugins/split-chunks-plugin/"><code>SplitChunks</code></a> in place, we should now see the duplicate dependency removed from our <code>index.bundle.js</code>. The plugin should notice that we&apos;ve separated <code>lodash</code> out to a separate chunk and remove the dead weight from our main bundle. Let&apos;s do an <code>npm run build</code> to see if it worked:</p>
+<pre><code class="lang-bash">Hash: ac2ac6042ebb4f20ee54
+Version: webpack 4.7.0
+Time: 316ms
+                          Asset      Size                 Chunks             Chunk Names
+              another.bundle.js  5.95 KiB                another  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  another
+                index.bundle.js  5.89 KiB                  index  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  index
+vendors~another~index.bundle.js   547 KiB  vendors~another~index  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  vendors~another~index
+Entrypoint index <span class="token operator">=</span> vendors~another~index.bundle.js index.bundle.js
+Entrypoint another <span class="token operator">=</span> vendors~another~index.bundle.js another.bundle.js
+<span class="token punctuation">[</span>./node_modules/webpack/buildin/global.js<span class="token punctuation">]</span> <span class="token punctuation">(</span>webpack<span class="token punctuation">)</span>/buildin/global.js 489 bytes <span class="token punctuation">{</span>vendors~another~index<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>./node_modules/webpack/buildin/module.js<span class="token punctuation">]</span> <span class="token punctuation">(</span>webpack<span class="token punctuation">)</span>/buildin/module.js 497 bytes <span class="token punctuation">{</span>vendors~another~index<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>./src/another-module.js<span class="token punctuation">]</span> 88 bytes <span class="token punctuation">{</span>another<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>./src/index.js<span class="token punctuation">]</span> 86 bytes <span class="token punctuation">{</span>index<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+    + 1 hidden module
 </code></pre>
 <p>Here are some other useful plugins and loaders provided by the community for splitting code:</p>
 <ul>
-<li><a href="/plugins/extract-text-webpack-plugin"><code>ExtractTextPlugin</code></a>: Useful for splitting CSS out from the main application.</li>
+<li><a href="/plugins/mini-css-extract-plugin"><code>mini-css-extract-plugin</code></a>: Useful for splitting CSS out from the main application.</li>
 <li><a href="/loaders/bundle-loader"><code>bundle-loader</code></a>: Used to split code and lazy load the resulting bundles.</li>
 <li><a href="https://github.com/gaearon/promise-loader"><code>promise-loader</code></a>: Similar to the <code>bundle-loader</code> but uses promises.</li>
 </ul>
 <blockquote class="tip"><div class="tip-content"> The <a href="/plugins/commons-chunk-plugin"><code>CommonsChunkPlugin</code></a> is also used to split vendor modules from core application code using <a href="/plugins/commons-chunk-plugin/#explicit-vendor-chunk">explicit vendor chunks</a>. </div></blockquote><h2 class="header"><a class="anchor" href="#dynamic-imports" id="dynamic-imports"></a><span class="text">Dynamic Imports</span><a class="icon-link" href="#dynamic-imports"></a></h2>
-<p>Two similar techniques are supported by webpack when it comes to dynamic code splitting. The first and more preferable approach is to use the <a href="/api/module-methods#import-"><code>import()</code> syntax</a> that conforms to the <a href="https://github.com/tc39/proposal-dynamic-import">ECMAScript proposal</a> for dynamic imports. The legacy, webpack-specific approach is to use <a href="/api/module-methods#require-ensure"><code>require.ensure</code></a>. Let&apos;s try using the first of these two approaches...</p>
-<blockquote class="warning"><div class="tip-content"> <code>import()</code> calls use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">promises</a> internally. If you use <code>import()</code> with older browsers, remember to shim <code>Promise</code> using a polyfill such as <a href="https://github.com/stefanpenner/es6-promise">es6-promise</a> or <a href="https://github.com/taylorhakes/promise-polyfill">promise-polyfill</a>. </div></blockquote><p>Before we start, let&apos;s remove the extra <a href="/concepts/entry-points/"><code>entry</code></a> and <a href="/plugins/commons-chunk-plugin"><code>CommonsChunkPlugin</code></a> from our config as they won&apos;t be needed for this next demonstration:</p>
+<p>Two similar techniques are supported by webpack when it comes to dynamic code splitting. The first and recommended approach is to use the <a href="/api/module-methods#import-"><code>import()</code> syntax</a> that conforms to the <a href="https://github.com/tc39/proposal-dynamic-import">ECMAScript proposal</a> for dynamic imports. The legacy, webpack-specific approach is to use <a href="/api/module-methods#require-ensure"><code>require.ensure</code></a>. Let&apos;s try using the first of these two approaches...</p>
+<blockquote class="warning"><div class="tip-content"> <code>import()</code> calls use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">promises</a> internally. If you use <code>import()</code> with older browsers, remember to shim <code>Promise</code> using a polyfill such as <a href="https://github.com/stefanpenner/es6-promise">es6-promise</a> or <a href="https://github.com/taylorhakes/promise-polyfill">promise-polyfill</a>. </div></blockquote><p>Before we start, let&apos;s remove the extra <a href="/concepts/entry-points/"><code>entry</code></a> and <a href="/plugins/split-chunks-plugin"><code>optimization.splitChunks</code></a> from our config as they won&apos;t be needed for this next demonstration:</p>
 <p><strong>webpack.config.js</strong></p>
 <pre><code class="lang-diff">  const path = require(&apos;path&apos;);
-<span class="token deleted">- const webpack = require(&apos;webpack&apos;);</span>
-  const HTMLWebpackPlugin = require(&apos;html-webpack-plugin&apos;);
 
   module.exports = {
+    mode: &apos;development&apos;,
     entry: {
 <span class="token inserted">+     index: &apos;./src/index.js&apos;</span>
 <span class="token deleted">-     index: &apos;./src/index.js&apos;,</span>
 <span class="token deleted">-     another: &apos;./src/another-module.js&apos;</span>
     },
-    plugins: [
-      new HTMLWebpackPlugin({
-        title: &apos;Code Splitting&apos;
-<span class="token deleted">-     }),</span>
-<span class="token inserted">+     })</span>
-<span class="token deleted">-     new webpack.optimize.CommonsChunkPlugin({</span>
-<span class="token deleted">-       name: &apos;common&apos; // Specify the common bundle&apos;s name.</span>
-<span class="token deleted">-     })</span>
-    ],
     output: {
       filename: &apos;[name].bundle.js&apos;,
 <span class="token inserted">+     chunkFilename: &apos;[name].bundle.js&apos;,</span>
       path: path.resolve(__dirname, &apos;dist&apos;)
-    }
+    },
+<span class="token deleted">-   optimization: {</span>
+<span class="token deleted">-     splitChunks: {</span>
+<span class="token deleted">-       chunks: &apos;all&apos;</span>
+<span class="token deleted">-     }</span>
+<span class="token deleted">-   }</span>
   };
 </code></pre>
 <p>Note the use of <code>chunkFilename</code>, which determines the name of non-entry chunk files. For more information on <code>chunkFilename</code>, see <a href="/configuration/output/#output-chunkfilename">output documentation</a>. We&apos;ll also update our project to remove the now unused files:</p>
@@ -197,16 +186,17 @@ another.bundle.js  537 bytes       1  <span class="token punctuation">[</span>em
 <span class="token inserted">+ })</span>
 </code></pre>
 <p>Note the use of <code>webpackChunkName</code> in the comment. This will cause our separate bundle to be named <code>lodash.bundle.js</code> instead of just <code>[id].bundle.js</code>. For more information on <code>webpackChunkName</code> and the other available options, see the <a href="/api/module-methods#import-"><code>import()</code> documentation</a>. Let&apos;s run webpack to see <code>lodash</code> separated out to a separate bundle:</p>
-<pre><code class="lang-bash">Hash: a27e5bf1dd73c675d5c9
-Version: webpack 2.6.1
-Time: 544ms
-           Asset     Size  Chunks                    Chunk Names
-lodash.bundle.js   541 kB       0  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  <span class="token punctuation">[</span>big<span class="token punctuation">]</span>  lodash
- index.bundle.js  6.35 kB       1  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>         index
-   <span class="token punctuation">[</span>0<span class="token punctuation">]</span> ./~/lodash/lodash.js 540 kB <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
-   <span class="token punctuation">[</span>1<span class="token punctuation">]</span> ./src/index.js 377 bytes <span class="token punctuation">{</span>1<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
-   <span class="token punctuation">[</span>2<span class="token punctuation">]</span> <span class="token punctuation">(</span>webpack<span class="token punctuation">)</span>/buildin/global.js 509 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
-   <span class="token punctuation">[</span>3<span class="token punctuation">]</span> <span class="token punctuation">(</span>webpack<span class="token punctuation">)</span>/buildin/module.js 517 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+<pre><code class="lang-bash">Hash: a3f7446ffbeb7fb897ff
+Version: webpack 4.7.0
+Time: 316ms
+                   Asset      Size          Chunks             Chunk Names
+         index.bundle.js  7.88 KiB           index  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  index
+vendors~lodash.bundle.js   547 KiB  vendors~lodash  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  vendors~lodash
+Entrypoint index <span class="token operator">=</span> index.bundle.js
+<span class="token punctuation">[</span>./node_modules/webpack/buildin/global.js<span class="token punctuation">]</span> <span class="token punctuation">(</span>webpack<span class="token punctuation">)</span>/buildin/global.js 489 bytes <span class="token punctuation">{</span>vendors~lodash<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>./node_modules/webpack/buildin/module.js<span class="token punctuation">]</span> <span class="token punctuation">(</span>webpack<span class="token punctuation">)</span>/buildin/module.js 497 bytes <span class="token punctuation">{</span>vendors~lodash<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+<span class="token punctuation">[</span>./src/index.js<span class="token punctuation">]</span> 394 bytes <span class="token punctuation">{</span>index<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
+    + 1 hidden module
 </code></pre>
 <p>As <code>import()</code> returns a promise, it can be used with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"><code>async</code> functions</a>. However, this requires using a pre-processor like Babel and the <a href="https://babeljs.io/docs/plugins/syntax-dynamic-import/#installation">Syntax Dynamic Import Babel Plugin</a>. Here&apos;s how it would simplify the code:</p>
 <p><strong>src/index.js</strong></p>

@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/fb3db2a3c74e431069b5.css" rel="stylesheet">
+      <link href="/b1a5a733fbc1e1e1ad4e.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -115,23 +115,29 @@
 <p>This is the recommended configuration.</p>
 <blockquote class="tip"><div class="tip-content"> You can combine this configuration with the <a href="/plugins/html-webpack-plugin/">HtmlWebpackPlugin</a>, it will inject all the generated vendor chunks for you. </div></blockquote><h2 class="header"><a class="anchor" href="#optimization-splitchunks" id="optimization-splitchunks"></a><span class="text"><code>optimization.splitChunks</code></span><a class="icon-link" href="#optimization-splitchunks"></a></h2>
 <p>This configuration object represents the default behavior of the <code>SplitChunksPlugin</code>.</p>
-<pre><code class="lang-js">splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    chunks<span class="token punctuation">:</span> <span class="token string">&quot;async&quot;</span><span class="token punctuation">,</span>
-    minSize<span class="token punctuation">:</span> <span class="token number">30000</span><span class="token punctuation">,</span>
-    minChunks<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-    maxAsyncRequests<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
-    maxInitialRequests<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
-    automaticNameDelimiter<span class="token punctuation">:</span> <span class="token string">&apos;~&apos;</span><span class="token punctuation">,</span>
-    name<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    cacheGroups<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        vendors<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            test<span class="token punctuation">:</span> <span class="token regex">/[\\/]node_modules[\\/]/</span><span class="token punctuation">,</span>
-            priority<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">10</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            minChunks<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-            priority<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">20</span><span class="token punctuation">,</span>
-            reuseExistingChunk<span class="token punctuation">:</span> <span class="token boolean">true</span>
+<p><strong>webpack.config.js</strong></p>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">//...</span>
+    optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            chunks<span class="token punctuation">:</span> <span class="token string">&quot;async&quot;</span><span class="token punctuation">,</span>
+            minSize<span class="token punctuation">:</span> <span class="token number">30000</span><span class="token punctuation">,</span>
+            minChunks<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            maxAsyncRequests<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+            maxInitialRequests<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+            automaticNameDelimiter<span class="token punctuation">:</span> <span class="token string">&apos;~&apos;</span><span class="token punctuation">,</span>
+            name<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            cacheGroups<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                vendors<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    test<span class="token punctuation">:</span> <span class="token regex">/[\\/]node_modules[\\/]/</span><span class="token punctuation">,</span>
+                    priority<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">10</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    minChunks<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+                    priority<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">20</span><span class="token punctuation">,</span>
+                    reuseExistingChunk<span class="token punctuation">:</span> <span class="token boolean">true</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
@@ -143,31 +149,43 @@
 <p>Here are some examples and their effect:</p>
 <h3 class="header"><a class="anchor" href="#split-chunks-example-1" id="split-chunks-example-1"></a><span class="text">Split Chunks: Example 1</span><a class="icon-link" href="#split-chunks-example-1"></a></h3>
 <p>Create a <code>commons</code> chunk, which includes all code shared between entry points.</p>
-<pre><code class="lang-js">splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    cacheGroups<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        commons<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            name<span class="token punctuation">:</span> <span class="token string">&quot;commons&quot;</span><span class="token punctuation">,</span>
-            chunks<span class="token punctuation">:</span> <span class="token string">&quot;initial&quot;</span><span class="token punctuation">,</span>
-            minChunks<span class="token punctuation">:</span> <span class="token number">2</span>
+<p><strong>webpack.config.js</strong></p>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">//...</span>
+    optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            cacheGroups<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                commons<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    name<span class="token punctuation">:</span> <span class="token string">&quot;commons&quot;</span><span class="token punctuation">,</span>
+                    chunks<span class="token punctuation">:</span> <span class="token string">&quot;initial&quot;</span><span class="token punctuation">,</span>
+                    minChunks<span class="token punctuation">:</span> <span class="token number">2</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote class="warning"><div class="tip-content"> This configuration can enlarge your initial bundles, it is recommended to use dynamic imports when a module is not immediately needed. </div></blockquote><h3 class="header"><a class="anchor" href="#split-chunks-example-2" id="split-chunks-example-2"></a><span class="text">Split Chunks: Example 2</span><a class="icon-link" href="#split-chunks-example-2"></a></h3>
 <p>Create a <code>vendors</code> chunk, which includes all code from <code>node_modules</code> in the whole application.</p>
-<pre><code class="lang-js">splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    cacheGroups<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        commons<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            test<span class="token punctuation">:</span> <span class="token regex">/[\\/]node_modules[\\/]/</span><span class="token punctuation">,</span>
-            name<span class="token punctuation">:</span> <span class="token string">&quot;vendors&quot;</span><span class="token punctuation">,</span>
-            chunks<span class="token punctuation">:</span> <span class="token string">&quot;all&quot;</span>
+<p><strong>webpack.config.js</strong></p>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">//...</span>
+    optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            cacheGroups<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                commons<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    test<span class="token punctuation">:</span> <span class="token regex">/[\\/]node_modules[\\/]/</span><span class="token punctuation">,</span>
+                    name<span class="token punctuation">:</span> <span class="token string">&quot;vendors&quot;</span><span class="token punctuation">,</span>
+                    chunks<span class="token punctuation">:</span> <span class="token string">&quot;all&quot;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote class="warning"><div class="tip-content"> This might result in a large chunk containing all external packages. It is recommended to only include your core frameworks and utilities and dynamically load the rest of the dependencies. </div></blockquote><h2 class="header"><a class="anchor" href="#optimization-runtimechunk" id="optimization-runtimechunk"></a><span class="text"><code>optimization.runtimeChunk</code></span><a class="icon-link" href="#optimization-runtimechunk"></a></h2>
 <p><a href="/configuration/optimization/#optimization-runtimechunk">optimization.runtimeChunk</a> allows to control runtime chunk generation behaviour.</p>
-</div><div><hr><h3>Further Reading</h3><ul><li><a href="https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366">webpack 4: Code Splitting, chunk graph and the splitChunks optimization</a></li></ul></div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/jeremenichelli"><img src="https://github.com/jeremenichelli.png?size=90"><span class="contributor__name"> jeremenichelli</span></a><a class="contributor" href="https://github.com/sokra"><img src="https://github.com/sokra.png?size=90"><span class="contributor__name"> sokra</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
+</div><div><hr><h3>Further Reading</h3><ul><li><a href="https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366">webpack 4: Code Splitting, chunk graph and the splitChunks optimization</a></li></ul></div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/EugeneHlushko"><img src="https://github.com/EugeneHlushko.png?size=90"><span class="contributor__name"> EugeneHlushko</span></a><a class="contributor" href="https://github.com/jeremenichelli"><img src="https://github.com/jeremenichelli.png?size=90"><span class="contributor__name"> jeremenichelli</span></a><a class="contributor" href="https://github.com/sokra"><img src="https://github.com/sokra.png?size=90"><span class="contributor__name"> sokra</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
 
     
       <script src="/b637b12707eb1c76d6a52650d450c6e6.js"></script>
