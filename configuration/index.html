@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/b1a5a733fbc1e1e1ad4e.css" rel="stylesheet">
+      <link href="/8cb42c016c4f3a384301.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -331,6 +331,13 @@ module<span class="token punctuation">.</span>exports <span class="token operato
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <a class="code-link" href="/configuration/externals">externals</a><span class="token punctuation">:</span> <span class="token punctuation">(</span>request<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token comment">/* ... */</span> <span class="token keyword">return</span> <span class="token string">&quot;commonjs &quot;</span> <span class="token operator">+</span> request <span class="token punctuation">}</span>
 </details>  <span class="token comment">// Don&apos;t follow/bundle these modules, but request them at runtime from the environment</span>
+
+  <a class="code-link" href="https://github.com/webpack-contrib/webpack-serve#options">serve</a><span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token comment">//object</span>
+    port<span class="token punctuation">:</span> <span class="token number">1337</span><span class="token punctuation">,</span>
+    content <span class="token string">&apos;./dist&apos;</span><span class="token punctuation">,</span>
+    <span class="token comment">// ...</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// lets you provide options for webpack-serve</span>
 
 <details><summary><span class="code-details-summary-span">  <a class="code-link" href="/configuration/stats">stats</a><span class="token punctuation">:</span> <span class="token string">&quot;errors-only&quot;</span><span class="token punctuation">,</span></span></summary>  <a class="code-link" href="/configuration/stats">stats</a><span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token comment">//object</span>
     assets<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
