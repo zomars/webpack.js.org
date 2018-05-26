@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/3619c96c99c34e10a8de.css" rel="stylesheet">
+      <link href="/a933d8814158a14d1cc9.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -130,7 +130,7 @@
 <p>A module can belong to multiple cache groups. The optimization will prefer the cache group with a higher <code>priority</code>. The default groups have a negative priority to allow custom groups to take higher priority (default value is <code>0</code> for custom groups).</p>
 <h4 class="header"><a class="anchor" href="#splitchunks-cachegroups-reuseexistingchunk" id="splitchunks-cachegroups-reuseexistingchunk"></a><span class="text"><code>splitChunks.cacheGroups.reuseExistingChunk</code></span><a class="icon-link" href="#splitchunks-cachegroups-reuseexistingchunk"></a></h4>
 <p><code>boolean</code></p>
-<p>Reuse existing chunks instead of creating a new one when modules match exactly.</p>
+<p>If the current chunk contains modules already split out from the main bundle, it will be reused instead of a new one being generated. This can impact the resulting file name of the chunk.</p>
 <h4 class="header"><a class="anchor" href="#splitchunks-cachegroups-test" id="splitchunks-cachegroups-test"></a><span class="text"><code>splitChunks.cacheGroups.test</code></span><a class="icon-link" href="#splitchunks-cachegroups-test"></a></h4>
 <p><code>function</code> <code>RegExp</code> <code>string</code></p>
 <p>Controls which modules are selected by this cache group. Omitting it selects all modules. It can match the absolute module resource path or chunk names. When a chunk name is matched, all modules in the chunk are selected.</p>
