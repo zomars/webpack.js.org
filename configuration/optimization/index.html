@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/a667f0a3f7de600d92d5.css" rel="stylesheet">
+      <link href="/cf99354e6b9ab30ac7be.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -56,7 +56,8 @@ It is possible to use preset mode of the plugin by providing a string value:</p>
 <li><code>multiple</code>: creates multiple runtime files for common chunks.</li>
 </ul>
 <p>By setting <code>optimization.runtimeChunk</code> to <code>object</code> it is only possible to provide the <code>name</code> property which stands for the name or name factory for the runtime chunks.</p>
-<p><strong>webpack.config.js</strong></p>
+<p>Default is <code>false</code>: each entry chunk embeds runtime.</p>
+<blockquote class="warning"><div class="tip-content"> Imported modules are initialized for each runtime chunk separately, so if you include multiple entrypoints on a page, beware of this behavior. You will probably want to set it to <code>single</code> or use another configuration that allows you to only have one runtime instance. </div></blockquote><p><strong>webpack.config.js</strong></p>
 <pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
   <span class="token comment">//...</span>
   optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
