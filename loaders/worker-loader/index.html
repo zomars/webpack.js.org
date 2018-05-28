@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/a933d8814158a14d1cc9.css" rel="stylesheet">
+      <link href="/637a4cecc18debf42219.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -255,7 +255,7 @@ self<span class="token punctuation">.</span><span class="token function">addEven
     <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 
-  <span class="token keyword">export</span> <span class="token operator">=</span> WebpackWorker<span class="token punctuation">;</span>
+  <span class="token keyword">export</span> <span class="token keyword">default</span> WebpackWorker<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p><strong>Worker.ts</strong></p>
@@ -268,7 +268,7 @@ ctx<span class="token punctuation">.</span><span class="token function">postMess
 ctx<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&quot;message&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><strong>App.ts</strong></p>
-<pre><code class="lang-typescript"><span class="token keyword">import</span> Worker <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;worker-loader!./Worker&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="lang-typescript"><span class="token keyword">import</span> Worker from <span class="token string">&quot;worker-loader!./Worker&quot;</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> worker <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Worker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
