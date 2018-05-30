@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/637a4cecc18debf42219.css" rel="stylesheet">
+      <link href="/dea04ffff5c6ebf3bda6.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -99,9 +99,9 @@ Default: <code>process.cwd()</code></p>
 <p>Specifies an filesystem path from which point <code>config-loader</code> will begin looking
 for a configuration file.</p>
 <h3 class="header"><a class="anchor" href="#require" id="require"></a><span class="text"><code>require</code></span><a class="icon-link" href="#require"></a></h3>
-<p>Type: <code>String</code>
+<p>Type: <code>String | Array[String]</code>
 Default: <code>undefined</code></p>
-<p>Specifies a compiler to use when loading modules from files containing the
+<p>Specifies compiler(s) to use when loading modules from files containing the
 configuration. For example:</p>
 <pre><code class="lang-js"><span class="token keyword">const</span> loader <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;@webpack-contrib/config-loader&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">{</span> require<span class="token punctuation">:</span> <span class="token string">&apos;ts-node/register&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
