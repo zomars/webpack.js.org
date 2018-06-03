@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/75f4f344d2b149fda030.css" rel="stylesheet">
+      <link href="/65c95c906c6aa50ff502.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -335,7 +335,7 @@
     </div><p>The lengths of <code>[hash]</code> and <code>[chunkhash]</code> can be specified using <code>[hash:16]</code> (defaults to 20). Alternatively, specify <a href="#output-hashdigestlength"><code>output.hashDigestLength</code></a> to configure the length globally.</p>
 <p>If using a function for this option, the function will be passed an object containing the substitutions in the table above.</p>
 <blockquote class="tip"><div class="tip-content"> When using the <a href="/plugins/extract-text-webpack-plugin"><code>ExtractTextWebpackPlugin</code></a>, use <code>[contenthash]</code> to obtain a hash of the extracted file (neither <code>[hash]</code> nor <code>[chunkhash]</code> work). </div></blockquote><h2 class="header"><a class="anchor" href="#output-hashdigest" id="output-hashdigest"></a><span class="text"><code>output.hashDigest</code></span><a class="icon-link" href="#output-hashdigest"></a></h2>
-<p>The encoding to use when generating the hash, defaults to <code>&apos;hex&apos;</code>. All encodings from Node.JS&apos; <a href="https://nodejs.org/api/crypto.html#crypto_hash_digest_encoding"><code>hash.digest</code></a> are supported.</p>
+<p>The encoding to use when generating the hash, defaults to <code>&apos;hex&apos;</code>. All encodings from Node.JS&apos; <a href="https://nodejs.org/api/crypto.html#crypto_hash_digest_encoding"><code>hash.digest</code></a> are supported. Using <code>&apos;base64&apos;</code> for filenames might be problematic since it has the character <code>/</code> in its alphabet. Likewise <code>&apos;latin1&apos;</code> could contain any character.</p>
 <h2 class="header"><a class="anchor" href="#output-hashdigestlength" id="output-hashdigestlength"></a><span class="text"><code>output.hashDigestLength</code></span><a class="icon-link" href="#output-hashdigestlength"></a></h2>
 <p>The prefix length of the hash digest to use, defaults to <code>20</code>.</p>
 <h2 class="header"><a class="anchor" href="#output-hashfunction" id="output-hashfunction"></a><span class="text"><code>output.hashFunction</code></span><a class="icon-link" href="#output-hashfunction"></a></h2>
