@@ -205,10 +205,10 @@
         <loc>https://webpack.js.org/contribute/writers-guide/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/contribute/writing-a-plugin/index.html</loc>
+        <loc>https://webpack.js.org/contribute/writing-a-loader/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/contribute/writing-a-loader/index.html</loc>
+        <loc>https://webpack.js.org/contribute/writing-a-plugin/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/development/how-to-write-a-loader/index.html</loc>
@@ -362,6 +362,9 @@
     </url>
     <url>
         <loc>https://webpack.js.org/loaders/i18n-loader/index.html</loc>
+    </url>
+    <url>
+        <loc>https://webpack.js.org/loaders/imports-loader/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/loaders/istanbul-instrumenter-loader/index.html</loc>
@@ -539,9 +542,6 @@
     </url>
     <url>
         <loc>https://webpack.js.org/plugins/source-map-dev-tool-plugin/index.html</loc>
-    </url>
-    <url>
-        <loc>https://webpack.js.org/loaders/imports-loader/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/plugins/split-chunks-plugin/index.html</loc>

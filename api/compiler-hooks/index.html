@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/6f2c3d54563cc35aa64d.css" rel="stylesheet">
+      <link href="/4eb011cdac2fa39f1265.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -24,7 +24,8 @@ with all the options passed through the <a href="/api/cli">CLI</a> or <a href="/
 are first registered on the <code>Compiler</code>.</p>
 <blockquote class="tip"><div class="tip-content"> This module is exposed as <code>webpack.Compiler</code> and can be used directly.See
 <a href="https://github.com/pksjce/webpack-internal-examples/tree/master/compiler-example">this example</a>
-for more information. </div></blockquote><h2 class="header"><a class="anchor" href="#watching" id="watching"></a><span class="text">Watching</span><a class="icon-link" href="#watching"></a></h2>
+for more information. </div></blockquote><p>When developing a plugin for webpack, you might want to know where each hook is called. To learn this, search for <code>hooks.&lt;hook name&gt;.call</code> across the webpack source</p>
+<h2 class="header"><a class="anchor" href="#watching" id="watching"></a><span class="text">Watching</span><a class="icon-link" href="#watching"></a></h2>
 <p>The <code>Compiler</code> supports <a href="/api/node/#watching">watching</a> which monitors the file
 system and recompiles as files change. When in watch mode, the compiler will
 emit the additional events such as <code>watchRun</code>, <code>watchClose</code>, and <code>invalid</code>.
@@ -38,9 +39,10 @@ as such:</p>
 <pre><code class="lang-js">compiler<span class="token punctuation">.</span>hooks<span class="token punctuation">.</span>someHook<span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
 </code></pre>
 <p>Depending on the hook type, <code>tapAsync</code> and <code>tapPromise</code> may also be available.</p>
+<p>For the description of hook types, see <a href="https://github.com/webpack/tapable#hook-types">the Tapable docs</a>.</p>
 <h3 class="header"><a class="anchor" href="#entryoption" id="entryoption"></a><span class="text"><code>entryOption</code></span><a class="icon-link" href="#entryoption"></a></h3>
 <p><code>SyncBailHook</code></p>
-<p>Executes a plugin after the <code>entry</code> configuration has been processed.</p>
+<p>Executes a plugin after <a href="https://webpack.js.org/configuration/entry-context/#entry">the <code>entry</code> configuration</a> from webpack options has been processed.</p>
 <h3 class="header"><a class="anchor" href="#afterplugins" id="afterplugins"></a><span class="text"><code>afterPlugins</code></span><a class="icon-link" href="#afterplugins"></a></h3>
 <p><code>SyncHook</code></p>
 <p>Runs a plugin after setting up initial set of plugins.</p>
