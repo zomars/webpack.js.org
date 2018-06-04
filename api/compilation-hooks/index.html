@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/305ae3090ac0d3d89d5b.css" rel="stylesheet">
+      <link href="/5184cdb7aa9c2c8b8904.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -268,7 +268,7 @@ Any additional chunk assets are stored in <code>compilation.additionalChunkAsset
 <p>The chunk assets have been optimized.</p>
 <p>Parameters: <code>chunks</code></p>
 <p>Here&apos;s an example plugin from <a href="https://github.com/boopathi">@boopathi</a> that outputs exactly what went into each chunk.</p>
-<pre><code class="lang-js">compilation<span class="token punctuation">.</span>hooks<span class="token punctuation">.</span>afterOptimizeChunkAssets<span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span>chunks <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+<pre><code class="lang-js">compilation<span class="token punctuation">.</span>hooks<span class="token punctuation">.</span>afterOptimizeChunkAssets<span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span><span class="token string">&apos;MyPlugin&apos;</span><span class="token punctuation">,</span> chunks <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
   chunks<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>chunk <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
       id<span class="token punctuation">:</span> chunk<span class="token punctuation">.</span>id<span class="token punctuation">,</span>

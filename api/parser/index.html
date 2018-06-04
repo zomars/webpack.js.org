@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/305ae3090ac0d3d89d5b.css" rel="stylesheet">
+      <link href="/5184cdb7aa9c2c8b8904.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -24,8 +24,8 @@ extends <code>tapable</code> and provides a variety of <code>tapable</code> hook
 plugin authors to customize the parsing process.</p>
 <p>The <code>parser</code> is found within <a href="/api/compiler-hooks/#normalmodulefactory">module factories</a> and therefore takes little
 more work to access:</p>
-<pre><code class="lang-js">compiler<span class="token punctuation">.</span>hooks<span class="token punctuation">.</span>normalModuleFactory<span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span>factory <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
-  factory<span class="token punctuation">.</span>hooks<span class="token punctuation">.</span>parser<span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span><span class="token punctuation">(</span>parser<span class="token punctuation">,</span> options<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+<pre><code class="lang-js">compiler<span class="token punctuation">.</span>hooks<span class="token punctuation">.</span>normalModuleFactory<span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span><span class="token string">&apos;MyPlugin&apos;</span><span class="token punctuation">,</span> factory <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  factory<span class="token punctuation">.</span>hooks<span class="token punctuation">.</span>parser<span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span><span class="token string">&apos;MyPlugin&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>parser<span class="token punctuation">,</span> options<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
     parser<span class="token punctuation">.</span>hooks<span class="token punctuation">.</span>someHook<span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
