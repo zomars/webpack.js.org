@@ -571,6 +571,9 @@
         <loc>https://webpack.js.org/api/plugins/compiler/index.html</loc>
     </url>
     <url>
+        <loc>https://webpack.js.org/api/plugins/module-factories/index.html</loc>
+    </url>
+    <url>
         <loc>https://webpack.js.org/api/plugins/parser/index.html</loc>
     </url>
     <url>
@@ -581,8 +584,5 @@
     </url>
     <url>
         <loc>https://webpack.js.org/api/plugins/template/index.html</loc>
-    </url>
-    <url>
-        <loc>https://webpack.js.org/api/plugins/module-factories/index.html</loc>
     </url>
 </urlset>
