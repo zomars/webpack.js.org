@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/c4094678c4ab8264f4ba.css" rel="stylesheet">
+      <link href="/65a9d43de9e2480bf50c.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -35,26 +35,31 @@
 <p>For developers that want to have more control over this functionality, webpack provides a set of options to better fit your needs. If you&apos;re changing the configuration, it&apos;s a good idea to measure the impact of your changes to ensure there&apos;s a real benefit.</p>
 <blockquote class="warning"><div class="tip-content"> Default configuration was chosen to fit web performance best practices but the optimum strategy for your project might defer depending on the nature of it. </div></blockquote><h2 class="header"><a class="anchor" href="#optimization-splitchunks" id="optimization-splitchunks"></a><span class="text"><code>optimization.splitChunks</code></span><a class="icon-link" href="#optimization-splitchunks"></a></h2>
 <p>This configuration object represents the default behavior of the <code>SplitChunksPlugin</code>.</p>
-<pre><code class="lang-js">splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    chunks<span class="token punctuation">:</span> <span class="token string">&quot;async&quot;</span><span class="token punctuation">,</span>
-    minSize<span class="token punctuation">:</span> <span class="token number">30000</span><span class="token punctuation">,</span>
-    minChunks<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-    maxAsyncRequests<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
-    maxInitialRequests<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
-    automaticNameDelimiter<span class="token punctuation">:</span> <span class="token string">&apos;~&apos;</span><span class="token punctuation">,</span>
-    name<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    cacheGroups<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      chunks<span class="token punctuation">:</span> <span class="token string">&apos;async&apos;</span><span class="token punctuation">,</span>
+      minSize<span class="token punctuation">:</span> <span class="token number">30000</span><span class="token punctuation">,</span>
+      minChunks<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      maxAsyncRequests<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+      maxInitialRequests<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      automaticNameDelimiter<span class="token punctuation">:</span> <span class="token string">&apos;~&apos;</span><span class="token punctuation">,</span>
+      name<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      cacheGroups<span class="token punctuation">:</span> <span class="token punctuation">{</span>
         vendors<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            test<span class="token punctuation">:</span> <span class="token regex">/[\\/]node_modules[\\/]/</span><span class="token punctuation">,</span>
-            priority<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">10</span>
+          test<span class="token punctuation">:</span> <span class="token regex">/[\\/]node_modules[\\/]/</span><span class="token punctuation">,</span>
+          priority<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">10</span>
         <span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            minChunks<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-            priority<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">20</span><span class="token punctuation">,</span>
-            reuseExistingChunk<span class="token punctuation">:</span> <span class="token boolean">true</span>
+          minChunks<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+          priority<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">20</span><span class="token punctuation">,</span>
+          reuseExistingChunk<span class="token punctuation">:</span> <span class="token boolean">true</span>
         <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <h3 class="header"><a class="anchor" href="#splitchunks-automaticnamedelimiter" id="splitchunks-automaticnamedelimiter"></a><span class="text"><code>splitChunks.automaticNameDelimiter</code></span><a class="icon-link" href="#splitchunks-automaticnamedelimiter"></a></h3>
 <p><code>string</code></p>
@@ -63,27 +68,27 @@
 <p><code>function</code> <code>string</code></p>
 <p>This indicates which chunks will be selected for optimization. If a string is provided, possible values are <code>all</code>, <code>async</code>, and <code>initial</code>. Providing <code>all</code> can be particularly powerful because it means that chunks can be shared even between async and non-async chunks.</p>
 <pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token comment">//...</span>
-    optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            <span class="token comment">// include all types of chunks</span>
-            chunks<span class="token punctuation">:</span> <span class="token string">&quot;all&quot;</span>
-        <span class="token punctuation">}</span>
+  <span class="token comment">//...</span>
+  optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// include all types of chunks</span>
+      chunks<span class="token punctuation">:</span> <span class="token string">&apos;all&apos;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Alternatively, you can provide a function for more control. The return value will indicate whether to include each chunk.</p>
 <pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token comment">//...</span>
-    optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            chunks <span class="token punctuation">(</span>chunk<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token comment">// exclude `my-excluded-chunk`</span>
-                <span class="token keyword">return</span> chunk<span class="token punctuation">.</span>name <span class="token operator">!==</span> <span class="token string">&quot;my-excluded-chunk&quot;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
+  <span class="token comment">//...</span>
+  optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      chunks <span class="token punctuation">(</span>chunk<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// exclude `my-excluded-chunk`</span>
+        <span class="token keyword">return</span> chunk<span class="token punctuation">.</span>name <span class="token operator">!==</span> <span class="token string">&apos;my-excluded-chunk&apos;</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <blockquote class="tip"><div class="tip-content"> You can combine this configuration with the <a href="/plugins/html-webpack-plugin/">HtmlWebpackPlugin</a>. It will inject all the generated vendor chunks for you. </div></blockquote><h3 class="header"><a class="anchor" href="#splitchunks-maxasyncrequests" id="splitchunks-maxasyncrequests"></a><span class="text"><code>splitChunks.maxAsyncRequests</code></span><a class="icon-link" href="#splitchunks-maxasyncrequests"></a></h3>
 <p><code>number</code></p>
@@ -101,29 +106,29 @@
 <p><code>boolean: true</code> <code>function</code> <code>string</code></p>
 <p>The name of the split chunk. Providing <code>true</code> will automatically generate a name based on chunks and cache group key. Providing a string or function will allow you to use a custom name. If the name matches an entry point name, the entry point will be removed.</p>
 <pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token comment">//...</span>
-    optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            name <span class="token punctuation">(</span>module<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token comment">// generate a chunk name...</span>
-                <span class="token keyword">return</span> <span class="token comment">//...</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
+  <span class="token comment">//...</span>
+  optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      name <span class="token punctuation">(</span>module<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// generate a chunk name...</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span> <span class="token comment">//...</span>
+      <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <blockquote class="warning"><div class="tip-content"> When assigning equal names to different split chunks, all vendor modules are placed into a single shared chunk, though it&apos;s not recommend since it can result in more code downloaded. </div></blockquote><h3 class="header"><a class="anchor" href="#splitchunks-cachegroups" id="splitchunks-cachegroups"></a><span class="text"><code>splitChunks.cacheGroups</code></span><a class="icon-link" href="#splitchunks-cachegroups"></a></h3>
 <p>Cache groups can inherit and/or override any options from <code>splitChunks.*</code>; but <code>test</code>, <code>priority</code> and <code>reuseExistingChunk</code> can only be configured on cache group level. To disable any of the default cache groups, set them to <code>false</code>.</p>
 <pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token comment">//...</span>
-    optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            cacheGroups<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-                <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token boolean">false</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
+  <span class="token comment">//...</span>
+  optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      cacheGroups<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <h4 class="header"><a class="anchor" href="#splitchunks-cachegroups-priority" id="splitchunks-cachegroups-priority"></a><span class="text"><code>splitChunks.cacheGroups.priority</code></span><a class="icon-link" href="#splitchunks-cachegroups-priority"></a></h4>
 <p><code>number</code></p>
@@ -135,25 +140,25 @@
 <p><code>function</code> <code>RegExp</code> <code>string</code></p>
 <p>Controls which modules are selected by this cache group. Omitting it selects all modules. It can match the absolute module resource path or chunk names. When a chunk name is matched, all modules in the chunk are selected.</p>
 <pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token comment">//...</span>
-    optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            test <span class="token punctuation">(</span>chunks<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token comment">//...</span>
-                <span class="token keyword">return</span> <span class="token boolean">true</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
+  <span class="token comment">//...</span>
+  optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      test <span class="token punctuation">(</span>chunks<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//...</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 class="header"><a class="anchor" href="#examples" id="examples"></a><span class="text">Examples</span><a class="icon-link" href="#examples"></a></h2>
 <h3 class="header"><a class="anchor" href="#defaults-example-1" id="defaults-example-1"></a><span class="text">Defaults: Example 1</span><a class="icon-link" href="#defaults-example-1"></a></h3>
 <pre><code class="lang-js"><span class="token comment">// index.js</span>
 
-<span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">&quot;./a&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// dynamic import</span>
+<span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">&apos;./a&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// dynamic import</span>
 </code></pre>
 <pre><code class="lang-js"><span class="token comment">// a.js</span>
-<span class="token keyword">import</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
 
 <span class="token comment">//...</span>
 </code></pre>
@@ -170,17 +175,17 @@
 <pre><code class="lang-js"><span class="token comment">// entry.js</span>
 
 <span class="token comment">// dynamic imports</span>
-<span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">&quot;./a&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">&quot;./b&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">&apos;./a&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">&apos;./b&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <pre><code class="lang-js"><span class="token comment">// a.js</span>
-<span class="token keyword">import</span> <span class="token string">&quot;./helpers&quot;</span><span class="token punctuation">;</span> <span class="token comment">// helpers is 40kb in size</span>
+<span class="token keyword">import</span> <span class="token string">&apos;./helpers&apos;</span><span class="token punctuation">;</span> <span class="token comment">// helpers is 40kb in size</span>
 
 <span class="token comment">//...</span>
 </code></pre>
 <pre><code class="lang-js"><span class="token comment">// b.js</span>
-<span class="token keyword">import</span> <span class="token string">&quot;./helpers&quot;</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token string">&quot;./more-helpers&quot;</span><span class="token punctuation">;</span> <span class="token comment">// more-helpers is also 40kb in size</span>
+<span class="token keyword">import</span> <span class="token string">&apos;./helpers&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&apos;./more-helpers&apos;</span><span class="token punctuation">;</span> <span class="token comment">// more-helpers is also 40kb in size</span>
 
 <span class="token comment">//...</span>
 </code></pre>
@@ -197,39 +202,39 @@
 <p>Create a <code>commons</code> chunk, which includes all code shared between entry points.</p>
 <p><strong>webpack.config.js</strong></p>
 <pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token comment">//...</span>
-    optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            cacheGroups<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-                commons<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-                    name<span class="token punctuation">:</span> <span class="token string">&quot;commons&quot;</span><span class="token punctuation">,</span>
-                    chunks<span class="token punctuation">:</span> <span class="token string">&quot;initial&quot;</span><span class="token punctuation">,</span>
-                    minChunks<span class="token punctuation">:</span> <span class="token number">2</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
+  <span class="token comment">//...</span>
+  optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      cacheGroups<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        commons<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          name<span class="token punctuation">:</span> <span class="token string">&apos;commons&apos;</span><span class="token punctuation">,</span>
+          chunks<span class="token punctuation">:</span> <span class="token string">&apos;initial&apos;</span><span class="token punctuation">,</span>
+          minChunks<span class="token punctuation">:</span> <span class="token number">2</span>
         <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <blockquote class="warning"><div class="tip-content"> This configuration can enlarge your initial bundles, it is recommended to use dynamic imports when a module is not immediately needed. </div></blockquote><h3 class="header"><a class="anchor" href="#split-chunks-example-2" id="split-chunks-example-2"></a><span class="text">Split Chunks: Example 2</span><a class="icon-link" href="#split-chunks-example-2"></a></h3>
 <p>Create a <code>vendors</code> chunk, which includes all code from <code>node_modules</code> in the whole application.</p>
 <p><strong>webpack.config.js</strong></p>
 <pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token comment">//...</span>
-    optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            cacheGroups<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-                commons<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-                    test<span class="token punctuation">:</span> <span class="token regex">/[\\/]node_modules[\\/]/</span><span class="token punctuation">,</span>
-                    name<span class="token punctuation">:</span> <span class="token string">&quot;vendors&quot;</span><span class="token punctuation">,</span>
-                    chunks<span class="token punctuation">:</span> <span class="token string">&quot;all&quot;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
+  <span class="token comment">//...</span>
+  optimization<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    splitChunks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      cacheGroups<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        commons<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          test<span class="token punctuation">:</span> <span class="token regex">/[\\/]node_modules[\\/]/</span><span class="token punctuation">,</span>
+          name<span class="token punctuation">:</span> <span class="token string">&apos;vendors&apos;</span><span class="token punctuation">,</span>
+          chunks<span class="token punctuation">:</span> <span class="token string">&apos;all&apos;</span>
         <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
-<blockquote class="warning"><div class="tip-content"> This might result in a large chunk containing all external packages. It is recommended to only include your core frameworks and utilities and dynamically load the rest of the dependencies. </div></blockquote></div><div><hr><h3>Further Reading</h3><ul><li><a href="https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366">webpack 4: Code Splitting, chunk graph and the splitChunks optimization</a></li></ul></div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/EugeneHlushko"><img src="https://github.com/EugeneHlushko.png?size=90"><span class="contributor__name"> EugeneHlushko</span></a><a class="contributor" href="https://github.com/chrisdothtml"><img src="https://github.com/chrisdothtml.png?size=90"><span class="contributor__name"> chrisdothtml</span></a><a class="contributor" href="https://github.com/jeremenichelli"><img src="https://github.com/jeremenichelli.png?size=90"><span class="contributor__name"> jeremenichelli</span></a><a class="contributor" href="https://github.com/sokra"><img src="https://github.com/sokra.png?size=90"><span class="contributor__name"> sokra</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
+<blockquote class="warning"><div class="tip-content"> This might result in a large chunk containing all external packages. It is recommended to only include your core frameworks and utilities and dynamically load the rest of the dependencies. </div></blockquote></div><div><hr><h3>Further Reading</h3><ul><li><a href="https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366">webpack 4: Code Splitting, chunk graph and the splitChunks optimization</a></li></ul></div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/EugeneHlushko"><img src="https://github.com/EugeneHlushko.png?size=90"><span class="contributor__name"> EugeneHlushko</span></a><a class="contributor" href="https://github.com/byzyk"><img src="https://github.com/byzyk.png?size=90"><span class="contributor__name"> byzyk</span></a><a class="contributor" href="https://github.com/chrisdothtml"><img src="https://github.com/chrisdothtml.png?size=90"><span class="contributor__name"> chrisdothtml</span></a><a class="contributor" href="https://github.com/jeremenichelli"><img src="https://github.com/jeremenichelli.png?size=90"><span class="contributor__name"> jeremenichelli</span></a><a class="contributor" href="https://github.com/sokra"><img src="https://github.com/sokra.png?size=90"><span class="contributor__name"> sokra</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
 
     
       <script src="/f863da1d250f8e90add1749b89db26b7.js"></script>

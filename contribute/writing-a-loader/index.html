@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/c4094678c4ab8264f4ba.css" rel="stylesheet">
+      <link href="/65a9d43de9e2480bf50c.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -23,24 +23,34 @@
 <p>Before we dig into the different types of loaders, their usage, and examples, let&apos;s take a look at the three ways you can develop and test a loader locally.</p>
 <p>To test a single loader, you can simply use <code>path</code> to <code>resolve</code> a local file within a rule object:</p>
 <p><strong>webpack.config.js</strong></p>
-<pre><code class="lang-js"><span class="token punctuation">{</span>
-  test<span class="token punctuation">:</span> <span class="token regex">/\.js$/</span>
-  use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>
-      loader<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&apos;path/to/loader.js&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-      options<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token comment">/* ... */</span><span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/\.js$/</span><span class="token punctuation">,</span>
+        use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            loader<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&apos;path/to/loader.js&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            options<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token comment">/* ... */</span><span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>To test multiple, you can utilize the <code>resolveLoader.modules</code> configuration to update where webpack will search for loaders. For example, if you had a local <code>/loaders</code> directory in your project:</p>
 <p><strong>webpack.config.js</strong></p>
-<pre><code class="lang-js">resolveLoader<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-  modules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-    <span class="token string">&apos;node_modules&apos;</span><span class="token punctuation">,</span>
-    path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;loaders&apos;</span><span class="token punctuation">)</span>
-  <span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  resolveLoader<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    modules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&apos;node_modules&apos;</span><span class="token punctuation">,</span>
+      path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;loaders&apos;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Last but not least, if you&apos;ve already created a separate repository and package for your loader, you could <a href="https://docs.npmjs.com/cli/link"><code>npm link</code></a> it to the project in which you&apos;d like to test it out.</p>
 <h2 class="header"><a class="anchor" href="#simple-usage" id="simple-usage"></a><span class="text">Simple Usage</span><a class="icon-link" href="#simple-usage"></a></h2>
@@ -56,13 +66,20 @@
 </ul>
 <p>So, in the following example, the <code>foo-loader</code> would be passed the raw resource and the <code>bar-loader</code> would receive the output of the <code>foo-loader</code> and return the final transformed module and a source map if necessary.</p>
 <p><strong>webpack.config.js</strong></p>
-<pre><code class="lang-js"><span class="token punctuation">{</span>
-  test<span class="token punctuation">:</span> <span class="token regex">/\.js/</span><span class="token punctuation">,</span>
-  use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-    <span class="token string">&apos;bar-loader&apos;</span><span class="token punctuation">,</span>
-    <span class="token string">&apos;foo-loader&apos;</span>
-  <span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/\.js/</span><span class="token punctuation">,</span>
+        use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&apos;bar-loader&apos;</span><span class="token punctuation">,</span>
+          <span class="token string">&apos;foo-loader&apos;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 class="header"><a class="anchor" href="#guidelines" id="guidelines"></a><span class="text">Guidelines</span><a class="icon-link" href="#guidelines"></a></h2>
 <p>The following guidelines should be followed when writing a loader. They are ordered in terms of importance and some only apply in certain scenarios, read the detailed sections that follow for more information.</p>
@@ -105,7 +122,7 @@
       type<span class="token punctuation">:</span> <span class="token string">&apos;string&apos;</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span>source<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token function">getOptions</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -115,7 +132,7 @@
   <span class="token comment">// Apply some transformations to the source...</span>
 
   <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`export default </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>source<span class="token punctuation">)</span> <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 class="header"><a class="anchor" href="#loader-dependencies" id="loader-dependencies"></a><span class="text">Loader Dependencies</span><a class="icon-link" href="#loader-dependencies"></a></h3>
 <p>If a loader uses external resources (i.e. by reading from filesystem), they <strong>must</strong> indicate it. This information is used to invalidate cacheable loaders and recompile in watch mode. Here&apos;s a brief example of how to accomplish this using the <code>addDependency</code> method:</p>
@@ -130,9 +147,9 @@
 
   fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>headerPath<span class="token punctuation">,</span> <span class="token string">&apos;utf-8&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> header<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">callback</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">callback</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> header <span class="token operator">+</span> <span class="token string">&quot;\n&quot;</span> <span class="token operator">+</span> source<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">callback</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> header <span class="token operator">+</span> <span class="token string">&apos;\n&apos;</span> <span class="token operator">+</span> source<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 class="header"><a class="anchor" href="#module-dependencies" id="module-dependencies"></a><span class="text">Module Dependencies</span><a class="icon-link" href="#module-dependencies"></a></h3>
 <p>Depending the type of module, there may be a different schema used to specify dependencies. In CSS for example, the <code>@import</code> and <code>url(...)</code> statements are used. These dependencies should be resolved by the module system.</p>
@@ -150,8 +167,10 @@
 <h3 class="header"><a class="anchor" href="#peer-dependencies" id="peer-dependencies"></a><span class="text">Peer Dependencies</span><a class="icon-link" href="#peer-dependencies"></a></h3>
 <p>If the loader you&apos;re working on is a simple wrapper around another package, then you should include the package as a <code>peerDependency</code>. This approach allows the application&apos;s developer to specify the exact version in the <code>package.json</code> if desired.</p>
 <p>For instance, the <code>sass-loader</code> <a href="https://github.com/webpack-contrib/sass-loader/blob/master/package.json">specifies <code>node-sass</code></a> as peer dependency like so:</p>
-<pre><code class="lang-js"><span class="token string">&quot;peerDependencies&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-  <span class="token string">&quot;node-sass&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;^4.0.0&quot;</span>
+<pre><code class="lang-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;peerDependencies&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;node-sass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^4.0.0&quot;</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <h2 class="header"><a class="anchor" href="#testing" id="testing"></a><span class="text">Testing</span><a class="icon-link" href="#testing"></a></h2>
@@ -180,7 +199,7 @@
   source <span class="token operator">=</span> source<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\[name\]/g</span><span class="token punctuation">,</span> options<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
   <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`export default </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>source<span class="token punctuation">)</span> <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>We&apos;ll use this loader to process the following file:</p>
 <p><strong>test/example.txt</strong></p>
@@ -224,7 +243,7 @@
       <span class="token function">resolve</span><span class="token punctuation">(</span>stats<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <blockquote class="tip"><div class="tip-content"> In this case, we&apos;ve inlined our webpack configuration but you can also accept a configuration as a parameter to the exported function. This would allow you to test multiple setups using the same compiler module. </div></blockquote><p>And now, finally, we can write our test and add an npm script to run it:</p>
 <p><strong>test/loader.test.js</strong></p>
@@ -234,12 +253,14 @@
   <span class="token keyword">const</span> stats <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">compiler</span><span class="token punctuation">(</span><span class="token string">&apos;example.txt&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> output <span class="token operator">=</span> stats<span class="token punctuation">.</span><span class="token function">toJson</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>modules<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>source<span class="token punctuation">;</span>
 
-  <span class="token function">expect</span><span class="token punctuation">(</span>output<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span>`<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token string">&quot;Hey Alice!\\n&quot;</span>`<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">expect</span><span class="token punctuation">(</span>output<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">&apos;export default &quot;Hey Alice!\\n&quot;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><strong>package.json</strong></p>
-<pre><code class="lang-js"><span class="token string">&quot;scripts&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-  <span class="token string">&quot;test&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;jest&quot;</span>
+<pre><code class="lang-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;test&quot;</span><span class="token operator">:</span> <span class="token string">&quot;jest&quot;</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p>With everything in place, we can run it and see if our new loader passes the test:</p>
@@ -253,7 +274,7 @@ Time:        1.853s, estimated 2s
 Ran all <span class="token function">test</span> suites.
 </code></pre>
 <p>It worked! At this point you should be ready to start developing, testing, and deploying your own loaders. We hope that you&apos;ll share your creations with the rest of the community!</p>
-</div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/asulaiman"><img src="https://github.com/asulaiman.png?size=90"><span class="contributor__name"> asulaiman</span></a><a class="contributor" href="https://github.com/michael-ciniawsky"><img src="https://github.com/michael-ciniawsky.png?size=90"><span class="contributor__name"> michael-ciniawsky</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
+</div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/asulaiman"><img src="https://github.com/asulaiman.png?size=90"><span class="contributor__name"> asulaiman</span></a><a class="contributor" href="https://github.com/byzyk"><img src="https://github.com/byzyk.png?size=90"><span class="contributor__name"> byzyk</span></a><a class="contributor" href="https://github.com/michael-ciniawsky"><img src="https://github.com/michael-ciniawsky.png?size=90"><span class="contributor__name"> michael-ciniawsky</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
 
     
       <script src="/f279dea9a617a776f7910c3beb7be93b.js"></script>

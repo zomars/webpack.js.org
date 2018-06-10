@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/c4094678c4ab8264f4ba.css" rel="stylesheet">
+      <link href="/65a9d43de9e2480bf50c.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -61,20 +61,30 @@
 <p>By default, the resource file is converted to a UTF-8 string and passed to the loader. By setting the <code>raw</code> flag, the loader will receive the raw <code>Buffer</code>. Every loader is allowed to deliver its result as <code>String</code> or as <code>Buffer</code>. The compiler converts them between loaders.</p>
 <p><strong>raw-loader.js</strong></p>
 <pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">assert</span><span class="token punctuation">(</span>content <span class="token keyword">instanceof</span> <span class="token class-name">Buffer</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token function">someSyncOperation</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment">// return value can be a `Buffer` too</span>
-    <span class="token comment">// This is also allowed if loader is not &quot;raw&quot;</span>
+  <span class="token function">assert</span><span class="token punctuation">(</span>content <span class="token keyword">instanceof</span> <span class="token class-name">Buffer</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token function">someSyncOperation</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// return value can be a `Buffer` too</span>
+  <span class="token comment">// This is also allowed if loader is not &quot;raw&quot;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>raw <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
 </code></pre>
 <h3 class="header"><a class="anchor" href="#pitching-loader" id="pitching-loader"></a><span class="text">Pitching Loader</span><a class="icon-link" href="#pitching-loader"></a></h3>
 <p>Loaders are <strong>always</strong> called from right to left. There are some instances where the loader only cares about the <strong>metadata</strong> behind a request and can ignore the results of the previous loader. The <code>pitch</code> method on loaders is called from <strong>left to right</strong> before the loaders are actually executed (from right to left). For the following <a href="/configuration/module#rule-use"><code>use</code></a> configuration:</p>
-<pre><code class="lang-js">use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-  <span class="token string">&apos;a-loader&apos;</span><span class="token punctuation">,</span>
-  <span class="token string">&apos;b-loader&apos;</span><span class="token punctuation">,</span>
-  <span class="token string">&apos;c-loader&apos;</span>
-<span class="token punctuation">]</span>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token comment">//...</span>
+        use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&apos;a-loader&apos;</span><span class="token punctuation">,</span>
+          <span class="token string">&apos;b-loader&apos;</span><span class="token punctuation">,</span>
+          <span class="token string">&apos;c-loader&apos;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>These steps would occur:</p>
 <pre><code class="lang-diff">|- a-loader `pitch`
@@ -88,11 +98,11 @@ module<span class="token punctuation">.</span>exports<span class="token punctuat
 <p>So why might a loader take advantage of the &quot;pitching&quot; phase?</p>
 <p>First, the <code>data</code> passed to the <code>pitch</code> method is exposed in the execution phase as well under <code>this.data</code> and could be useful for capturing and sharing information from earlier in the cycle.</p>
 <pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token function">someSyncOperation</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token function">someSyncOperation</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>pitch <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>remainingRequest<span class="token punctuation">,</span> precedingRequest<span class="token punctuation">,</span> data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    data<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>
+  data<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Second, if a loader delivers a result in the <code>pitch</code> method the process turns around and skips the remaining loaders. In our example above, if the <code>b-loader</code>s <code>pitch</code> method returned something:</p>
@@ -102,7 +112,7 @@ module<span class="token punctuation">.</span>exports<span class="token punctuat
 
 module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>pitch <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>remainingRequest<span class="token punctuation">,</span> precedingRequest<span class="token punctuation">,</span> data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">someCondition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token string">&quot;module.exports = require(&quot;</span> <span class="token operator">+</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token string">&quot;-!&quot;</span> <span class="token operator">+</span> remainingRequest<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;);&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token string">&apos;module.exports = require(&apos;</span> <span class="token operator">+</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token string">&apos;-!&apos;</span> <span class="token operator">+</span> remainingRequest<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&apos;);&apos;</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
@@ -116,7 +126,7 @@ module<span class="token punctuation">.</span>exports<span class="token punctuat
 <p>The loader context represents the properties that are available inside of a loader assigned to the <code>this</code> property.</p>
 <p>Given the following example this require call is used:
 In <code>/abc/file.js</code>:</p>
-<pre><code class="lang-js"><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;./loader1?xyz!loader2!./resource?rrr&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="lang-js"><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;./loader1?xyz!loader2!./resource?rrr&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h3 class="header"><a class="anchor" href="#this-version" id="this-version"></a><span class="text"><code>this.version</code></span><a class="icon-link" href="#this-version"></a></h3>
 <p><strong>Loader API version.</strong> Currently <code>2</code>. This is useful for providing backwards compatibility. Using the version you can specify custom logic or fallbacks for breaking changes.</p>
@@ -135,6 +145,7 @@ In <code>/abc/file.js</code>:</p>
 </ol>
 <blockquote class="tip"><div class="tip-content"> Use the <a href="https://github.com/webpack/loader-utils#getoptions"><code>getOptions</code> method</a> from <code>loader-utils</code> to extract given loader options. </div></blockquote><h3 class="header"><a class="anchor" href="#this-callback" id="this-callback"></a><span class="text"><code>this.callback</code></span><a class="icon-link" href="#this-callback"></a></h3>
 <p>A function that can be called synchronously or asynchronously in order to return multiple results. The expected arguments are:</p>
+<!-- eslint-skip -->
 <pre><code class="lang-js"><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">callback</span><span class="token punctuation">(</span>
   err<span class="token punctuation">:</span> Error <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
   content<span class="token punctuation">:</span> string <span class="token operator">|</span> Buffer<span class="token punctuation">,</span>
@@ -161,23 +172,24 @@ In <code>/abc/file.js</code>:</p>
 <p>A cacheable loader must have a deterministic result, when inputs and dependencies haven&apos;t changed. This means the loader shouldn&apos;t have other dependencies than specified with <code>this.addDependency</code>.</p>
 <h3 class="header"><a class="anchor" href="#this-loaders" id="this-loaders"></a><span class="text"><code>this.loaders</code></span><a class="icon-link" href="#this-loaders"></a></h3>
 <p>An array of all the loaders. It is writeable in the pitch phase.</p>
+<!-- eslint-skip -->
 <pre><code class="lang-js">loaders <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>request<span class="token punctuation">:</span> string<span class="token punctuation">,</span> path<span class="token punctuation">:</span> string<span class="token punctuation">,</span> query<span class="token punctuation">:</span> string<span class="token punctuation">,</span> module<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
 </code></pre>
 <p>In the example:</p>
 <pre><code class="lang-js"><span class="token punctuation">[</span>
   <span class="token punctuation">{</span>
-    request<span class="token punctuation">:</span> <span class="token string">&quot;/abc/loader1.js?xyz&quot;</span><span class="token punctuation">,</span>
-    path<span class="token punctuation">:</span> <span class="token string">&quot;/abc/loader1.js&quot;</span><span class="token punctuation">,</span>
-    query<span class="token punctuation">:</span> <span class="token string">&quot;?xyz&quot;</span><span class="token punctuation">,</span>
+    request<span class="token punctuation">:</span> <span class="token string">&apos;/abc/loader1.js?xyz&apos;</span><span class="token punctuation">,</span>
+    path<span class="token punctuation">:</span> <span class="token string">&apos;/abc/loader1.js&apos;</span><span class="token punctuation">,</span>
+    query<span class="token punctuation">:</span> <span class="token string">&apos;?xyz&apos;</span><span class="token punctuation">,</span>
     module<span class="token punctuation">:</span> <span class="token punctuation">[</span>Function<span class="token punctuation">]</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">{</span>
-    request<span class="token punctuation">:</span> <span class="token string">&quot;/abc/node_modules/loader2/index.js&quot;</span><span class="token punctuation">,</span>
-    path<span class="token punctuation">:</span> <span class="token string">&quot;/abc/node_modules/loader2/index.js&quot;</span><span class="token punctuation">,</span>
-    query<span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    request<span class="token punctuation">:</span> <span class="token string">&apos;/abc/node_modules/loader2/index.js&apos;</span><span class="token punctuation">,</span>
+    path<span class="token punctuation">:</span> <span class="token string">&apos;/abc/node_modules/loader2/index.js&apos;</span><span class="token punctuation">,</span>
+    query<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
     module<span class="token punctuation">:</span> <span class="token punctuation">[</span>Function<span class="token punctuation">]</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">]</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
 </code></pre>
 <h3 class="header"><a class="anchor" href="#this-loaderindex" id="this-loaderindex"></a><span class="text"><code>this.loaderIndex</code></span><a class="icon-link" href="#this-loaderindex"></a></h3>
 <p>The index in the loaders array of the current loader.</p>
@@ -257,7 +269,7 @@ In <code>/abc/file.js</code>:</p>
 <p>Hacky access to the Compiler object of webpack.</p>
 <h3 class="header"><a class="anchor" href="#this-_module" id="this-_module"></a><span class="text"><code>this._module</code></span><a class="icon-link" href="#this-_module"></a></h3>
 <p>Hacky access to the Module object being loaded.</p>
-</div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/TheLarkInn"><img src="https://github.com/TheLarkInn.png?size=90"><span class="contributor__name"> TheLarkInn</span></a><a class="contributor" href="https://github.com/jhnns"><img src="https://github.com/jhnns.png?size=90"><span class="contributor__name"> jhnns</span></a><a class="contributor" href="https://github.com/tbroadley"><img src="https://github.com/tbroadley.png?size=90"><span class="contributor__name"> tbroadley</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
+</div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/TheLarkInn"><img src="https://github.com/TheLarkInn.png?size=90"><span class="contributor__name"> TheLarkInn</span></a><a class="contributor" href="https://github.com/byzyk"><img src="https://github.com/byzyk.png?size=90"><span class="contributor__name"> byzyk</span></a><a class="contributor" href="https://github.com/jhnns"><img src="https://github.com/jhnns.png?size=90"><span class="contributor__name"> jhnns</span></a><a class="contributor" href="https://github.com/tbroadley"><img src="https://github.com/tbroadley.png?size=90"><span class="contributor__name"> tbroadley</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
 
     
       <script src="/89027ca5066761381e7810fc17fce6e2.js"></script>

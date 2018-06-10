@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/c4094678c4ab8264f4ba.css" rel="stylesheet">
+      <link href="/65a9d43de9e2480bf50c.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -23,12 +23,15 @@
 <p><code>RegExp | [RegExp]</code></p>
 <p><code>RegExp | [RegExp] | function</code> (since webpack 3.0.0)</p>
 <p>Prevent webpack from parsing any files matching the given regular expression(s). Ignored files <strong>should not</strong> have calls to <code>import</code>, <code>require</code>, <code>define</code> or any other importing mechanism. This can boost build performance when ignoring large libraries.</p>
-<pre><code class="lang-js">noParse<span class="token punctuation">:</span> <span class="token regex">/jquery|lodash/</span>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  noParse<span class="token punctuation">:</span> <span class="token regex">/jquery|lodash/</span><span class="token punctuation">,</span>
 
-<span class="token comment">// since webpack 3.0.0</span>
-noParse<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token regex">/jquery|lodash/</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+  <span class="token comment">// since webpack 3.0.0</span>
+  noParse<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token regex">/jquery|lodash/</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 class="header"><a class="anchor" href="#module-rules" id="module-rules"></a><span class="text"><code>module.rules</code></span><a class="icon-link" href="#module-rules"></a></h2>
 <p><code>array</code></p>
@@ -76,7 +79,7 @@ noParse<span class="token punctuation">:</span> <span class="token keyword">func
 <h2 class="header"><a class="anchor" href="#rule-issuer" id="rule-issuer"></a><span class="text"><code>Rule.issuer</code></span><a class="icon-link" href="#rule-issuer"></a></h2>
 <p>A <a href="#condition"><code>Condition</code></a> to match against the module that issued the request. In the following example, the <code>issuer</code> for the <code>a.js</code> request would be the path to the <code>index.js</code> file.</p>
 <p><strong>index.js</strong></p>
-<pre><code class="lang-js"><span class="token keyword">import</span> A <span class="token keyword">from</span> <span class="token string">&apos;./a.js&apos;</span>
+<pre><code class="lang-js"><span class="token keyword">import</span> A <span class="token keyword">from</span> <span class="token string">&apos;./a.js&apos;</span><span class="token punctuation">;</span>
 </code></pre>
 <p>This option can be used to apply loaders to the dependencies of a specific module or set of modules.</p>
 <h2 class="header"><a class="anchor" href="#rule-loader" id="rule-loader"></a><span class="text"><code>Rule.loader</code></span><a class="icon-link" href="#rule-loader"></a></h2>
@@ -85,19 +88,26 @@ noParse<span class="token punctuation">:</span> <span class="token keyword">func
 <blockquote class="warning"><div class="tip-content"> This option is <strong>deprecated</strong> in favor of <code>Rule.use</code>. </div></blockquote><p><code>Rule.loaders</code> is an alias to <code>Rule.use</code>. See <a href="#rule-use"><code>Rule.use</code></a> for details.</p>
 <h2 class="header"><a class="anchor" href="#rule-oneof" id="rule-oneof"></a><span class="text"><code>Rule.oneOf</code></span><a class="icon-link" href="#rule-oneof"></a></h2>
 <p>An array of <a href="#rule"><code>Rules</code></a> from which only the first matching Rule is used when the Rule matches.</p>
-<pre><code class="lang-javascript"><span class="token punctuation">{</span>
-  test<span class="token punctuation">:</span> <span class="token regex">/.css$/</span><span class="token punctuation">,</span>
-  oneOf<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>
-      resourceQuery<span class="token punctuation">:</span> <span class="token regex">/inline/</span><span class="token punctuation">,</span> <span class="token comment">// foo.css?inline</span>
-      use<span class="token punctuation">:</span> <span class="token string">&apos;url-loader&apos;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>
-      resourceQuery<span class="token punctuation">:</span> <span class="token regex">/external/</span><span class="token punctuation">,</span> <span class="token comment">// foo.css?external</span>
-      use<span class="token punctuation">:</span> <span class="token string">&apos;file-loader&apos;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/.css$/</span><span class="token punctuation">,</span>
+        oneOf<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            resourceQuery<span class="token punctuation">:</span> <span class="token regex">/inline/</span><span class="token punctuation">,</span> <span class="token comment">// foo.css?inline</span>
+            use<span class="token punctuation">:</span> <span class="token string">&apos;url-loader&apos;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            resourceQuery<span class="token punctuation">:</span> <span class="token regex">/external/</span><span class="token punctuation">,</span> <span class="token comment">// foo.css?external</span>
+            use<span class="token punctuation">:</span> <span class="token string">&apos;file-loader&apos;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 class="header"><a class="anchor" href="#rule-options-rule-query" id="rule-options-rule-query"></a><span class="text"><code>Rule.options</code> / <code>Rule.query</code></span><a class="icon-link" href="#rule-options-rule-query"></a></h2>
 <p><code>Rule.options</code> and <code>Rule.query</code> are shortcuts to <code>Rule.use: [ { options } ]</code>. See <a href="#rule-use"><code>Rule.use</code></a> and <a href="#useentry"><code>UseEntry.options</code></a> for details.</p>
@@ -110,29 +120,46 @@ noParse<span class="token punctuation">:</span> <span class="token keyword">func
 </ul>
 <p>However, parser plugins may accept more than just a boolean. For example, the internal <code>NodeStuffPlugin</code> can accept an object instead of <code>true</code> to add additional options for a particular Rule.</p>
 <p><strong>Examples</strong> (parser options by the default plugins):</p>
-<pre><code class="lang-js">parser<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-  amd<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable AMD</span>
-  commonjs<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable CommonJS</span>
-  system<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable SystemJS</span>
-  harmony<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable ES2015 Harmony import/export</span>
-  requireInclude<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable require.include</span>
-  requireEnsure<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable require.ensure</span>
-  requireContext<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable require.context</span>
-  browserify<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable special handling of Browserify bundles</span>
-  requireJs<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable requirejs.*</span>
-  node<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable __dirname, __filename, module, require.extensions, require.main, etc.</span>
-  node<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span> <span class="token comment">// reconfigure <a class="code-link" href="/configuration/node">node</a> layer on module level</span>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token comment">//...</span>
+        parser<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          amd<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable AMD</span>
+          commonjs<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable CommonJS</span>
+          system<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable SystemJS</span>
+          harmony<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable ES2015 Harmony import/export</span>
+          requireInclude<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable require.include</span>
+          requireEnsure<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable require.ensure</span>
+          requireContext<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable require.context</span>
+          browserify<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable special handling of Browserify bundles</span>
+          requireJs<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable requirejs.*</span>
+          node<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// disable __dirname, __filename, module, require.extensions, require.main, etc.</span>
+          node<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span> <span class="token comment">// reconfigure <a class="code-link" href="/configuration/node">node</a> layer on module level</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <h2 class="header"><a class="anchor" href="#rule-resource" id="rule-resource"></a><span class="text"><code>Rule.resource</code></span><a class="icon-link" href="#rule-resource"></a></h2>
 <p>A <a href="#condition"><code>Condition</code></a> matched with the resource. You can either supply a <code>Rule.resource</code> option or use the shortcut options <code>Rule.test</code>, <code>Rule.exclude</code>, and <code>Rule.include</code>. See details in <a href="#rule-conditions"><code>Rule</code> conditions</a>.</p>
 <h2 class="header"><a class="anchor" href="#rule-resourcequery" id="rule-resourcequery"></a><span class="text"><code>Rule.resourceQuery</code></span><a class="icon-link" href="#rule-resourcequery"></a></h2>
 <p>A <a href="#condition"><code>Condition</code></a> matched with the resource query. This option is used to test against the query section of a request string (i.e. from the question mark onwards). If you were to <code>import Foo from &apos;./foo.css?inline&apos;</code>, the following condition would match:</p>
-<pre><code class="lang-js"><span class="token punctuation">{</span>
-  test<span class="token punctuation">:</span> <span class="token regex">/.css$/</span><span class="token punctuation">,</span>
-  resourceQuery<span class="token punctuation">:</span> <span class="token regex">/inline/</span><span class="token punctuation">,</span>
-  use<span class="token punctuation">:</span> <span class="token string">&apos;url-loader&apos;</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/.css$/</span><span class="token punctuation">,</span>
+        resourceQuery<span class="token punctuation">:</span> <span class="token regex">/inline/</span><span class="token punctuation">,</span>
+        use<span class="token punctuation">:</span> <span class="token string">&apos;url-loader&apos;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 class="header"><a class="anchor" href="#rule-rules" id="rule-rules"></a><span class="text"><code>Rule.rules</code></span><a class="icon-link" href="#rule-rules"></a></h2>
 <p>An array of <a href="#rule"><code>Rules</code></a> that is also used when the Rule matches.</p>
@@ -142,21 +169,31 @@ noParse<span class="token punctuation">:</span> <span class="token keyword">func
 <p>A list of <a href="#useentry">UseEntries</a> which are applied to modules. Each entry specifies a loader to be used.</p>
 <p>Passing a string (i.e. <code>use: [ &quot;style-loader&quot; ]</code>) is a shortcut to the loader property (i.e. <code>use: [ { loader: &quot;style-loader &quot;} ]</code>).</p>
 <p>Loaders can be chained by passing multiple loaders, which will be applied from right to left (last to first configured).</p>
-<pre><code class="lang-javascript">use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-  <span class="token string">&apos;style-loader&apos;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">{</span>
-    loader<span class="token punctuation">:</span> <span class="token string">&apos;css-loader&apos;</span><span class="token punctuation">,</span>
-    options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      importLoaders<span class="token punctuation">:</span> <span class="token number">1</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">{</span>
-    loader<span class="token punctuation">:</span> <span class="token string">&apos;less-loader&apos;</span><span class="token punctuation">,</span>
-    options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      noIeCompat<span class="token punctuation">:</span> <span class="token boolean">true</span>
-    <span class="token punctuation">}</span>
+<pre><code class="lang-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token comment">//...</span>
+        use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&apos;style-loader&apos;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            loader<span class="token punctuation">:</span> <span class="token string">&apos;css-loader&apos;</span><span class="token punctuation">,</span>
+            options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+              importLoaders<span class="token punctuation">:</span> <span class="token number">1</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            loader<span class="token punctuation">:</span> <span class="token string">&apos;less-loader&apos;</span><span class="token punctuation">,</span>
+            options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+              noIeCompat<span class="token punctuation">:</span> <span class="token boolean">true</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>See <a href="#useentry">UseEntry</a> for details.</p>
 <h2 class="header"><a class="anchor" href="#condition" id="condition"></a><span class="text"><code>Condition</code></span><a class="icon-link" href="#condition"></a></h2>
@@ -175,13 +212,20 @@ noParse<span class="token punctuation">:</span> <span class="token keyword">func
 <p><code>{ or: [Condition] }</code>: Any Condition must match.</p>
 <p><code>{ not: [Condition] }</code>: All Conditions must NOT match.</p>
 <p><strong>Example:</strong></p>
-<pre><code class="lang-js"><span class="token punctuation">{</span>
-  test<span class="token punctuation">:</span> <span class="token regex">/\.css$/</span><span class="token punctuation">,</span>
-  include<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-    path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;app/styles&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;vendor/styles&quot;</span><span class="token punctuation">)</span>
-  <span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/\.css$/</span><span class="token punctuation">,</span>
+        include<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;app/styles&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;vendor/styles&apos;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 class="header"><a class="anchor" href="#useentry" id="useentry"></a><span class="text"><code>UseEntry</code></span><a class="icon-link" href="#useentry"></a></h2>
 <p><code>object</code></p>
@@ -189,12 +233,19 @@ noParse<span class="token punctuation">:</span> <span class="token keyword">func
 <p>It can have an <code>options</code> property being a string or object. This value is passed to the loader, which should interpret it as loader options.</p>
 <p>For compatibility a <code>query</code> property is also possible, which is an alias for the <code>options</code> property. Use the <code>options</code> property instead.</p>
 <p><strong>Example:</strong></p>
-<pre><code class="lang-js"><span class="token punctuation">{</span>
-  loader<span class="token punctuation">:</span> <span class="token string">&quot;css-loader&quot;</span><span class="token punctuation">,</span>
-  options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    modules<span class="token punctuation">:</span> <span class="token boolean">true</span>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        loader<span class="token punctuation">:</span> <span class="token string">&apos;css-loader&apos;</span><span class="token punctuation">,</span>
+        options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          modules<span class="token punctuation">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Note that webpack needs to generate a unique module identifier from the resource and all loaders including options. It tries to do this with a <code>JSON.stringify</code> of the options object. This is fine in 99.9% of cases, but may be not unique if you apply the same loaders with different options to the resource and the options have some stringified values.</p>
 <p>It also breaks if the options object cannot be stringified (i.e. circular JSON). Because of this you can have a <code>ident</code> property in the options object which is used as unique identifier.</p>
@@ -207,20 +258,23 @@ noParse<span class="token punctuation">:</span> <span class="token keyword">func
 <p>Example for an <code>expr</code> dynamic dependency: <code>require(expr)</code>.</p>
 <p>Example for an <code>wrapped</code> dynamic dependency: <code>require(&quot;./templates/&quot; + expr)</code>.</p>
 <p>Here are the available options with their <a href="https://github.com/webpack/webpack/blob/master/lib/WebpackOptionsDefaulter.js">defaults</a>:</p>
-<pre><code class="lang-js">module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-  exprContextCritical<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  exprContextRecursive<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  exprContextRegExp<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  exprContextRequest<span class="token punctuation">:</span> <span class="token string">&quot;.&quot;</span><span class="token punctuation">,</span>
-  unknownContextCritical<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  unknownContextRecursive<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  unknownContextRegExp<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  unknownContextRequest<span class="token punctuation">:</span> <span class="token string">&quot;.&quot;</span><span class="token punctuation">,</span>
-  wrappedContextCritical<span class="token punctuation">:</span> <span class="token boolean">false</span>
-  wrappedContextRecursive<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  wrappedContextRegExp<span class="token punctuation">:</span> <span class="token regex">/.*/</span><span class="token punctuation">,</span>
-  strictExportPresence<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token comment">// since webpack 2.3.0</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    exprContextCritical<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    exprContextRecursive<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    exprContextRegExp<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    exprContextRequest<span class="token punctuation">:</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">,</span>
+    unknownContextCritical<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    unknownContextRecursive<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    unknownContextRegExp<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    unknownContextRequest<span class="token punctuation">:</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">,</span>
+    wrappedContextCritical<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    wrappedContextRecursive<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    wrappedContextRegExp<span class="token punctuation">:</span> <span class="token regex">/.*/</span><span class="token punctuation">,</span>
+    strictExportPresence<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token comment">// since webpack 2.3.0</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <blockquote class="tip"><div class="tip-content"> You can use the <code>ContextReplacementPlugin</code> to modify these values for individual dependencies. This also removes the warning. </div></blockquote><p>A few use cases:</p>
 <ul>
@@ -229,7 +283,7 @@ noParse<span class="token punctuation">:</span> <span class="token keyword">func
 <li><code>require(&quot;./templates/&quot; + expr)</code> should not include subdirectories by default: <code>wrappedContextRecursive: false</code></li>
 <li><code>strictExportPresence</code> makes missing exports an error instead of warning</li>
 </ul>
-</div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/dylanonelson"><img src="https://github.com/dylanonelson.png?size=90"><span class="contributor__name"> dylanonelson</span></a><a class="contributor" href="https://github.com/jhnns"><img src="https://github.com/jhnns.png?size=90"><span class="contributor__name"> jhnns</span></a><a class="contributor" href="https://github.com/jouni-kantola"><img src="https://github.com/jouni-kantola.png?size=90"><span class="contributor__name"> jouni-kantola</span></a><a class="contributor" href="https://github.com/skipjack"><img src="https://github.com/skipjack.png?size=90"><span class="contributor__name"> skipjack</span></a><a class="contributor" href="https://github.com/sokra"><img src="https://github.com/sokra.png?size=90"><span class="contributor__name"> sokra</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
+</div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/byzyk"><img src="https://github.com/byzyk.png?size=90"><span class="contributor__name"> byzyk</span></a><a class="contributor" href="https://github.com/dylanonelson"><img src="https://github.com/dylanonelson.png?size=90"><span class="contributor__name"> dylanonelson</span></a><a class="contributor" href="https://github.com/jhnns"><img src="https://github.com/jhnns.png?size=90"><span class="contributor__name"> jhnns</span></a><a class="contributor" href="https://github.com/jouni-kantola"><img src="https://github.com/jouni-kantola.png?size=90"><span class="contributor__name"> jouni-kantola</span></a><a class="contributor" href="https://github.com/skipjack"><img src="https://github.com/skipjack.png?size=90"><span class="contributor__name"> skipjack</span></a><a class="contributor" href="https://github.com/sokra"><img src="https://github.com/sokra.png?size=90"><span class="contributor__name"> sokra</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
 
     
       <script src="/386feff7cdbc97b89f5358778420841e.js"></script>

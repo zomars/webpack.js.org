@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/c4094678c4ab8264f4ba.css" rel="stylesheet">
+      <link href="/65a9d43de9e2480bf50c.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -22,7 +22,10 @@
 <h2 class="header"><a class="anchor" href="#context" id="context"></a><span class="text"><code>context</code></span><a class="icon-link" href="#context"></a></h2>
 <p><code>string</code></p>
 <p>The base directory, an <strong>absolute path</strong>, for resolving entry points and loaders from configuration.</p>
-<pre><code class="lang-js">context<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;app&quot;</span><span class="token punctuation">)</span>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  context<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;app&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>By default the current directory is used, but it&apos;s recommended to pass a value in your configuration. This makes your configuration independent from CWD (current working directory).</p>
 <hr>
@@ -31,22 +34,31 @@
 <p>The point or points to enter the application. At this point the application starts executing. If an array is passed all items will be executed.</p>
 <p>A dynamically loaded module is <strong>not</strong> an entry point.</p>
 <p>Simple rule: one entry point per HTML page. SPA: one entry point, MPA: multiple entry points.</p>
-<pre><code class="lang-js">entry<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-  home<span class="token punctuation">:</span> <span class="token string">&quot;./home.js&quot;</span><span class="token punctuation">,</span>
-  about<span class="token punctuation">:</span> <span class="token string">&quot;./about.js&quot;</span><span class="token punctuation">,</span>
-  contact<span class="token punctuation">:</span> <span class="token string">&quot;./contact.js&quot;</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  entry<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    home<span class="token punctuation">:</span> <span class="token string">&apos;./home.js&apos;</span><span class="token punctuation">,</span>
+    about<span class="token punctuation">:</span> <span class="token string">&apos;./about.js&apos;</span><span class="token punctuation">,</span>
+    contact<span class="token punctuation">:</span> <span class="token string">&apos;./contact.js&apos;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <h3 class="header"><a class="anchor" href="#naming" id="naming"></a><span class="text">Naming</span><a class="icon-link" href="#naming"></a></h3>
 <p>If a string or array of strings is passed, the chunk is named <code>main</code>. If an object is passed, each key is the name of a chunk, and the value describes the entrypoint for the chunk.</p>
 <h3 class="header"><a class="anchor" href="#dynamic-entry" id="dynamic-entry"></a><span class="text">Dynamic entry</span><a class="icon-link" href="#dynamic-entry"></a></h3>
-<pre><code class="lang-js">entry<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;./demo&apos;</span>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  entry<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;./demo&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>or</p>
-<pre><code class="lang-js">entry<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&apos;./demo&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;./demo2&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  entry<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&apos;./demo&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;./demo2&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>When combining with the <a href="/configuration/output#output-library"><code>output.library</code></a> option: If an array is passed only the last item is exported.</p>
-</div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/skipjack"><img src="https://github.com/skipjack.png?size=90"><span class="contributor__name"> skipjack</span></a><a class="contributor" href="https://github.com/sokra"><img src="https://github.com/sokra.png?size=90"><span class="contributor__name"> sokra</span></a><a class="contributor" href="https://github.com/tarang9211"><img src="https://github.com/tarang9211.png?size=90"><span class="contributor__name"> tarang9211</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
+</div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/byzyk"><img src="https://github.com/byzyk.png?size=90"><span class="contributor__name"> byzyk</span></a><a class="contributor" href="https://github.com/skipjack"><img src="https://github.com/skipjack.png?size=90"><span class="contributor__name"> skipjack</span></a><a class="contributor" href="https://github.com/sokra"><img src="https://github.com/sokra.png?size=90"><span class="contributor__name"> sokra</span></a><a class="contributor" href="https://github.com/tarang9211"><img src="https://github.com/tarang9211.png?size=90"><span class="contributor__name"> tarang9211</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
 
     
       <script src="/ea98145c4c9412fca3cfd742cf33fea5.js"></script>

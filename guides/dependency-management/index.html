@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/c4094678c4ab8264f4ba.css" rel="stylesheet">
+      <link href="/65a9d43de9e2480bf50c.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -30,19 +30,19 @@
 <h2 class="header"><a class="anchor" href="#require-with-expression" id="require-with-expression"></a><span class="text">require with expression</span><a class="icon-link" href="#require-with-expression"></a></h2>
 <p>A context is created if your request contains expressions, so the <strong>exact</strong> module is not known on compile time.</p>
 <p>Example:</p>
-<pre><code class="lang-javascript"><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;./template/&quot;</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">&quot;.ejs&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="lang-javascript"><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;./template/&apos;</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">&apos;.ejs&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>webpack parses the <code>require()</code> call and extracts some information:</p>
-<pre><code class="lang-diff">Directory: ./template
+<pre><code class="lang-code">Directory: ./template
 Regular expression: /^.*\.ejs$/
 </code></pre>
 <p><strong>context module</strong></p>
 <p>A context module is generated. It contains references to <strong>all modules in that directory</strong> that can be required with a request matching the regular expression. The context module contains a map which translates requests to module ids.</p>
 <p>Example:</p>
-<pre><code class="lang-javascript"><span class="token punctuation">{</span>
-    <span class="token string">&quot;./table.ejs&quot;</span><span class="token punctuation">:</span> <span class="token number">42</span><span class="token punctuation">,</span>
-    <span class="token string">&quot;./table-row.ejs&quot;</span><span class="token punctuation">:</span> <span class="token number">43</span><span class="token punctuation">,</span>
-    <span class="token string">&quot;./directory/folder.ejs&quot;</span><span class="token punctuation">:</span> <span class="token number">44</span>
+<pre><code class="lang-json"><span class="token punctuation">{</span>
+  &quot;./table.ejs&quot;<span class="token operator">:</span> <span class="token number">42</span><span class="token punctuation">,</span>
+  &quot;./table-row.ejs&quot;<span class="token operator">:</span> <span class="token number">43</span><span class="token punctuation">,</span>
+  &quot;./directory/folder.ejs&quot;<span class="token operator">:</span> <span class="token number">44</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p>The context module also contains some runtime logic to access the map.</p>
@@ -53,13 +53,13 @@ Regular expression: /^.*\.ejs$/
 too, and a regular expression to match files against.</p>
 <p>webpack parses for <code>require.context()</code> in the code while building.</p>
 <p>The syntax is as follows:</p>
-<pre><code class="lang-javascript">require<span class="token punctuation">.</span><span class="token function">context</span><span class="token punctuation">(</span>directory<span class="token punctuation">,</span> useSubdirectories <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">,</span> regExp <span class="token operator">=</span> <span class="token regex">/^\.\//</span><span class="token punctuation">)</span>
+<pre><code class="lang-javascript">require<span class="token punctuation">.</span><span class="token function">context</span><span class="token punctuation">(</span>directory<span class="token punctuation">,</span> useSubdirectories <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">,</span> regExp <span class="token operator">=</span> <span class="token regex">/^\.\//</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Examples:</p>
-<pre><code class="lang-javascript">require<span class="token punctuation">.</span><span class="token function">context</span><span class="token punctuation">(</span><span class="token string">&quot;./test&quot;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token regex">/\.test\.js$/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="lang-javascript">require<span class="token punctuation">.</span><span class="token function">context</span><span class="token punctuation">(</span><span class="token string">&apos;./test&apos;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token regex">/\.test\.js$/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// a context with files from the test directory that can be required with a request endings with `.test.js`.</span>
 </code></pre>
-<pre><code class="lang-javascript">require<span class="token punctuation">.</span><span class="token function">context</span><span class="token punctuation">(</span><span class="token string">&quot;../&quot;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token regex">/\.stories\.js$/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre><code class="lang-javascript">require<span class="token punctuation">.</span><span class="token function">context</span><span class="token punctuation">(</span><span class="token string">&apos;../&apos;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token regex">/\.stories\.js$/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// a context with all files in the parent folder and descending folders ending with `.stories.js`.</span>
 </code></pre>
 <blockquote class="warning"><div class="tip-content"> The arguments passed to <code>require.context</code> must be literals! </div></blockquote><h3 class="header"><a class="anchor" href="#context-module-api" id="context-module-api"></a><span class="text">context module API</span><a class="icon-link" href="#context-module-api"></a></h3>
@@ -88,7 +88,7 @@ too, and a regular expression to match files against.</p>
 <ul>
 <li><code>id</code> is the module id of the context module. This may be useful for <code>module.hot.accept</code>.</li>
 </ul>
-</div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/chrisVillanueva"><img src="https://github.com/chrisVillanueva.png?size=90"><span class="contributor__name"> chrisVillanueva</span></a><a class="contributor" href="https://github.com/ndelangen"><img src="https://github.com/ndelangen.png?size=90"><span class="contributor__name"> ndelangen</span></a><a class="contributor" href="https://github.com/sokra"><img src="https://github.com/sokra.png?size=90"><span class="contributor__name"> sokra</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
+</div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/byzyk"><img src="https://github.com/byzyk.png?size=90"><span class="contributor__name"> byzyk</span></a><a class="contributor" href="https://github.com/chrisVillanueva"><img src="https://github.com/chrisVillanueva.png?size=90"><span class="contributor__name"> chrisVillanueva</span></a><a class="contributor" href="https://github.com/ndelangen"><img src="https://github.com/ndelangen.png?size=90"><span class="contributor__name"> ndelangen</span></a><a class="contributor" href="https://github.com/sokra"><img src="https://github.com/sokra.png?size=90"><span class="contributor__name"> sokra</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
 
     
       <script src="/c1e8fb8fbe0cf74220a623bf66cd48b9.js"></script>

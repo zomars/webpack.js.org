@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/c4094678c4ab8264f4ba.css" rel="stylesheet">
+      <link href="/65a9d43de9e2480bf50c.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -37,8 +37,8 @@ can be customized via plugins as such:</p>
 <pre><code class="lang-js">compiler<span class="token punctuation">.</span>resolverFactory<span class="token punctuation">.</span><span class="token function">plugin</span><span class="token punctuation">(</span><span class="token string">&apos;resolver [type]&apos;</span><span class="token punctuation">,</span> resolver <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
   resolver<span class="token punctuation">.</span>hooks<span class="token punctuation">.</span>resolve<span class="token punctuation">.</span><span class="token function">tapAsync</span><span class="token punctuation">(</span><span class="token string">&apos;MyPlugin&apos;</span><span class="token punctuation">,</span> params <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
     <span class="token comment">// ...</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Where <code>[type]</code> is one of the three resolvers mention above, specified as:</p>
 <ul>

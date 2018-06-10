@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/c4094678c4ab8264f4ba.css" rel="stylesheet">
+      <link href="/65a9d43de9e2480bf50c.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -22,7 +22,10 @@
 <blockquote class="tip"><div class="tip-content"> For webpack-dev-server, this property needs to be in the <code>devServer</code> object. </div></blockquote><blockquote class="warning"><div class="tip-content"> This option does not have any effect when using the Node.js API. </div></blockquote><h2 class="header"><a class="anchor" href="#stats" id="stats"></a><span class="text"><code>stats</code></span><a class="icon-link" href="#stats"></a></h2>
 <p><code>object</code> <code>string</code></p>
 <p>There are some presets available to use as a shortcut. Use them like this:</p>
-<pre><code class="lang-js">stats<span class="token punctuation">:</span> <span class="token string">&quot;errors-only&quot;</span>
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  stats<span class="token punctuation">:</span> <span class="token string">&apos;errors-only&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 
     <div class="table">
@@ -140,130 +143,133 @@
           </div>
         </div>
     </div><p>For more granular control, it is possible to specify exactly what information you want. Please note that all of the options in this object are optional.</p>
-<pre><code class="lang-js">stats<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+<!-- eslint-skip -->
+<pre><code class="lang-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  stats<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// fallback value for stats options when an option is not defined (has precedence over local webpack defaults)</span>
+    all<span class="token punctuation">:</span> undefined<span class="token punctuation">,</span>
 
-  <span class="token comment">// fallback value for stats options when an option is not defined (has precedence over local webpack defaults)</span>
-  all<span class="token punctuation">:</span> undefined<span class="token punctuation">,</span>
+    <span class="token comment">// Add asset Information</span>
+    assets<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add asset Information</span>
-  assets<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Sort assets by a field</span>
+    <span class="token comment">// You can reverse the sort with `!field`.</span>
+    assetsSort<span class="token punctuation">:</span> <span class="token string">&quot;field&quot;</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Sort assets by a field</span>
-  <span class="token comment">// You can reverse the sort with `!field`.</span>
-  assetsSort<span class="token punctuation">:</span> <span class="token string">&quot;field&quot;</span><span class="token punctuation">,</span>
+    <span class="token comment">// Add build date and time information</span>
+    builtAt<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add build date and time information</span>
-  builtAt<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Add information about cached (not built) modules</span>
+    cached<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add information about cached (not built) modules</span>
-  cached<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Show cached assets (setting this to `false` only shows emitted files)</span>
+    cachedAssets<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Show cached assets (setting this to `false` only shows emitted files)</span>
-  cachedAssets<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Add children information</span>
+    children<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add children information</span>
-  children<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Add chunk information (setting this to `false` allows for a less verbose output)</span>
+    chunks<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add chunk information (setting this to `false` allows for a less verbose output)</span>
-  chunks<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Add built modules information to chunk information</span>
+    chunkModules<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add built modules information to chunk information</span>
-  chunkModules<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Add the origins of chunks and chunk merging info</span>
+    chunkOrigins<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add the origins of chunks and chunk merging info</span>
-  chunkOrigins<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Sort the chunks by a field</span>
+    <span class="token comment">// You can reverse the sort with `!field`. Default is `id`.</span>
+    chunksSort<span class="token punctuation">:</span> <span class="token string">&quot;field&quot;</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Sort the chunks by a field</span>
-  <span class="token comment">// You can reverse the sort with `!field`. Default is `id`.</span>
-  chunksSort<span class="token punctuation">:</span> <span class="token string">&quot;field&quot;</span><span class="token punctuation">,</span>
+    <span class="token comment">// Context directory for request shortening</span>
+    context<span class="token punctuation">:</span> <span class="token string">&quot;../src/&quot;</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Context directory for request shortening</span>
-  context<span class="token punctuation">:</span> <span class="token string">&quot;../src/&quot;</span><span class="token punctuation">,</span>
+    <span class="token comment">// `webpack --colors` equivalent</span>
+    colors<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// `webpack --colors` equivalent</span>
-  colors<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token comment">// Display the distance from the entry point for each module</span>
+    depth<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Display the distance from the entry point for each module</span>
-  depth<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token comment">// Display the entry points with the corresponding bundles</span>
+    entrypoints<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Display the entry points with the corresponding bundles</span>
-  entrypoints<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token comment">// Add --env information</span>
+    env<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add --env information</span>
-  env<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token comment">// Add errors</span>
+    errors<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add errors</span>
-  errors<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Add details to errors (like resolving log)</span>
+    errorDetails<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add details to errors (like resolving log)</span>
-  errorDetails<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Exclude assets from being displayed in stats</span>
+    <span class="token comment">// This can be done with a String, a RegExp, a Function getting the assets name</span>
+    <span class="token comment">// and returning a boolean or an Array of the above.</span>
+    excludeAssets<span class="token punctuation">:</span> <span class="token string">&quot;filter&quot;</span> <span class="token operator">|</span> <span class="token operator">/</span>filter<span class="token operator">/</span> <span class="token operator">|</span> <span class="token punctuation">(</span>assetName<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">true</span> <span class="token operator">|</span> <span class="token boolean">false</span> <span class="token operator">|</span>
+      <span class="token punctuation">[</span><span class="token string">&quot;filter&quot;</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token operator">/</span>filter<span class="token operator">/</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>assetName<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">true</span><span class="token operator">|</span><span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Exclude assets from being displayed in stats</span>
-  <span class="token comment">// This can be done with a String, a RegExp, a Function getting the assets name</span>
-  <span class="token comment">// and returning a boolean or an Array of the above.</span>
-  excludeAssets<span class="token punctuation">:</span> <span class="token string">&quot;filter&quot;</span> <span class="token operator">|</span> <span class="token operator">/</span>filter<span class="token operator">/</span> <span class="token operator">|</span> <span class="token punctuation">(</span>assetName<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token operator">|</span><span class="token boolean">false</span> <span class="token operator">|</span>
-    <span class="token punctuation">[</span><span class="token string">&quot;filter&quot;</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token operator">/</span>filter<span class="token operator">/</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>assetName<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token operator">|</span><span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token comment">// Exclude modules from being displayed in stats</span>
+    <span class="token comment">// This can be done with a String, a RegExp, a Function getting the modules source</span>
+    <span class="token comment">// and returning a boolean or an Array of the above.</span>
+    excludeModules<span class="token punctuation">:</span> <span class="token string">&quot;filter&quot;</span> <span class="token operator">|</span> <span class="token operator">/</span>filter<span class="token operator">/</span> <span class="token operator">|</span> <span class="token punctuation">(</span>moduleSource<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">true</span> <span class="token operator">|</span> <span class="token boolean">false</span> <span class="token operator">|</span>
+      <span class="token punctuation">[</span><span class="token string">&quot;filter&quot;</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token operator">/</span>filter<span class="token operator">/</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>moduleSource<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">true</span><span class="token operator">|</span><span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Exclude modules from being displayed in stats</span>
-  <span class="token comment">// This can be done with a String, a RegExp, a Function getting the modules source</span>
-  <span class="token comment">// and returning a boolean or an Array of the above.</span>
-  excludeModules<span class="token punctuation">:</span> <span class="token string">&quot;filter&quot;</span> <span class="token operator">|</span> <span class="token operator">/</span>filter<span class="token operator">/</span> <span class="token operator">|</span> <span class="token punctuation">(</span>moduleSource<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token operator">|</span><span class="token boolean">false</span> <span class="token operator">|</span>
-    <span class="token punctuation">[</span><span class="token string">&quot;filter&quot;</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token operator">/</span>filter<span class="token operator">/</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>moduleSource<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token operator">|</span><span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token comment">// See excludeModules</span>
+    exclude<span class="token punctuation">:</span> <span class="token string">&quot;filter&quot;</span> <span class="token operator">|</span> <span class="token operator">/</span>filter<span class="token operator">/</span> <span class="token operator">|</span> <span class="token punctuation">(</span>moduleSource<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">true</span> <span class="token operator">|</span> <span class="token boolean">false</span> <span class="token operator">|</span>
+      <span class="token punctuation">[</span><span class="token string">&quot;filter&quot;</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token operator">/</span>filter<span class="token operator">/</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>moduleSource<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">true</span><span class="token operator">|</span><span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// See excludeModules</span>
-  exclude<span class="token punctuation">:</span> <span class="token string">&quot;filter&quot;</span> <span class="token operator">|</span> <span class="token operator">/</span>filter<span class="token operator">/</span> <span class="token operator">|</span> <span class="token punctuation">(</span>moduleSource<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token operator">|</span><span class="token boolean">false</span> <span class="token operator">|</span>
-    <span class="token punctuation">[</span><span class="token string">&quot;filter&quot;</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token operator">/</span>filter<span class="token operator">/</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>moduleSource<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token operator">|</span><span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token comment">// Add the hash of the compilation</span>
+    hash<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add the hash of the compilation</span>
-  hash<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Set the maximum number of modules to be shown</span>
+    maxModules<span class="token punctuation">:</span> <span class="token number">15</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Set the maximum number of modules to be shown</span>
-  maxModules<span class="token punctuation">:</span> <span class="token number">15</span><span class="token punctuation">,</span>
+    <span class="token comment">// Add built modules information</span>
+    modules<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add built modules information</span>
-  modules<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Sort the modules by a field</span>
+    <span class="token comment">// You can reverse the sort with `!field`. Default is `id`.</span>
+    modulesSort<span class="token punctuation">:</span> <span class="token string">&quot;field&quot;</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Sort the modules by a field</span>
-  <span class="token comment">// You can reverse the sort with `!field`. Default is `id`.</span>
-  modulesSort<span class="token punctuation">:</span> <span class="token string">&quot;field&quot;</span><span class="token punctuation">,</span>
+    <span class="token comment">// Show dependencies and origin of warnings/errors (since webpack 2.5.0)</span>
+    moduleTrace<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Show dependencies and origin of warnings/errors (since webpack 2.5.0)</span>
-  moduleTrace<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Show performance hint when file size exceeds `performance.maxAssetSize`</span>
+    performance<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Show performance hint when file size exceeds `performance.maxAssetSize`</span>
-  performance<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Show the exports of the modules</span>
+    providedExports<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Show the exports of the modules</span>
-  providedExports<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token comment">// Add public path information</span>
+    publicPath<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add public path information</span>
-  publicPath<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Add information about the reasons why modules are included</span>
+    reasons<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add information about the reasons why modules are included</span>
-  reasons<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Add the source code of modules</span>
+    source<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add the source code of modules</span>
-  source<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Add timing information</span>
+    timings<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add timing information</span>
-  timings<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Show which exports of a module are used</span>
+    usedExports<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Show which exports of a module are used</span>
-  usedExports<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token comment">// Add webpack version information</span>
+    version<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add webpack version information</span>
-  version<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Add warnings</span>
+    warnings<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
-  <span class="token comment">// Add warnings</span>
-  warnings<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-
-  <span class="token comment">// Filter warnings to be shown (since webpack 2.4.0),</span>
-  <span class="token comment">// can be a String, Regexp, a function getting the warning and returning a boolean</span>
-  <span class="token comment">// or an Array of a combination of the above. First match wins.</span>
-  warningsFilter<span class="token punctuation">:</span> <span class="token string">&quot;filter&quot;</span> <span class="token operator">|</span> <span class="token operator">/</span>filter<span class="token operator">/</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token string">&quot;filter&quot;</span><span class="token punctuation">,</span> <span class="token operator">/</span>filter<span class="token operator">/</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">(</span>warning<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token operator">|</span><span class="token boolean">false</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token comment">// Filter warnings to be shown (since webpack 2.4.0),</span>
+    <span class="token comment">// can be a String, Regexp, a function getting the warning and returning a boolean</span>
+    <span class="token comment">// or an Array of a combination of the above. First match wins.</span>
+    warningsFilter<span class="token punctuation">:</span> <span class="token string">&quot;filter&quot;</span> <span class="token operator">|</span> <span class="token operator">/</span>filter<span class="token operator">/</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token string">&quot;filter&quot;</span><span class="token punctuation">,</span> <span class="token operator">/</span>filter<span class="token operator">/</span><span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">(</span>warning<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">true</span><span class="token operator">|</span><span class="token boolean">false</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
-</div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/SpaceK33z"><img src="https://github.com/SpaceK33z.png?size=90"><span class="contributor__name"> SpaceK33z</span></a><a class="contributor" href="https://github.com/jasonblanchard"><img src="https://github.com/jasonblanchard.png?size=90"><span class="contributor__name"> jasonblanchard</span></a><a class="contributor" href="https://github.com/jungomi"><img src="https://github.com/jungomi.png?size=90"><span class="contributor__name"> jungomi</span></a><a class="contributor" href="https://github.com/ldrick"><img src="https://github.com/ldrick.png?size=90"><span class="contributor__name"> ldrick</span></a><a class="contributor" href="https://github.com/sallar"><img src="https://github.com/sallar.png?size=90"><span class="contributor__name"> sallar</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
+</div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/SpaceK33z"><img src="https://github.com/SpaceK33z.png?size=90"><span class="contributor__name"> SpaceK33z</span></a><a class="contributor" href="https://github.com/byzyk"><img src="https://github.com/byzyk.png?size=90"><span class="contributor__name"> byzyk</span></a><a class="contributor" href="https://github.com/jasonblanchard"><img src="https://github.com/jasonblanchard.png?size=90"><span class="contributor__name"> jasonblanchard</span></a><a class="contributor" href="https://github.com/jungomi"><img src="https://github.com/jungomi.png?size=90"><span class="contributor__name"> jungomi</span></a><a class="contributor" href="https://github.com/ldrick"><img src="https://github.com/ldrick.png?size=90"><span class="contributor__name"> ldrick</span></a><a class="contributor" href="https://github.com/sallar"><img src="https://github.com/sallar.png?size=90"><span class="contributor__name"> sallar</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
 
     
       <script src="/d47a100e6eaa1dadb355d1d19a941e25.js"></script>

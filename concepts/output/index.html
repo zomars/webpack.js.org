@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/c4094678c4ab8264f4ba.css" rel="stylesheet">
+      <link href="/65a9d43de9e2480bf50c.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -26,19 +26,17 @@
 <li>An absolute <code>path</code> to your preferred output directory.</li>
 </ul>
 <p><strong>webpack.config.js</strong></p>
-<pre><code class="lang-javascript"><span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token punctuation">{</span>
+<pre><code class="lang-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
   output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
     filename<span class="token punctuation">:</span> <span class="token string">&apos;bundle.js&apos;</span><span class="token punctuation">,</span>
     path<span class="token punctuation">:</span> <span class="token string">&apos;/home/proj/public/assets&apos;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> config<span class="token punctuation">;</span>
 </code></pre>
 <p>This configuration would output a single <code>bundle.js</code> file into the <code>/home/proj/public/assets</code> directory.</p>
 <h2 class="header"><a class="anchor" href="#multiple-entry-points" id="multiple-entry-points"></a><span class="text">Multiple Entry Points</span><a class="icon-link" href="#multiple-entry-points"></a></h2>
 <p>If your configuration creates more than a single &quot;chunk&quot; (as with multiple entry points or when using plugins like CommonsChunkPlugin), you should use <a href="/configuration/output#output-filename">substitutions</a> to ensure that each file has a unique name.</p>
-<pre><code class="lang-javascript"><span class="token punctuation">{</span>
+<pre><code class="lang-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
   entry<span class="token punctuation">:</span> <span class="token punctuation">{</span>
     app<span class="token punctuation">:</span> <span class="token string">&apos;./src/app.js&apos;</span><span class="token punctuation">,</span>
     search<span class="token punctuation">:</span> <span class="token string">&apos;./src/search.js&apos;</span>
@@ -47,24 +45,27 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     filename<span class="token punctuation">:</span> <span class="token string">&apos;[name].js&apos;</span><span class="token punctuation">,</span>
     path<span class="token punctuation">:</span> __dirname <span class="token operator">+</span> <span class="token string">&apos;/dist&apos;</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 <span class="token comment">// writes to disk: ./dist/app.js, ./dist/search.js</span>
 </code></pre>
 <h2 class="header"><a class="anchor" href="#advanced" id="advanced"></a><span class="text">Advanced</span><a class="icon-link" href="#advanced"></a></h2>
 <p>Here&apos;s a more complicated example of using a CDN and hashes for assets:</p>
 <p><strong>config.js</strong></p>
-<pre><code class="lang-javascript">output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-  path<span class="token punctuation">:</span> <span class="token string">&apos;/home/proj/cdn/assets/[hash]&apos;</span><span class="token punctuation">,</span>
-  publicPath<span class="token punctuation">:</span> <span class="token string">&apos;http://cdn.example.com/assets/[hash]/&apos;</span>
-<span class="token punctuation">}</span>
+<pre><code class="lang-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    path<span class="token punctuation">:</span> <span class="token string">&apos;/home/proj/cdn/assets/[hash]&apos;</span><span class="token punctuation">,</span>
+    publicPath<span class="token punctuation">:</span> <span class="token string">&apos;http://cdn.example.com/assets/[hash]/&apos;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>In cases when the eventual <code>publicPath</code> of output files isn&apos;t known at compile time, it can be left blank and set dynamically at runtime in the entry point file. If you don&apos;t know the <code>publicPath</code> while compiling, you can omit it and set <code>__webpack_public_path__</code> on your entry point.</p>
-<pre><code class="lang-javascript">__webpack_public_path__ <span class="token operator">=</span> myRuntimePublicPath
+<pre><code class="lang-javascript">__webpack_public_path__ <span class="token operator">=</span> myRuntimePublicPath<span class="token punctuation">;</span>
 
 <span class="token comment">// rest of your application entry</span>
 </code></pre>
-</div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/TheLarkInn"><img src="https://github.com/TheLarkInn.png?size=90"><span class="contributor__name"> TheLarkInn</span></a><a class="contributor" href="https://github.com/chyipin"><img src="https://github.com/chyipin.png?size=90"><span class="contributor__name"> chyipin</span></a><a class="contributor" href="https://github.com/rouzbeh84"><img src="https://github.com/rouzbeh84.png?size=90"><span class="contributor__name"> rouzbeh84</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
+</div><div><hr><h3>Contributors</h3><div class="contributors"><div class="contributors__list"><a class="contributor" href="https://github.com/TheLarkInn"><img src="https://github.com/TheLarkInn.png?size=90"><span class="contributor__name"> TheLarkInn</span></a><a class="contributor" href="https://github.com/byzyk"><img src="https://github.com/byzyk.png?size=90"><span class="contributor__name"> byzyk</span></a><a class="contributor" href="https://github.com/chyipin"><img src="https://github.com/chyipin.png?size=90"><span class="contributor__name"> chyipin</span></a><a class="contributor" href="https://github.com/rouzbeh84"><img src="https://github.com/rouzbeh84.png?size=90"><span class="contributor__name"> rouzbeh84</span></a></div></div></div><div class="interactive" id="src/components/Gitter/Gitter.jsx" data-props="{}"><span class="gitter"><div class="gitter__button js-gitter-toggle-chat-button" style="margin-bottom:0"><i class="gitter__icon icon-gitter"></i></div></span></div></section></div><footer class="footer"><div class="container footer__inner"><section class="footer__left"><a href="/guides/getting-started/" class="footer__link">Get Started</a><a href="/organization/" class="footer__link">Organization</a><a href="/starter-kits/" class="footer__link">Starter Kits</a><a href="/comparison/" class="footer__link">Comparison</a></section><section class="footer__middle"><a href="/" class="footer__icon"><img src="/6bc5d8cf78d442a984e70195db059b69.svg" alt="webpack icon"></a></section><section class="footer__right"><a href="/glossary/" class="footer__link">Glossary</a><a href="/branding/" class="footer__link">Branding</a><a href="https://gitter.im/webpack/webpack" target="_blank" class="footer__link">Gitter</a><a href="https://github.com/webpack/webpack/releases" target="_blank" class="footer__link">Changelog</a><a href="/license" class="footer__link footer__license"><img alt="Creative Commons License" src="/c983c925f14c5a308465ce5f912be111.svg"><img alt="Creative Commons License" src="/c440e4e11ad72daf1899ca0616ddd8b8.svg"></a></section></div></footer><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46921629-2', 'auto');ga('send', 'pageview');</script></div></body></html>
 
     
       <script src="/194a2e7a208ed9b09e332025f4c66e57.js"></script>
