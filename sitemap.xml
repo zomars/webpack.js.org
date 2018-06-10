@@ -4,10 +4,10 @@
         <loc>https://webpack.js.org/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/branding/index.html</loc>
+        <loc>https://webpack.js.org/api/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/api/index.html</loc>
+        <loc>https://webpack.js.org/branding/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/comparison/index.html</loc>
@@ -133,9 +133,6 @@
         <loc>https://webpack.js.org/concepts/modules/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/concepts/output/index.html</loc>
-    </url>
-    <url>
         <loc>https://webpack.js.org/concepts/plugins/index.html</loc>
     </url>
     <url>
@@ -158,6 +155,9 @@
     </url>
     <url>
         <loc>https://webpack.js.org/configuration/externals/index.html</loc>
+    </url>
+    <url>
+        <loc>https://webpack.js.org/concepts/output/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/configuration/module/index.html</loc>
@@ -190,10 +190,10 @@
         <loc>https://webpack.js.org/configuration/target/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/contribute/debugging/index.html</loc>
+        <loc>https://webpack.js.org/configuration/watch/index.html</loc>
     </url>
     <url>
-        <loc>https://webpack.js.org/configuration/watch/index.html</loc>
+        <loc>https://webpack.js.org/contribute/debugging/index.html</loc>
     </url>
     <url>
         <loc>https://webpack.js.org/contribute/plugin-patterns/index.html</loc>
