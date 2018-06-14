@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/a5ad3ebdb919a226ca28.css" rel="stylesheet">
+      <link href="/6c2aaff1ff01240fe6fb.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -131,7 +131,7 @@ document<span class="token punctuation">.</span>body<span class="token punctuati
   &lt;/html&gt;
 </code></pre>
 <p>In this setup, <code>index.js</code> explicitly requires <code>lodash</code> to be present, and binds it as <code>_</code> (no global scope pollution). By stating what dependencies a module needs, webpack can use this information to build a dependency graph. It then uses the graph to generate an optimized bundle where scripts will be executed in the correct order.</p>
-<p>With that said, let&apos;s run <code>npx webpack</code> with our script as the <a href="/concepts/entry-points">entry point</a> and <code>bundle.js</code> as the <a href="/concepts/output">output</a>. The <code>npx</code> command, which ships with Node 8.2 or higher, runs the webpack binary (<code>./node_modules/.bin/webpack</code>) of the webpack package we installed in the beginning:</p>
+<p>With that said, let&apos;s run <code>npx webpack</code> with our script as the <a href="/concepts/entry-points">entry point</a> and <code>main.js</code> as the <a href="/concepts/output">output</a>. The <code>npx</code> command, which ships with Node 8.2 or higher, runs the webpack binary (<code>./node_modules/.bin/webpack</code>) of the webpack package we installed in the beginning:</p>
 <pre><code class="lang-bash">npx webpack
 
 Hash: dabab1bac2b940c1462b
@@ -139,8 +139,8 @@ Version: webpack 4.0.1
 Time: 3003ms
 Built at: 2018-2-26 22:42:11
     Asset      Size  Chunks             Chunk Names
-bundle.js  69.6 KiB       0  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  main
-Entrypoint main <span class="token operator">=</span> bundle.js
+main.js  69.6 KiB       0  <span class="token punctuation">[</span>emitted<span class="token punctuation">]</span>  main
+Entrypoint main <span class="token operator">=</span> main.js
    <span class="token punctuation">[</span>1<span class="token punctuation">]</span> <span class="token punctuation">(</span>webpack<span class="token punctuation">)</span>/buildin/module.js 519 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
    <span class="token punctuation">[</span>2<span class="token punctuation">]</span> <span class="token punctuation">(</span>webpack<span class="token punctuation">)</span>/buildin/global.js 509 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
    <span class="token punctuation">[</span>3<span class="token punctuation">]</span> ./src/index.js 256 bytes <span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token punctuation">[</span>built<span class="token punctuation">]</span>
@@ -152,7 +152,7 @@ The <span class="token string">&apos;mode&apos;</span> option has not been set. 
 <blockquote class="tip"><div class="tip-content"> Your output may vary a bit, but if the build is successful then you are good to go. Also, don&apos;t worry about the warning, we&apos;ll tackle that later. </div></blockquote><p>Open <code>index.html</code> in your browser and, if everything went right, you should see the following text: &apos;Hello webpack&apos;.</p>
 <h2 class="header"><a class="anchor" href="#modules" id="modules"></a><span class="text">Modules</span><a class="icon-link" href="#modules"></a></h2>
 <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import"><code>import</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export"><code>export</code></a> statements have been standardized in <a href="https://babeljs.io/learn-es2015/">ES2015</a>. Although they are not supported in most browsers yet, webpack does support them out of the box.</p>
-<p>Behind the scenes, webpack actually &quot;transpiles&quot; the code so that older browsers can also run it. If you inspect <code>dist/bundle.js</code>, you might be able to see how webpack does this, it&apos;s quite ingenious! Besides <code>import</code> and <code>export</code>, webpack supports various other module syntaxes as well, see <a href="/api/module-methods">Module API</a> for more information.</p>
+<p>Behind the scenes, webpack actually &quot;transpiles&quot; the code so that older browsers can also run it. If you inspect <code>dist/main.js</code>, you might be able to see how webpack does this, it&apos;s quite ingenious! Besides <code>import</code> and <code>export</code>, webpack supports various other module syntaxes as well, see <a href="/api/module-methods">Module API</a> for more information.</p>
 <p>Note that webpack will not alter any code other than <code>import</code> and <code>export</code> statements. If you are using other <a href="http://es6-features.org/">ES2015 features</a>, make sure to <a href="/loaders/#transpiling">use a transpiler</a> such as <a href="https://babeljs.io/">Babel</a> or <a href="https://buble.surge.sh/guide/">Bubl&#xE9;</a> via webpack&apos;s <a href="/concepts/loaders/">loader system</a>.</p>
 <h2 class="header"><a class="anchor" href="#using-a-configuration" id="using-a-configuration"></a><span class="text">Using a Configuration</span><a class="icon-link" href="#using-a-configuration"></a></h2>
 <p>As of version 4, webpack doesn&apos;t require any configuration, but most projects will need a more complex setup, which is why webpack supports a <a href="/concepts/configuration">configuration file</a>. This is much more efficient than having to manually type in a lot of commands in the terminal, so let&apos;s create one to replace the CLI line options used above:</p>
