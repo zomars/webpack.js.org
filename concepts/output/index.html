@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
     
-      <link href="/9df85a6e61116dd39ba0.css" rel="stylesheet">
+      <link href="/2c99b4c2c61fb83c2994.css" rel="stylesheet">
     
 
     <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
@@ -60,7 +60,7 @@
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
-<p>In cases when the eventual <code>publicPath</code> of output files isn&apos;t known at compile time, it can be left blank and set dynamically at runtime in the entry point file. If you don&apos;t know the <code>publicPath</code> while compiling, you can omit it and set <code>__webpack_public_path__</code> on your entry point.</p>
+<p>In cases where the eventual <code>publicPath</code> of output files isn&apos;t known at compile time, it can be left blank and set dynamically at runtime via the <code>__webpack_public_path__</code> variable in the entry point file:</p>
 <pre><code class="lang-javascript">__webpack_public_path__ <span class="token operator">=</span> myRuntimePublicPath<span class="token punctuation">;</span>
 
 <span class="token comment">// rest of your application entry</span>
