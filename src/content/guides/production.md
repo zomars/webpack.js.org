@@ -16,6 +16,7 @@ contributors:
   - kelset
   - xgirma
   - mehrdaad
+  - zomars
 ---
 
 In this guide we'll dive into some of the best practices and utilities for building a production site or application.
